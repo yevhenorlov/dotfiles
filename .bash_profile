@@ -1,4 +1,7 @@
 # general
+function chrome() {
+  open -a "Google Chrome" $1        
+}
 alias subl="sublime ."
 alias vim="/usr/local/bin/vim"
 
@@ -10,8 +13,10 @@ alias gs="git status"
 alias gl="git log"
 
 # deco.agency (work stuff)
+function dp() {
+	cd ~/Documents/decoagency/$1/htdocs/wp-content/themes/$1
+}
 alias deco="cd ~/Documents/decoagency"
-alias dp="decoproj"
 
 # weather and the moon
 alias weather='curl -4 http://wttr.in/Kyiv'
@@ -23,11 +28,6 @@ alias rbash='. ~/.bash_profile'
 
 # the fuck: magnifiscent app which corrects your previous console command (https://github.com/nvbn/thefuck)
 eval "$(thefuck --alias)"
-
-# functions
-function decoproj() {
-	cd ~/Documents/decoagency/$1/htdocs/wp-content/themes/$1
-}
 
 # pretty prompt (made easy with http://xta.github.io/HalloweenBash/)
 function parse_git_branch {
