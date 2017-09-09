@@ -1,5 +1,6 @@
 # general
 alias subl="sublime ."
+alias vim="/usr/local/bin/vim"
 
 # git
 alias ga="git add -A"
