@@ -13,11 +13,11 @@ set showmatch         " highlight matching [{()}]
 set incsearch         " search as characters are entered
 set hlsearch          " highlight matches
 set noswapfile
+let g:NERDTreeWinSize=50 " NERDTree default width
 let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
-
 "============================================================
 " Mappings
 "============================================================
