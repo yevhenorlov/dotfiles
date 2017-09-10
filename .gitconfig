@@ -1,7 +1,7 @@
 # Most of the stuff you see below was blatantly stolen from Paul Irish with little to no change. Thanks a lot, Paul. (https://github.com/paulirish/dotfiles/)
 [alias]
-  	a = add .
-	c = commit -am
+	a = add .
+  c = commit -am
 	fpush = push --force
 	s = status
 	amend = commit --amend --all
