@@ -1,0 +1,19 @@
+# cache
+.DS_Store
+DS_Store?
+Desktop.ini
+._*
+Thumbs.db
+
+# packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# no thx
+node_modules
