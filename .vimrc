@@ -1,15 +1,17 @@
 syntax on
 color dracula
-set smartindent
+filetype plugin on
+set omnifunc=syntaxcomplete#Completeset smartindent " use omnicompletion
 set clipboard=unnamed " use os clipboard
-set tabstop=2 " number of visual spaces per tab
-set softtabstop=2 " number of spaces in tab when editing
-set expandtab "tab to spaces
-set number " show line numbers
-set cursorline  " highlight current line
-set showmatch " highlight matching [{()}]
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set tabstop=2         " number of visual spaces per tab
+set softtabstop=2     " number of spaces in tab when editing
+set expandtab         " tab to spaces
+set backspace=2       " set backspace to work as usual
+set number            " show line numbers
+set cursorline        " highlight current line
+set showmatch         " highlight matching [{()}]
+set incsearch         " search as characters are entered
+set hlsearch          " highlight matches
 set noswapfile
 let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
