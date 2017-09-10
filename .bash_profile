@@ -5,13 +5,6 @@ function chrome() {
 alias subl="sublime ."
 alias vim="/usr/local/bin/vim"
 
-# git
-alias ga="git add -A"
-alias gc="git commit"
-alias gp="git pull"
-alias gs="git status"
-alias gl="git log"
-
 # deco.agency (work stuff)
 function dp() {
 	cd ~/Documents/decoagency/$1/htdocs/wp-content/themes/$1
