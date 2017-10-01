@@ -21,6 +21,7 @@
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
 
 [pager]
 	# insanely beautiful diffs ==> npm install -g diff-so-fancy
