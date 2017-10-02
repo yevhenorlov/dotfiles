@@ -5,6 +5,7 @@ function chrome() {
 alias subl="sublime ."
 alias vim="/usr/local/bin/vim"
 alias grep="grep --color=auto"
+alias ls="ls -G"
 
 # deco.agency (work stuff)
 function dp() {
