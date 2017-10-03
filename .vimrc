@@ -13,6 +13,7 @@ set showmatch         " highlight matching [{()}]
 set incsearch         " search as characters are entered
 set hlsearch          " highlight matches
 set noswapfile
+packadd! matchit      " add matchit plugin
 let g:NERDTreeWinSize=50 " NERDTree default width
 let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
