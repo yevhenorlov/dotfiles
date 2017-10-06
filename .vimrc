@@ -16,7 +16,9 @@ set ignorecase smartcase " turn on case-insensitive matches (but only when patte
 set noswapfile           " don't create a swap file
 
 packadd! matchit         " add matchit plugin
+
 let g:NERDTreeWinSize=50 " NERDTree default width
+let g:NERDTreeShowHidden=1 " NERDTree display hidden files by default
 let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_show_hidden=1
