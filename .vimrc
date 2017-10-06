@@ -14,9 +14,6 @@ set incsearch            " search as characters are entered
 set hlsearch             " highlight matches
 set ignorecase smartcase " turn on case-insensitive matches (but only when pattern is all-lowercase)
 set noswapfile           " don't create a swap file
-highlight ColorColumn ctermbg=magenta
-set colorcolumn=81       " Set up a permanent universal vertical marker after 80 columns
-
 
 packadd! matchit         " add matchit plugin
 let g:NERDTreeWinSize=50 " NERDTree default width
@@ -46,11 +43,13 @@ endfunction
 "============================================================
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-map <C-Left> <Esc>:bprev<CR>
-map <C-Right> <Esc>:bnext<CR>
 map <C-b> :NERDTreeToggle<CR>
 nmap <silent>  <BS>  :nohlsearch<CR>
-
+nmap <Left> :tabprevious<CR>
+nmap <Right> :tabnext<CR>
+nmap <Up> <Esc>:bprev<CR>
+nmap <Down> <Esc>:bnext<CR>
+nnoremap / /\v
 
 execute pathogen#infect()
 call pathogen#helptags()
