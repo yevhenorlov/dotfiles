@@ -30,13 +30,21 @@ function parse_git_branch {
 }
 export PS1="\[\e[35;0m\]🕙  \d \t 🗂  \W\$(parse_git_branch)\[\e[0m\] 🚀  "
 
+# color variables
+DAWN='tput setaf 217'
+NOON='tput setaf 117'
+DUSK='tput setaf 93'
+
 # prompt greeting
 h=`date +%H`
 if [ $h -lt 12 ]; then
   TIMEOFDAY="morning"
+  COLOR=${DAWN}
 elif [ $h -lt 18 ]; then
   TIMEOFDAY="afternoon"
+  COLOR=${NOON}
 else
   TIMEOFDAY="evening"
+  COLOR=${DUSK}
 fi
-echo "$(tput setaf 2)Good ${TIMEOFDAY}, Yevhen.$(tput sgr0)"
+echo "$(${COLOR})Good ${TIMEOFDAY}, Yevhen.$(tput sgr0)"
