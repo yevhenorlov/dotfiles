@@ -29,12 +29,15 @@ eval "$(thefuck --alias)"
 function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
 }
-export PS1="\[\e[35;0m\]🕙  \d \t 🗂  \W\$(parse_git_branch)\[\e[0m\] 🚀  "
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(parse_git_branch) 🚀 \[\033[0m\] "
 
 # color variables
-DAWN='tput setaf 217'
-NOON='tput setaf 117'
-DUSK='tput setaf 93'
+DAWN='tput setaf 169'
+NOON='tput setaf 48'
+DUSK='tput setaf 62'
 
 # prompt greeting
 h=`date +%H`
@@ -49,7 +52,6 @@ else
   COLOR=${DUSK}
 fi
 echo "$(${COLOR})Good ${TIMEOFDAY}, Yevhen.$(tput sgr0)"
-
 
 
 # tiny-care-terminal
