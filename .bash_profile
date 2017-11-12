@@ -1,4 +1,9 @@
-# general
+# Enable tab completion
+source ~/.bash-git-config/git-completion.bash
+
+# Change command prompt
+source ~/.bash-git-config/git-prompt.sh
+
 function chrome() {
   open -a "Google Chrome" $1        
 }
@@ -25,17 +30,13 @@ alias rbash='. ~/.bash_profile'
 # the fuck: magnifiscent app which corrects your previous console command (https://github.com/nvbn/thefuck)
 eval "$(thefuck --alias)"
 
-# pretty prompt (made easy with http://xta.github.io/HalloweenBash/)
-function parse_git_branch {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
-}
+# pretty prompt
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-
-export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(parse_git_branch) 🚀 \[\033[0m\] "
+export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(__git_ps1) 🚀 \[\033[0m\] "
 
 # color variables
-DAWN='tput setaf 169'
+DAWN='tput setaf 168'
 NOON='tput setaf 48'
 DUSK='tput setaf 62'
 
