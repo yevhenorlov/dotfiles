@@ -7,6 +7,12 @@ source ~/.bash-git-config/git-prompt.sh
 function chrome() {
   open -a "Google Chrome" $1        
 }
+function cdd() {
+  printf "\n"
+  cd $1 && ls -G
+  printf "\n"
+}
+
 alias subl="sublime ."
 alias vim="/usr/local/bin/vim"
 alias grep="grep --color=auto"
