@@ -4,9 +4,12 @@ source ~/.bash-git-config/git-completion.bash
 # Change command prompt
 source ~/.bash-git-config/git-prompt.sh
 
+# Open in Chrome
 function chrome() {
   open -a "Google Chrome" $1        
 }
+
+# Change directory and list its content
 function cdd() {
   printf "\n"
   cd $1 && ls -G
