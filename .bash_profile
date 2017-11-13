@@ -33,7 +33,7 @@ eval "$(thefuck --alias)"
 # pretty prompt
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(__git_ps1) 🚀 \[\033[0m\] "
+export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(__git_ps1) 🐙 \[\033[0m\] "
 
 # color variables
 DAWN='tput setaf 168'
