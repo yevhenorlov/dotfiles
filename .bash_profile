@@ -21,6 +21,7 @@ alias vim="/usr/local/bin/vim"
 alias grep="grep --color=auto"
 alias ls="ls -G"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 
 # deco.agency (work stuff)
 function dp() {
