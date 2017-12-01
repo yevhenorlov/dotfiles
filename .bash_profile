@@ -28,6 +28,7 @@ function dp() {
 	cd ~/Documents/decoagency/$1/htdocs/wp-content/themes/$1
 }
 alias deco="cd ~/Documents/decoagency"
+alias gimmepass="cat ~/Documents/decoagency/access.txt"
 
 # weather and the moon
 alias weather='curl -4 http://wttr.in/Kyiv'
