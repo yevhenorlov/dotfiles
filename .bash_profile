@@ -24,9 +24,6 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 
 # deco.agency (work stuff)
-function dp() {
-	cd ~/Documents/decoagency/$1/htdocs/wp-content/themes/$1
-}
 alias deco="cd ~/Documents/decoagency"
 alias gimmepass="cat ~/Documents/decoagency/access.txt"
 
