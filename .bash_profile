@@ -23,9 +23,7 @@ alias ls="ls -G"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 
-# deco.agency (work stuff)
-alias dp="cd ~/Documents/decoagency"
-alias gimmepass="cat ~/Documents/decoagency/access.txt"
+alias cdc="cd ~/code"
 
 # weather and the moon
 alias weather='curl -4 http://wttr.in/Kyiv'
