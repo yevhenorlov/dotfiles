@@ -15,6 +15,7 @@ set incsearch            " search as characters are entered
 set hlsearch             " highlight matches
 set ignorecase smartcase " turn on case-insensitive matches (but only when pattern is all-lowercase)
 set noswapfile           " don't create a swap file
+set autoread             " automatically update changed files
 
 packadd! matchit         " add matchit plugin
 
