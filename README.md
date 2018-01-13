@@ -2,7 +2,7 @@
 🌐 dotfiles &amp; global configs
 
 Software:
-1. [Sublime Text 3](https://www.sublimetext.com/3)
+1. [VS Code](https://code.visualstudio.com/)
 2. [iTerm2](https://iterm2.com/index.html) with [Dracula theme](https://draculatheme.com/iterm/)
 3. Vim plugins:
 + [Dracula theme](https://draculatheme.com/vim/)
