@@ -6,7 +6,7 @@ source ~/.bash-git-config/git-prompt.sh
 
 # Open in Chrome
 function chrome() {
-  open -a "Google Chrome" $1        
+  open -a "Google Chrome" $1
 }
 
 # Change directory and list its content
@@ -22,6 +22,7 @@ alias grep="grep --color=auto"
 alias ls="ls -G"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
+alias pomodoro="~/code/pomodoro-go/pomodoro"
 
 alias cdc="cd ~/code"
 
@@ -107,7 +108,7 @@ export TTC_TERMINAL_TITLE=false
 # export TTC_CONSUMER_SECRET='...'
 # export TTC_ACCESS_TOKEN='...'
 # export TTC_ACCESS_TOKEN_SECRET='...'
-# 
+#
 # # Note: in tiny-terminal-care < 1.0.7, the recommended variables for the Twitter
 # # API keys were the ones before. As of 1.0.8, they are deprecated
 # # (because the names are too generic), but will still be supported
