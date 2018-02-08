@@ -1,5 +1,6 @@
 syntax on
-color dracula
+" color dracula
+colorscheme base16-grayscale-dark
 filetype plugin on
 set omnifunc=syntaxcomplete#Completeset smartindent " use omnicompletion
 set clipboard=unnamed    " use os clipboard
