@@ -6,6 +6,7 @@ set omnifunc=syntaxcomplete#Completeset smartindent " use omnicompletion
 set clipboard=unnamed    " use os clipboard
 set tabstop=2            " number of visual spaces per tab
 set shiftwidth=2         " when indenting with '>', use 2 spaces width
+set tw=80                " set word wrap to 80 characters
 set softtabstop=2        " number of spaces in tab when editing
 set expandtab            " tab to spaces
 set backspace=2          " set backspace to work as usual
