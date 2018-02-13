@@ -43,6 +43,9 @@ alias moon='curl -4 http://wttr.in/Moon'
 alias ebash='vim ~/.bash_profile'
 alias rbash='. ~/.bash_profile'
 
+# editing vimrc
+alias evim='vim ~/.vimrc'
+
 # the fuck: magnifiscent app which corrects your previous console command (https://github.com/nvbn/thefuck)
 eval "$(thefuck --alias)"
 
