@@ -35,7 +35,8 @@ alias pomodoro="~/code/pomodoro-go/pomodoro"
 
 alias cdc="cd ~/code"
 
-# weather and the moon
+# time, weather and the moon
+alias time='date +"%T"'
 alias weather='curl -4 http://wttr.in/Kyiv'
 alias moon='curl -4 http://wttr.in/Moon'
 
