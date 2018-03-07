@@ -22,7 +22,7 @@ function npmid() {
 # Change directory and list its content
 function cdd() {
   printf "\n"
-  cd $1 && ls -G
+  cd $1 && ls -Ga
   printf "\n"
 }
 
