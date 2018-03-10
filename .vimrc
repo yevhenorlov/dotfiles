@@ -1,6 +1,6 @@
 syntax on
 color dracula
-"colorscheme base16-grayscale-dark
+
 filetype plugin on
 set omnifunc=syntaxcomplete#Completeset smartindent " use omnicompletion
 set clipboard=unnamed    " use os clipboard
@@ -45,17 +45,43 @@ function! HelpInNewTab ()
 endfunction
 
 "============================================================
+" airline config
+"============================================================
+
+let g:airline_theme = 'wombat'
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline_left_sep = ' ★  '
+let g:airline_right_sep = ' 🟆  '
+let g:airline_section_warning = ''
+let g:airline_section_y = ''
+let g:airline_section_x = ''
+set laststatus=2 " for airline
+
+"============================================================
 " Mappings
 "============================================================
+
+" ctrl-p plugin shortcut
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" nerd tree toggling
 map <C-b> :NERDTreeToggle<CR>
+
+" remove search highlights with backspace
 nmap <silent>  <BS>  :nohlsearch<CR>
-nmap <Left> :tabprevious<CR>
-nmap <Right> :tabnext<CR>
-nmap <Up> <Esc>:bprev<CR>
-nmap <Down> <Esc>:bnext<CR>
+
+" buffer navigation
+nmap <Left> <Esc>:bprev<CR>
+nmap <Right> <Esc>:bnext<CR>
+
+" search without regex by default
 nnoremap / /\v
+
+"============================================================
+" Start pathogen
+"============================================================
 
 execute pathogen#infect()
 call pathogen#helptags()
