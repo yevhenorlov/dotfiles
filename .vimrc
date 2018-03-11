@@ -24,6 +24,7 @@ set noswapfile           " don't create a swap file
 set autoread             " automatically update changed files
 set hidden               " hide buffer with unsaved changes instead of closing it
 set noeb vb t_vb=        " don't beep
+set termguicolors
 
 packadd! matchit         " add matchit plugin
 

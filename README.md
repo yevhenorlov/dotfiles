@@ -4,8 +4,12 @@
 Software:
 1. [VS Code](https://code.visualstudio.com/)
 2. [iTerm2](https://iterm2.com/index.html) with [Dracula theme](https://draculatheme.com/iterm/)
-3. Vim plugins:
+3. Terminal plugins:
++ [pomodoro](https://github.com/carlmjohnson/pomodoro)
++ [slack-term](https://github.com/erroneousboat/slack-term)
+4. Vim plugins:
 + [Dracula theme](https://github.com/dracula/vim)
++ [Prettier](https://github.com/prettier/vim-prettier)
 + [Ctrl-P](https://github.com/kien/ctrlp.vim)
 + [NerdTree](https://github.com/scrooloose/nerdtree)
 + [Emmet-vim](https://github.com/mattn/emmet-vim)
