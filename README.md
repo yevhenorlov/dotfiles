@@ -12,5 +12,7 @@ Software:
 + [vim-airline](https://github.com/vim-airline/vim-airline)
 + [vim-mutiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 + [fugitive](https://github.com/tpope/vim-fugitive)
++ [vim-javascript](https://github.com/pangloss/vim-javascript.git)
++ [YouCompleteMe](https://github.com/valloric/youcompleteme)
 + [vimproc](https://github.com/Shougo/vimproc.vim)
 + [ChucK](https://github.com/wilsaj/chuck.vim)
