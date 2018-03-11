@@ -1,11 +1,12 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
+filetype plugin on
 
 syntax on
 color dracula
 
 
-filetype plugin on
+set encoding=utf8
 set omnifunc=syntaxcomplete#Completeset smartindent " use omnicompletion
 set clipboard=unnamed    " use os clipboard
 set tabstop=2            " number of visual spaces per tab
@@ -139,6 +140,14 @@ nmap <silent>  <BS>  :nohlsearch<CR>
 " buffer navigation
 nmap <Left> <Esc>:bprev<CR>
 nmap <Right> <Esc>:bnext<CR>
+
+" move lines up and down
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " search without regex by default
 nnoremap / /\v
