@@ -13,6 +13,7 @@ Software:
 + [Emmet-vim](https://github.com/mattn/emmet-vim)
 + [fugitive](https://github.com/tpope/vim-fugitive)
 + [NerdTree](https://github.com/scrooloose/nerdtree)
++ [NrrwRgn](https://github.com/chrisbra/NrrwRgn)
 + [Prettier](https://github.com/prettier/vim-prettier)
 + [vim-airline](https://github.com/vim-airline/vim-airline)
 + [vim-javascript](https://github.com/pangloss/vim-javascript.git)
