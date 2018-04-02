@@ -7,6 +7,8 @@ color dracula
 
 
 set encoding=utf8
+set keymap=ukrainian-jcukenmac " insert text in ukrainian by pressing ctrl+^
+set iminsert=0 imsearch=0   " english by default
 set omnifunc=syntaxcomplete#Completeset smartindent " use omnicompletion
 set clipboard=unnamed    " use os clipboard
 set tabstop=2            " number of visual spaces per tab
@@ -53,6 +55,16 @@ function! HelpInNewTab ()
 endfunction
 
 "============================================================
+" emmet config
+"============================================================
+
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}
+
+"============================================================
 " airline config
 "============================================================
 
@@ -67,8 +79,25 @@ let g:airline_section_x = ''
 set laststatus=2 " for airline
 
 "============================================================
+" syntastic/eslint config
+"============================================================
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
+"============================================================
 " prettier config
 "============================================================
+
+" set the prettier CLI executable path
+let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
 
 " max line length that prettier will wrap on
 " Prettier default: 80
