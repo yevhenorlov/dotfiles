@@ -1,3 +1,9 @@
+" sources for inspiration: 
+"   'Mastering Vim' by Damian Conway
+"   https://github.com/noopkat/dotfiles/blob/master/.vimrc
+"   https://dougblack.io/words/a-good-vimrc.html
+
+" general settings {{{
 " This must be first, because it changes other options as side effect
 set nocompatible
 filetype plugin on
@@ -25,6 +31,8 @@ set ignorecase smartcase " turn on case-insensitive matches (but only when patte
 set wildmenu             " visual autocomplete for command menu
 set foldenable           " enable code folding
 set foldmethod=indent
+set foldlevelstart=10    " open most folds by default
+set foldnestmax=10
 set noswapfile           " don't create a swap file
 set autoread             " automatically update changed files
 set hidden               " hide buffer with unsaved changes instead of closing it
@@ -33,19 +41,19 @@ set termguicolors        " use termguicolors
 set laststatus=2         " always show statusline
 set ttimeoutlen=50       " reduce statusline delay after switching modes
 set path+=**             " search down recursively
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 packadd! matchit         " add matchit plugin
 
 let g:NERDTreeWinSize=50 " NERDTree default width
 let g:NERDTreeShowHidden=1 " NERDTree display hidden files by default
-let g:ctrlp_working_path_mode = 'r'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-let g:ctrlp_show_hidden=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " autoquit if only nerdtree is open
 
-"============================================================
-" Make :help appear in a full-screen tab, instead of a window
-"============================================================
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_show_hidden=1
+" }}}
+" help {{{
+" Make :help appear in a full-screen tab, instead of a window 
 "only apply to .txt files
 augroup HelpInTabs
   autocmd!
@@ -58,20 +66,16 @@ function! HelpInNewTab ()
     execute "normal \<C-W>T"
   endif
 endfunction
-
-"============================================================
-" emmet config
-"============================================================
+" }}}
+" emmet {{{
 
 let g:user_emmet_settings = {
 \  'javascript.jsx' : {
 \      'extends' : 'jsx',
 \  },
 \}
-
-"============================================================
-" lightline config
-"============================================================
+" }}}
+" lightline {{{
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -83,10 +87,8 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
-
-"============================================================
-" prettier config
-"============================================================
+" }}}
+" prettier {{{
 
 " set the prettier CLI executable path
 let g:prettier#exec_cmd_path = "/usr/local/bin/prettier"
@@ -136,19 +138,21 @@ let g:prettier#config#config_precedence = 'prefer-file'
 
 " always|never|preserve
 let g:prettier#config#prose_wrap = 'preserve'
-
-"============================================================
-" Ale
-"============================================================
+" }}}
+" ale {{{
 
 let g:ale_linters = {'javascript': ['eslint']}
-
-"============================================================
-" Mappings
-"============================================================
+" }}}
+" mappings {{{
 
 " change the mapleader from \ to ,
 let mapleader=","
+
+" jk is escape
+inoremap jk <esc>
+
+" toggle line number/relativenumber
+nmap <silent> <leader>n :call ToggleNumber()<CR>
 
 " quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -176,10 +180,23 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " search without regex by default
 nnoremap / /\v
-
-"============================================================
-" Start pathogen
-"============================================================
-
+" }}}
+" custom functions {{{
+" toggle between number and relativenumber
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+" }}}
+" pathogen config {{{
 execute pathogen#infect()
 call pathogen#helptags()
+" }}}
+" modelines {{{
+set modelines=2
+" vim:foldmethod=marker:foldlevel=0 
+" }}}
