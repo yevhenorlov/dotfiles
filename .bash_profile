@@ -32,7 +32,7 @@ alias grep="grep --color=auto"
 alias ls="ls -G"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias pomodoro="~/code/pomodoro-go/pomodoro"
-
+alias nrd="npm run dev"
 alias cdc="cd ~/code"
 
 # time, weather and the moon

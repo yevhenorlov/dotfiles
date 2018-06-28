@@ -5,7 +5,6 @@ filetype plugin on
 syntax on
 color dracula
 
-
 set encoding=utf8
 set keymap=ukrainian-jcukenmac " insert text in ukrainian by pressing ctrl+^
 set iminsert=0 imsearch=0   " english by default
@@ -17,7 +16,7 @@ set tw=80                " set word wrap to 80 characters
 set softtabstop=2        " number of spaces in tab when editing
 set expandtab            " tab to spaces
 set backspace=2          " set backspace to work as usual
-set number               " show line numbers
+set relativenumber       " show line numbers relative to the cursor
 set cursorline           " highlight current line
 set showmatch            " highlight matching [{()}]
 set incsearch            " search as characters are entered
@@ -27,7 +26,10 @@ set noswapfile           " don't create a swap file
 set autoread             " automatically update changed files
 set hidden               " hide buffer with unsaved changes instead of closing it
 set noeb vb t_vb=        " don't beep
-set termguicolors
+set termguicolors        " use termguicolors
+set laststatus=2         " always show statusline
+set ttimeoutlen=50       " reduce statusline delay after switching modes
+set path+=**             " search down recursively
 
 packadd! matchit         " add matchit plugin
 
@@ -65,32 +67,19 @@ let g:user_emmet_settings = {
 \}
 
 "============================================================
-" airline config
+" lightline config
 "============================================================
 
-let g:airline_theme = 'wombat'
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#branch#enabled = 1
-let g:airline_left_sep = ' ★  '
-let g:airline_right_sep = ' 🟆  '
-let g:airline_section_warning = ''
-let g:airline_section_y = ''
-let g:airline_section_x = ''
-set laststatus=2 " for airline
-
-"============================================================
-" syntastic/eslint config
-"============================================================
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 "============================================================
 " prettier config
@@ -113,7 +102,7 @@ let g:prettier#config#use_tabs = 'false'
 
 " print semicolons
 " Prettier default: true
-let g:prettier#config#semi = 'true'
+let g:prettier#config#semi = 'false'
 
 " single quotes over double quotes
 " Prettier default: false
@@ -133,7 +122,7 @@ let g:prettier#config#arrow_parens = 'avoid'
 
 " none|es5|all
 " Prettier default: none
-let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#trailing_comma = 'none'
 
 " flow|babylon|typescript|css|less|scss|json|graphql|markdown
 " Prettier default: babylon
@@ -171,8 +160,6 @@ nmap <Left> <Esc>:bprev<CR>
 nmap <Right> <Esc>:bnext<CR>
 
 " move lines up and down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
