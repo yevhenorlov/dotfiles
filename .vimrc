@@ -22,6 +22,9 @@ set showmatch            " highlight matching [{()}]
 set incsearch            " search as characters are entered
 set hlsearch             " highlight matches
 set ignorecase smartcase " turn on case-insensitive matches (but only when pattern is all-lowercase)
+set wildmenu             " visual autocomplete for command menu
+set foldenable           " enable code folding
+set foldmethod=indent
 set noswapfile           " don't create a swap file
 set autoread             " automatically update changed files
 set hidden               " hide buffer with unsaved changes instead of closing it
@@ -133,6 +136,12 @@ let g:prettier#config#config_precedence = 'prefer-file'
 
 " always|never|preserve
 let g:prettier#config#prose_wrap = 'preserve'
+
+"============================================================
+" Ale
+"============================================================
+
+let g:ale_linters = {'javascript': ['eslint']}
 
 "============================================================
 " Mappings
