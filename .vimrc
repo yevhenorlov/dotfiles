@@ -148,9 +148,6 @@ let g:ale_linters = {'javascript': ['eslint']}
 " change the mapleader from \ to ,
 let mapleader=","
 
-" jk is escape
-inoremap jk <esc>
-
 " toggle line number/relativenumber
 nmap <silent> <leader>n :call ToggleNumber()<CR>
 
@@ -167,6 +164,9 @@ map <C-b> :NERDTreeToggle<CR>
 
 " remove search highlights with backspace
 nmap <silent>  <BS>  :nohlsearch<CR>
+
+" reset syntax highlighting
+nmap <silent> <leader>s :syntax sync fromstart<CR>
 
 " buffer navigation
 nmap <Left> <Esc>:bprev<CR>
