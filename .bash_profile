@@ -34,6 +34,7 @@ alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias pomodoro="~/code/pomodoro-go/pomodoro"
 alias nrd="npm run dev"
 alias cdc="cd ~/code"
+alias cdso="cd ~/code/adraba/ShoutOut/Frontend/app"
 
 # time, weather and the moon
 alias time='date +"%T"'
@@ -53,7 +54,7 @@ eval "$(thefuck --alias)"
 # pretty prompt
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(__git_ps1) 🐇 \[\033[0m\] "
+export PS1="\[\033[0;94m\]\W\[\033[0;96m\]\$(__git_ps1) \[\033[0m\] "
 
 # color variables
 DAWN='tput setaf 168'

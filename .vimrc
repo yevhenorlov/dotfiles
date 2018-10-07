@@ -22,6 +22,7 @@ set tw=80                " set word wrap to 80 characters
 set softtabstop=2        " number of spaces in tab when editing
 set expandtab            " tab to spaces
 set backspace=2          " set backspace to work as usual
+set number
 set relativenumber       " show line numbers relative to the cursor
 set cursorline           " highlight current line
 set showmatch            " highlight matching [{()}]
@@ -37,7 +38,7 @@ set noswapfile           " don't create a swap file
 set autoread             " automatically update changed files
 set hidden               " hide buffer with unsaved changes instead of closing it
 set noeb vb t_vb=        " don't beep
-set termguicolors        " use termguicolors
+"set termguicolors        " use termguicolors
 set laststatus=2         " always show statusline
 set ttimeoutlen=50       " reduce statusline delay after switching modes
 set path+=**             " search down recursively
