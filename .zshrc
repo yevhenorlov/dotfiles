@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/yevhenorlov/.oh-my-zsh"
@@ -8,7 +8,7 @@ export ZSH="/Users/yevhenorlov/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -141,22 +141,14 @@ alias rbash='. ~/.bash_profile'
 # editing vimrc
 alias evim='vim ~/.vimrc'
 
-# color variables
-DAWN='tput setaf 168'
-NOON='tput setaf 48'
-DUSK='tput setaf 62'
-
 # prompt greeting
 h=`date +%H`
 if [ $h -lt 12 ]; then
   TIMEOFDAY="morning"
-  COLOR=${DAWN}
 elif [ $h -lt 18 ]; then
   TIMEOFDAY="afternoon"
-  COLOR=${NOON}
 else
   TIMEOFDAY="evening"
-  COLOR=${DUSK}
 fi
-echo "$(${COLOR})Good ${TIMEOFDAY}, Yevhen.$(tput sgr0)"
+echo "Good ${TIMEOFDAY}, Yevhen."
 
