@@ -8,7 +8,7 @@ export ZSH="/Users/yevhenorlov/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="cobalt2"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -63,12 +63,19 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git,
+  npm,
+  trash,
+  extract,
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# include Z
+. /usr/local/etc/profile.d/z.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -96,6 +103,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# t: custom tree by Wes Bos
+# Install `tree` first — brew install tree
+function t() {
+  # Defaults to 3 levels deep, do more with `t 5` or `t 1`
+  # pass additional args after
+  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
+}
 
 # Open in Chrome
 function chrome() {
@@ -134,9 +149,9 @@ alias time='date +"%T"'
 alias weather='curl -4 http://wttr.in/Kyiv'
 alias moon='curl -4 http://wttr.in/Moon'
 
-# editing and reloading bash profile
-alias ebash='vim ~/.bash_profile'
-alias rbash='. ~/.bash_profile'
+# editing and reloading zsh
+alias ezsh='vim ~/.zshrc'
+alias rzsh='. ~/.zshrc'
 
 # editing vimrc
 alias evim='vim ~/.vimrc'
@@ -152,3 +167,5 @@ else
 fi
 echo "Good ${TIMEOFDAY}, Yevhen."
 
+# syntax-highlighting (must be at the end of the file)
+. /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
