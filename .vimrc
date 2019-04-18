@@ -22,6 +22,7 @@ set tw=80                " set word wrap to 80 characters
 set softtabstop=2        " number of spaces in tab when editing
 set expandtab            " tab to spaces
 set backspace=2          " set backspace to work as usual
+set backupcopy=yes       " fixes HMR
 set number
 set relativenumber       " show line numbers relative to the cursor
 set cursorline           " highlight current line

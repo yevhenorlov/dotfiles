@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -147,10 +147,10 @@ alias vim="/usr/local/bin/vim"
 alias grep="grep --color=auto"
 alias ls="ls -G"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
-alias pomodoro="~/code/pomodoro-go/pomodoro"
+alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias nrd="npm run dev"
-alias cdc="cd ~/code"
-alias cdso="cd ~/code/adraba/ShoutOut/Frontend/app"
+alias cdc="cdd ~/code"
+alias cdcd="cd ~/code/adraba/CryptoDigest/Frontend/app"
 
 # time, weather and the moon
 alias time='date +"%T"'
