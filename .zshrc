@@ -150,7 +150,6 @@ alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias nrd="npm run dev"
 alias cdc="cdd ~/code"
-alias cdcd="cd ~/code/adraba/CryptoDigest/Frontend/app"
 
 # time, weather and the moon
 alias time='date +"%T"'
