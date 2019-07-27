@@ -1,4 +1,4 @@
-" sources for inspiration: 
+" sources for inspiration:
 "   'Mastering Vim' by Damian Conway
 "   https://github.com/noopkat/dotfiles/blob/master/.vimrc
 "   https://dougblack.io/words/a-good-vimrc.html
@@ -9,8 +9,6 @@ set nocompatible
 filetype plugin on
 
 syntax on
-color dracula
-
 set encoding=utf8
 set keymap=ukrainian-jcukenmac " insert text in ukrainian by pressing ctrl+^
 set iminsert=0 imsearch=0   " english by default
@@ -26,6 +24,7 @@ set backupcopy=yes       " fixes HMR
 set number
 set relativenumber       " show line numbers relative to the cursor
 set cursorline           " highlight current line
+hi CursorLine term=bold cterm=bold guibg=Grey40
 set showmatch            " highlight matching [{()}]
 set incsearch            " search as characters are entered
 set hlsearch             " highlight matches

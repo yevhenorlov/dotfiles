@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/yevhenorlov/.oh-my-zsh"
@@ -63,10 +64,9 @@ ZSH_THEME="cobalt2"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
-  npm,
-  trash,
-  extract,
+  git
+  npm
+  extract
   zsh-autosuggestions
 )
 
@@ -142,14 +142,15 @@ function t() {
   tree -I '.git|node_modules|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
 }
 
-alias subl="sublime ."
 alias vim="/usr/local/bin/vim"
 alias grep="grep --color=auto"
-alias ls="ls -G"
+alias ls="ls -G" 
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
-alias nrd="npm run dev"
+alias ns="npm start"
 alias cdc="cdd ~/code"
+alias cdcf="cdd ~/code/carnext/checkout-frontend"
+alias an="vim ~/code/notes"
 
 # time, weather and the moon
 alias time='date +"%T"'
