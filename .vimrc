@@ -23,8 +23,6 @@ set backspace=2          " set backspace to work as usual
 set backupcopy=yes       " fixes HMR
 set number
 set relativenumber       " show line numbers relative to the cursor
-set cursorline           " highlight current line
-hi CursorLine term=bold cterm=bold guibg=Grey40
 set showmatch            " highlight matching [{()}]
 set incsearch            " search as characters are entered
 set hlsearch             " highlight matches
