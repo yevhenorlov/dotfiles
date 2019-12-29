@@ -177,3 +177,5 @@ echo "Good ${TIMEOFDAY}, Yevhen."
 
 # syntax-highlighting (must be at the end of the file)
 . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
