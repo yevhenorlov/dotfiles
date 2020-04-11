@@ -5,6 +5,8 @@ Desktop.ini
 ._*
 .idea
 Thumbs.db
+.vscode
+__pycache__
 
 # packages
 *.7z
@@ -17,4 +19,5 @@ Thumbs.db
 *.zip
 
 # no thx
+venv
 node_modules
