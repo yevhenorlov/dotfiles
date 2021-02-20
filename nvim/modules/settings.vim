@@ -1,28 +1,28 @@
 set nocompatible
 filetype plugin on
 
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
 set keymap=ukrainian-jcukenmac "insert text in ukrainian by pressing ctrl+^
-set iminsert=0 imsearch=0   "default to english
-set completeopt=menuone "always show popup menu for insert mode completion
-set mouse=a "enable mouse for all modes
-set nobackup "no backup files
+set iminsert=0 imsearch=0      "default to english
+set completeopt=menuone        "always show popup menu for insert mode completion
+set mouse=a                    "enable mouse for all modes
+set nobackup                   "no backup files
 set nowritebackup
-set noswapfile "no swap files for buffers
-set number "show number in gutter
-set relativenumber "show line numbers relative to the cursor
-set signcolumn=yes "always show signcolumn (aka gutter)
-set title "show filename and status in window title
-set wrap "wrap to new line
-set clipboard=unnamed "use os clipboard
-set tabstop=2 "number of visual spaces per tab
-set shiftwidth=2 "when indenting with '>', use 2 spaces width
-set incsearch            "search as characters are entered
-set hlsearch             "highlight matches
-set ignorecase smartcase "turn on case-insensitive matches (but only when pattern is all-lowercase)
-set foldenable           "enable code folding
+set noswapfile                 "no swap files for buffers
+set number                     "show number in gutter
+set relativenumber             "show line numbers relative to the cursor
+set signcolumn=yes             "always show signcolumn (aka gutter)
+set title                      "show filename and status in window title
+set wrap                       "wrap to new line
+set clipboard=unnamed          "use os clipboard
+set tabstop=2                  "number of visual spaces per tab
+set shiftwidth=2               "when indenting with '>', use 2 spaces width
+set incsearch                  "search as characters are entered
+set hlsearch                   "highlight matches
+set ignorecase smartcase       "turn on case-insensitive matches (but only when pattern is all-lowercase)
+set foldenable                 "enable code folding
 set foldmethod=indent
-set foldlevelstart=10    "open most folds by default
+set foldlevelstart=10          "open most folds by default
 set foldnestmax=10
 
 " set filetypes as typescriptreact
