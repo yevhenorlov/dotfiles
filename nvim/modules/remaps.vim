@@ -7,10 +7,13 @@ nmap <Leader>bp :bp<CR>
 nnoremap <C-p> :Rg<CR>
 nnoremap <C-e> :Files<CR>
 nmap <Leader>bl :Buffers<CR>
+"bdo (buffer delete others) - delete all buffers, reopen last one
+nmap <Leader>bdo :%bd <bar> e#<CR>
 nmap <Leader>g :GFiles<CR>
+nmap <Leader>g? :GFiles?<CR>
+nmap <Leader>gs :G<CR>
 nmap <Leader>e :Files<CR>
 nmap <Leader>p :Rg<CR>
-nmap <Leader>g? :GFiles?<CR>
 nmap <Leader>h :History<CR>
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)

@@ -65,7 +65,7 @@ colors:
     cyan: "0x8ec07c"
     white: "0xebdbb2"
   cursor:
-    text: '0xffffff'
+    text: '0x555555'
     cursor: '0xff0000'
 
 mouse:
