@@ -2,8 +2,8 @@
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 " Toggle between buffers
-nmap <Leader>bn :bn<CR>
-nmap <Leader>bp :bp<CR>
+nmap <Leader><Left> <Esc>:bprev<CR>
+nmap <Leader><Right> <Esc>:bnext<CR>
 nnoremap <C-p> :Rg<CR>
 nnoremap <C-e> :Files<CR>
 nmap <Leader>bl :Buffers<CR>
@@ -12,9 +12,10 @@ nmap <Leader>bdo :%bd <bar> e#<CR>
 nmap <Leader>g :GFiles<CR>
 nmap <Leader>g? :GFiles?<CR>
 nmap <Leader>gs :G<CR>
+nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>e :Files<CR>
 nmap <Leader>p :Rg<CR>
-nmap <Leader>h :History<CR>
+nmap <Leader>H :History<CR>
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
 nmap <Leader>3 <Plug>lightline#bufferline#go(3)
@@ -48,10 +49,6 @@ nmap <silent> <BS> :nohlsearch<CR>
 
 " reset syntax highlighting
 nmap <silent> <leader>S :syntax sync fromstart<CR>
-
-" buffer navigation
-nmap <Left> <Esc>:bprev<CR>
-nmap <Right> <Esc>:bnext<CR>
 
 " move lines up and down (∆ and ˚ here are alt+j and alt+k mac equivalent respectively
 nnoremap ∆ :m .+1<CR>== 
