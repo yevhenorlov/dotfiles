@@ -39,7 +39,8 @@ alias cdcf="cdd ~/code/carnext/checkout-frontend"
 alias cdsf="cdd ~/code/carnext/showroom-frontend"
 alias cdui="cdd ~/code/carnext/ui"
 alias cdjss="cdd ~/code/carnext/jss-frontend"
-alias an="vim ~/code/infinite-draft.md"
+alias cddf="cdd ~/code/dotfiles"
+alias an="vim ~/code/notes/infinite-note.md"
 
 # time, weather and the moon
 alias time='date +"%T"'

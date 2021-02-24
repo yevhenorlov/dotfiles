@@ -41,13 +41,13 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
-nmap <Silent> <Leader>n :call ToggleNumber()<CR>
+nmap <silent> <Leader>n :call ToggleNumber()<CR>
 
 " Remove search highlights with backspace
-nmap <Silent> <BS> :nohlsearch<CR>
+nmap <silent> <BS> :nohlsearch<CR>
 
 " reset syntax highlighting
-nmap <Silent> <Leader>S :syntax sync fromstart<CR>
+nmap <silent> <Leader>S :syntax sync fromstart<CR>
 
 " move lines up and down
 nnoremap <M-j> :m .+1<CR>== 
