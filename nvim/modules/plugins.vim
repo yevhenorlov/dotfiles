@@ -35,4 +35,7 @@ call plug#begin()
   Plug 'leafgarland/typescript-vim' 
   Plug 'peitalin/vim-jsx-typescript'
 
+	"Clojure tooling
+	Plug 'Olical/conjure', {'tag': 'v4.17.0'}
+
 call plug#end()
