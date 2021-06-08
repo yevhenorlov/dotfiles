@@ -1,5 +1,8 @@
 call plug#begin()
 
+  "NERDTree - file explorer for vim
+  Plug 'preservim/nerdtree'
+
   "A Git wrapper so awesome, it should be illegal
   Plug 'tpope/vim-fugitive' 
 
@@ -31,9 +34,10 @@ call plug#begin()
   "Comment stuff out
   Plug 'tpope/vim-commentary' 
 
-  "JSX, TSX syntax highlighting
+  "syntax highlighting
   Plug 'leafgarland/typescript-vim' 
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'lepture/vim-jinja'
 
 	"Clojure tooling
 	Plug 'Olical/conjure', {'tag': 'v4.17.0'}

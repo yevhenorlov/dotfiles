@@ -1,6 +1,9 @@
 " Align GitHub-flavored Markdown tables
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
+" Open current buffer in NERDTree
+nmap <leader>r :NERDTreeFind<CR>
+
 " Toggle between buffers
 nmap <Leader><Left> <Esc>:bprev<CR>
 nmap <Leader><Right> <Esc>:bnext<CR>
