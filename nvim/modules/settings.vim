@@ -1,6 +1,7 @@
 set nocompatible
 filetype plugin on
 
+let maplocalleader="\,"
 let mapleader="\<Space>"
 set keymap=ukrainian-jcukenmac "insert text in ukrainian by pressing ctrl+^
 set iminsert=0 imsearch=0      "default to english
