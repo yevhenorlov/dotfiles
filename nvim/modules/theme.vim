@@ -1,6 +1,7 @@
 syntax on
 set termguicolors
-colorscheme gruvbox8
+" colorscheme gruvbox8
+colorscheme 256_noir
 set background=dark
 set cursorline
 set hidden

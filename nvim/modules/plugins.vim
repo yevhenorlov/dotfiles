@@ -6,9 +6,6 @@ call plug#begin()
   "A Git wrapper so awesome, it should be illegal
   Plug 'tpope/vim-fugitive'
 
-  "Show changed file lines in gutter
-  Plug 'airblade/vim-gitgutter'
-
   "Generic .editorconfig standard support for Vim
   Plug 'editorconfig/editorconfig-vim'
 
@@ -27,6 +24,8 @@ call plug#begin()
 
   "Gruvbox colorscheme
   Plug 'lifepillar/vim-gruvbox8'
+  "256-noir colorscheme
+  Plug 'andreasvc/vim-256noir'
 
   "Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
