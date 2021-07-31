@@ -25,7 +25,7 @@ call plug#begin()
   "Gruvbox colorscheme
   Plug 'lifepillar/vim-gruvbox8'
   "256-noir colorscheme
-  Plug 'andreasvc/vim-256noir'
+  " Plug 'andreasvc/vim-256noir'
 
   "Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
