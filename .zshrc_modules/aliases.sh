@@ -61,3 +61,8 @@ alias ealac='vim ~/.config/alacritty/alacritty.yml'
 # editing tmux.conf
 alias etmux='vim ~/.tmux.conf'
 
+# dnd
+
+function gn() {
+npx run-func getName.js getName $1 $2
+}

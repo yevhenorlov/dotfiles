@@ -40,6 +40,7 @@ call plug#begin()
 
 	"Clojure tooling
 	Plug 'Olical/conjure', {'tag': 'v4.17.0'}
+	Plug 'venantius/vim-cljfmt'
 
 	"Twitter
 	Plug 'https://github.com/twitvim/twitvim.git'
