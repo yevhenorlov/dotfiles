@@ -40,6 +40,11 @@ alias cddj="cdd ~/code/djinni-co/djinn"
 alias cddf="cdd ~/code/dotfiles"
 alias an="vim ~/code/notes/infinite-note.md"
 
+# docker djinni
+alias psql="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=running" -q\` psql --user djinn djinn"
+alias pgdb="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=running" -q\` bash"
+alias web="docker exec -ti \`docker ps --filter "name=web" --filter "status=running" -q\` bash"
+
 # time, weather and the moon
 alias time='date +"%T"'
 alias weather='curl -4 http://wttr.in/Kyiv'
