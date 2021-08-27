@@ -18,6 +18,7 @@ set wrap                       "wrap to new line
 set clipboard=unnamed          "use os clipboard
 set tabstop=2                  "number of visual spaces per tab
 set shiftwidth=2               "when indenting with '>', use 2 spaces width
+set expandtab                  "use spaces when pressing tab
 set incsearch                  "search as characters are entered
 set hlsearch                   "highlight matches
 set ignorecase smartcase       "turn on case-insensitive matches (but only when pattern is all-lowercase)
