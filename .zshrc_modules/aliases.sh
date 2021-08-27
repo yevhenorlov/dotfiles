@@ -36,7 +36,7 @@ alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias pcs="node ~/code/perfect-circuit-scraper/index.js"
 alias ns="npm start"
 alias cdc="cdd ~/code"
-alias cddj="cdd ~/code/djinni-co/djinn"
+alias cddj="cdd ~/code/djinn"
 alias cddf="cdd ~/code/dotfiles"
 alias an="vim ~/code/notes/infinite-note.md"
 
