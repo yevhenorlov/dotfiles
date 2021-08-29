@@ -44,6 +44,8 @@ alias an="vim ~/code/notes/infinite-note.md"
 alias psql="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=running" -q\` psql --user djinn djinn"
 alias pgdb="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=running" -q\` bash"
 alias web="docker exec -ti \`docker ps --filter "name=web" --filter "status=running" -q\` bash"
+alias dcu="docker-compose up -d"
+alias dcs="docker-compose stop"
 
 # time, weather and the moon
 alias time='date +"%T"'
