@@ -38,8 +38,6 @@ alias ns="npm start"
 alias nd="npm run dev"
 alias nb="npm run build"
 alias cdc="cdd ~/code"
-alias cddj="cdd ~/code/djinn"
-alias cddn="cdd ~/code/djinn-next"
 alias cddf="cdd ~/code/dotfiles"
 alias an="vim ~/code/notes/infinite-note.md"
 
