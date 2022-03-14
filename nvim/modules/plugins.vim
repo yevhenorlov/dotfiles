@@ -33,15 +33,16 @@ call plug#begin()
   "Comment stuff out
   Plug 'tpope/vim-commentary'
 
-  "JSX, TSX, Nunjucks syntax highlighting
+  "syntax highlighting
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
-	Plug 'lepture/vim-jinja'
+  Plug 'lepture/vim-jinja'
+  Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
-	"Clojure tooling
-	Plug 'Olical/conjure', {'tag': 'v4.17.0'}
-	Plug 'venantius/vim-cljfmt'
+  "Clojure tooling
+  Plug 'Olical/conjure', {'tag': 'v4.17.0'}
+  Plug 'venantius/vim-cljfmt'
 
-	"Twitter
-	Plug 'https://github.com/twitvim/twitvim.git'
+  "Twitter
+  Plug 'https://github.com/twitvim/twitvim.git'
 call plug#end()

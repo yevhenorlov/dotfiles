@@ -35,8 +35,11 @@ alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias pcs="node ~/code/perfect-circuit-scraper/index.js"
 alias ns="npm start"
+alias nd="npm run dev"
+alias nb="npm run build"
 alias cdc="cdd ~/code"
 alias cddj="cdd ~/code/djinn"
+alias cddn="cdd ~/code/djinn-next"
 alias cddf="cdd ~/code/dotfiles"
 alias an="vim ~/code/notes/infinite-note.md"
 
@@ -46,6 +49,8 @@ alias pgdb="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=ru
 alias web="docker exec -ti \`docker ps --filter "name=web" --filter "status=running" -q\` bash"
 alias dcu="docker-compose up -d"
 alias dcs="docker-compose stop"
+# python djinni
+alias v="source .venv/bin/activate"
 
 # time, weather and the moon
 alias time='date +"%T"'
