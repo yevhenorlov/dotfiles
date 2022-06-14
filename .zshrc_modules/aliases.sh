@@ -39,6 +39,10 @@ alias nd="npm run dev"
 alias nb="npm run build"
 alias cdc="cdd ~/code"
 alias cddf="cdd ~/code/dotfiles"
+alias cdcn="cdd ~/code/cn"
+alias cdjss="cdd ~/code/cn/jss-frontend"
+alias cdwww="cdd ~/code/cn/www-frontend"
+
 alias an="vim ~/code/notes/infinite-note.md"
 
 # docker djinni
@@ -52,7 +56,7 @@ alias v="source .venv/bin/activate"
 
 # time, weather and the moon
 alias time='date +"%T"'
-alias weather='curl -4 http://wttr.in/Kyiv'
+alias weather='curl -4 http://wttr.in/Uithoorn'
 alias moon='curl -4 http://wttr.in/Moon'
 
 # editing and reloading zsh
