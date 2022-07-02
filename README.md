@@ -2,11 +2,13 @@
 
 🌐 dotfiles &amp; global configs
 
+![screenshot](screenshot.png)
+
 ## Software
 
 1. Terminal - [kitty](https://sw.kovidgoyal.net/kitty/)
 1. Shell - [oh-my-zsh](https://ohmyz.sh/)
-1. Code editor - [nvim](https://github.com/neovim/neovim/) with a [custom theme](./nvim/colors/gruvbox_customized.vim) based on [Gruvbox](https://github.com/morhetz/gruvbox)
+1. Code editor - [neovim](https://github.com/neovim/neovim/) with a [custom theme](./nvim/colors/gruvbox_customized.vim) based on [Gruvbox](https://github.com/morhetz/gruvbox)
 1. Font - [Dank mono](http://dank.sh)
 1. Neat terminal plugins:
 
