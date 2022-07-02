@@ -1,6 +1,5 @@
 # modules
 source $HOME/.zshrc_modules/fzf.sh
-# source $HOME/.zshrc_modules/tmux.sh
 source $HOME/.zshrc_modules/paths.sh
 source $HOME/.zshrc_modules/theme.sh
 source $HOME/.zshrc_modules/plugins.sh
