@@ -32,12 +32,12 @@ else
 fi
 
 # zsh
-ln -sfn "$DotfilesPath/.zshrc" "$ConfigPath/.zshrc"
-ln -sfn "$DotfilesPath/.zshrc_modules" "$ConfigPath/.zshrc_modules"
+ln -sfn "$DotfilesPath/.zshrc" "$HOME/.zshrc"
+ln -sfn "$DotfilesPath/.zshrc_modules" "$HOME/.zshrc_modules"
 
 # git
-ln -sfn "$DotfilesPath/.gitconfig" "$ConfigPath/.gitconfig"
-ln -sfn "$DotfilesPath/.gitignore_global" "$ConfigPath/.gitignore_global"
+ln -sfn "$DotfilesPath/.gitconfig" "$HOME/.gitconfig"
+ln -sfn "$DotfilesPath/.gitignore_global" "$HOME/.gitignore_global"
 
 # neovim
 ln -sfn "$DotfilesPath/nvim/colors/" "$ConfigPath/nvim/colors"
