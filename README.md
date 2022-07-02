@@ -1,52 +1,46 @@
 # dotfiles
+
 🌐 dotfiles &amp; global configs
 
+## Software
 
-Software:
-1. [Alacritty](https://github.com/alacritty/alacritty) with [Gruvbox](https://github.com/morhetz/gruvbox) theme and [Dank mono](http://dank.sh) font.
-2. Terminal plugins:
-+ [tmux](https://github.com/tmux/tmux)
-+ [pomodoro](https://github.com/carlmjohnson/pomodoro)
-+ [slack-term](https://github.com/erroneousboat/slack-term)
-3. Vim plugins (old, rewrite):
-+ [ChucK](https://github.com/wilsaj/chuck.vim)
-+ [Ctrl-P](https://github.com/kien/ctrlp.vim)
-+ [Dracula theme](https://github.com/dracula/vim)
-+ [Emmet-vim](https://github.com/mattn/emmet-vim)
-+ [fugitive](https://github.com/tpope/vim-fugitive)
-+ [NerdTree](https://github.com/scrooloose/nerdtree)
-+ [NrrwRgn](https://github.com/chrisbra/NrrwRgn)
-+ [Prettier](https://github.com/prettier/vim-prettier)
-+ [vim-airline](https://github.com/vim-airline/vim-airline)
-+ [vim-javascript](https://github.com/pangloss/vim-javascript.git)
-+ [vim-mutiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-+ [vim-surround](https://github.com/tpope/vim-surround)
-+ [vimproc](https://github.com/Shougo/vimproc.vim)
-+ [YouCompleteMe](https://github.com/valloric/youcompleteme)
+1. Terminal - [kitty](https://sw.kovidgoyal.net/kitty/)
+1. Shell - [oh-my-zsh](https://ohmyz.sh/)
+1. Code editor - [nvim](https://github.com/neovim/neovim/) with a [custom theme](./nvim/colors/gruvbox_customized.vim) based on [Gruvbox](https://github.com/morhetz/gruvbox)
+1. Font - [Dank mono](http://dank.sh)
+1. Neat terminal plugins:
 
-# Steps (draft)
+- [pomodoro](https://github.com/carlmjohnson/pomodoro)
 
-1. clone repo to ~/code;
+## Installation
 
-2. add respective symlinks to pick up resources from dotfiles repo
-
-## Alacritty
+### [install `neovim`](https://github.com/neovim/neovim/wiki/Installing-Neovim):
 
 ```sh
-# under ~/.config/alacritty
-
-$ ln -s ~/code/dotfiles/alacritty/alacritty.yml alacritty.yml
+brew install neovim
 ```
 
-## Neovim
+### [install `kitty`](https://sw.kovidgoyal.net/kitty/binary/):
 
 ```sh
-# under ~/.config/nvim
-
-$ ln -s ~/code/dotfiles/nvim/init.vim ./init.vim
-$ ln -s ~/code/dotfiles/nvim/modules ./modules
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
-## install ripgrep (for fzf to work with it):
+### clone repo to `~/code`
 
-```brew install rg
+```sh
+git clone git@github.com:yevhenorlov/dotfiles.git ~/code/dotfiles
+```
+
+### add symlinks to pick up resources from dotfiles repo
+
+```sh
+cd ~/code/dotfiles
+./install.sh
+```
+
+### install ripgrep (for fzf to work with it)
+
+```sh
+brew install rg
+```

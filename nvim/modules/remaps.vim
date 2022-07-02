@@ -35,6 +35,27 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
+"toggle status line
+let s:hidden_all = 1
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+        set nonumber norelativenumber
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+        set number relativenumber
+    endif
+endfunction
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
 " toggle line number/relativenumber
 function! ToggleNumber()
     if(&relativenumber == 1)
