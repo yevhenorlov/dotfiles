@@ -13,6 +13,20 @@ function npmid() {
   npm install --save-dev $1
 }
 
+# captains log
+function le() {
+  LogEntry="$HOME/code/journal/$(date +%F).md"
+  if [[ -f $LogEntry ]]; then
+    : # noop
+  else
+    touch $LogEntry
+    echo "# $(date +%F)\n\n" >> $LogEntry
+  fi
+  cd $HOME/code/journal
+  # open file and go to the 3rd line (under heading)
+  vim -c :3 $LogEntry
+}
+
 # Change directory and list its content
 function cdd() {
   printf "\n"
