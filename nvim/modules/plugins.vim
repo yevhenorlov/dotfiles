@@ -40,7 +40,7 @@ call plug#begin()
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'evanleck/vim-svelte', {'branch': 'main'}
-
+  Plug 'preservim/vim-markdown'
   "Clojure tooling
   Plug 'Olical/conjure', {'tag': 'v4.17.0'}
   Plug 'venantius/vim-cljfmt'

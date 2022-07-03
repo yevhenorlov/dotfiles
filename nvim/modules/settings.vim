@@ -25,12 +25,16 @@ set foldenable                 "enable code folding
 set foldmethod=manual
 set foldlevelstart=10          "open most folds by default
 set foldnestmax=10
+set statusline=%r%F\%=%{strftime('%Y\%m\%d\.%H\%M')}
 set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
 
-set statusline=%r%F\%=%{strftime('%Y\%m\%d\.%H\%M')}
+" save and load folds automatically
+" TODO ask Bart 
+" au BufWinLeave * mkview
+" au BufWinEnter * silent! loadview
 
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact

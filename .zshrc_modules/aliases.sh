@@ -25,7 +25,7 @@ function cdd() {
 function t() {
   # Defaults to 3 levels deep, do more with `t 5` or less with `t 1`
   # Pass additional args after
-  tree -I '.git|node_modules|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
+  tree -I '.git|node_modules|.DS_Store' --dirsfirst --filelimit 150 -L ${1:-3} -aC $2
 }
 
 alias vim="nvim"

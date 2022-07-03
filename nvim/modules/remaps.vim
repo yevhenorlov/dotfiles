@@ -6,7 +6,9 @@ nmap <leader>r :NERDTreeFind<CR>
 
 " Toggle between buffers
 nmap <Leader><Left> <Esc>:bprev<CR>
+nmap <Leader>h :bprev<CR>
 nmap <Leader><Right> <Esc>:bnext<CR>
+nmap <Leader>l :bnext<CR>
 nnoremap <C-p> :Rg<CR>
 nnoremap <C-e> :Files<CR>
 nmap <Leader>bl :Buffers<CR>
@@ -54,7 +56,7 @@ function! ToggleHiddenAll()
         set number relativenumber
     endif
 endfunction
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
+nnoremap <silent> <S-h> :call ToggleHiddenAll()<CR>
 
 " toggle line number/relativenumber
 function! ToggleNumber()
