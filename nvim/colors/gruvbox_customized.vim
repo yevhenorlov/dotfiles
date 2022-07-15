@@ -89,7 +89,7 @@ let s:gb = {}
 let s:gb.dark0_hard  = ['#1d2021', 234]     " 29-32-33
 let s:gb.dark0       = ['#282828', 235]     " 40-40-40
 let s:gb.dark0_soft  = ['#32302f', 236]     " 50-48-47
-let s:gb.dark1       = ['#3c3836', 237]     " 60-56-54
+let s:gb.dark1       = ['#252525', 237]     " 60-56-54
 let s:gb.dark2       = ['#504945', 239]     " 80-73-69
 let s:gb.dark3       = ['#665c54', 241]     " 102-92-84
 let s:gb.dark4       = ['#7c6f64', 243]     " 124-111-100
@@ -1416,3 +1416,8 @@ endfunction
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+" Customizations -------------------------------------------------------------------
+" Override values {{{
+:hi SignColumn guibg=bg
+:hi EndOfBuffer guifg=bg
+" }}}

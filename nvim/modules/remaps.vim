@@ -72,7 +72,7 @@ nmap <silent> <Leader>S :syntax sync fromstart<CR>
 
 " move lines up and down
 nnoremap <C-j> <CMD>m .+1<CR>
-nnoremap <C-k> :m .-2<CR>
+nnoremap <C-k> <CMD>m .-2<CR>
 
 " search without regex by default
 nnoremap / /\v
