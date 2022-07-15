@@ -32,7 +32,6 @@ call plug#begin()
   "Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
   "Generic .editorconfig standard support for Vim
   Plug 'editorconfig/editorconfig-vim'
 
