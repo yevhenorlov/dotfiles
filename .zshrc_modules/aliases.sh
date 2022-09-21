@@ -59,15 +59,6 @@ alias cdwww="cdd ~/code/cn/www-frontend"
 
 alias an="vim ~/code/notes/infinite-note.md"
 
-# docker djinni
-alias psql="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=running" -q\` psql --user djinn djinn"
-alias pgdb="docker exec -ti \`docker ps --filter "name=pgdb" --filter "status=running" -q\` bash"
-alias web="docker exec -ti \`docker ps --filter "name=web" --filter "status=running" -q\` bash"
-alias dcu="docker-compose up -d"
-alias dcs="docker-compose stop"
-# python djinni
-alias v="source .venv/bin/activate"
-
 # time, weather and the moon
 alias time='date +"%T"'
 alias weather='curl -4 http://wttr.in/Uithoorn'
