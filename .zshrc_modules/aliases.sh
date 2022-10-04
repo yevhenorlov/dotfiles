@@ -24,7 +24,13 @@ function le() {
   fi
   cd $HOME/code/journal
   # open file and go to the 3rd line (under heading)
-  vim -c :3 $LogEntry
+  nvim -c :3 $LogEntry
+}
+
+# load file into node.js repl
+noderepl() {
+    FILE_CONTENTS="$(< $1 )"
+    node -i -e "$FILE_CONTENTS"
 }
 
 # Change directory and list its content
