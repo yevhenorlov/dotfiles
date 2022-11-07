@@ -15,16 +15,15 @@ function npmid() {
 
 # captains log
 function le() {
-  LogEntry="$HOME/code/journal/$(date +%F).md"
+  LogEntry="$HOME/code/journal/journal.txt"
   if [[ -f $LogEntry ]]; then
     : # noop
   else
     touch $LogEntry
-    echo "# $(date +%F)\n\n" >> $LogEntry
   fi
   cd $HOME/code/journal
-  # open file and go to the 3rd line (under heading)
-  nvim -c :3 $LogEntry
+  # open file and go to the last line
+  nvim -c :$ $LogEntry
 }
 
 # load file into node.js repl
@@ -63,8 +62,6 @@ alias cdcn="cdd ~/code/cn"
 alias cdjss="cdd ~/code/cn/jss-frontend"
 alias cdwww="cdd ~/code/cn/www-frontend"
 
-alias an="vim ~/code/notes/infinite-note.md"
-
 # time, weather and the moon
 alias time='date +"%T"'
 alias weather='curl -4 http://wttr.in/Uithoorn'
@@ -82,6 +79,9 @@ alias ealac='vim ~/.config/alacritty/alacritty.yml'
 
 # editing tmux.conf
 alias etmux='vim ~/.tmux.conf'
+# GlobalProtect
+alias gpoff="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
+alias gpon="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 
 # dnd
 
