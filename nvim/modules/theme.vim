@@ -1,7 +1,7 @@
-syntax on
 set termguicolors
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox_customized
+syntax on
 
 set cursorline
 set hidden

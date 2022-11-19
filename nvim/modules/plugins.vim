@@ -2,6 +2,9 @@ call plug#begin()
 
   "NERDTree - file explorer for vim
   Plug 'preservim/nerdtree'
+  "Sticky headers
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter-context'
 
   "A Git wrapper so awesome, it should be illegal
   Plug 'tpope/vim-fugitive'
