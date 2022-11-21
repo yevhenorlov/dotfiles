@@ -33,8 +33,9 @@ else
 fi
 
 # zsh
-ln -sfn "$DotfilesPath/.zshrc" "$HOME/.zshrc"
-ln -sfn "$DotfilesPath/.zshrc_modules" "$HOME/.zshrc_modules"
+ln -sfn "$DotfilesPath/zsh/.zshrc" "$HOME/.zshrc"
+ln -sfn "$DotfilesPath/zsh/.zshrc_modules" "$HOME/.zshrc_modules"
+ln -sfn "$DotfilesPath/zsh/themes/lambda_minimal.zsh-theme" "$ZSH_CUSTOM/themes/lambda_minimal.zsh-theme"
 
 # git
 ln -sfn "$DotfilesPath/.gitconfig" "$HOME/.gitconfig"
