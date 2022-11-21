@@ -1,3 +1,4 @@
+"config details: https://github.com/junegunn/vim-plug
 call plug#begin()
 
   "NERDTree - file explorer for vim
@@ -26,8 +27,8 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
 
   "Gruvbox colorscheme 
-  "(UPD: replaced by colors/gruvbox_customized.vim)
-  " Plug 'morhetz/gruvbox'
+  " Plug 'morhetz/gruvbox' "(UPD: replaced by colors/gruvbox_customized.vim)
+  Plug 'ayu-theme/ayu-vim'
 
   " Indent guides
   Plug 'lukas-reineke/indent-blankline.nvim'

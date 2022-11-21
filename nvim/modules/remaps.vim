@@ -1,36 +1,34 @@
-" Align GitHub-flavored Markdown tables
-au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+" reload vim config
+nnoremap <Leader><CR> :so $MYVIMRC<CR>
 
-" Open current buffer in NERDTree
-nmap <leader>r :NERDTreeFind<CR>
-
-" fix gx command (issue: https://github.com/vim/vim/issues/4738)
-nmap <silent> gx :!open <cfile><cr>
-
-" Toggle between buffers
+" Navigate between buffers
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
-nnoremap <C-p> :Rg<CR>
-nnoremap <C-e> :Files<CR>
-nmap <Leader>bl :Buffers<CR>
+" tree exploring
+nnoremap <Leader>rr :NERDTreeFind<CR>
+
 "bdo (buffer delete others) - delete all buffers, reopen last one
 nmap <Leader>bdo :%bd <bar> e#<CR>
 "Shift+b (delete buffer without closing the window) - go to previous buffer, delete the one you just left
 nnoremap <silent> <S-b> :bp<BAR>bd#<CR>
 
-" GIT
-nmap <Leader>g :GFiles<CR>
-nmap <Leader>g? :GFiles?<CR>
-nmap <Leader>gs :G<CR>
-nmap <Leader>gd :Gdiff<CR>
-"fugitive 3-way merge. //2 and //3 are left and right buffers respectively
-nmap <Leader>g[ :diffget //2<CR>
-nmap <Leader>g] :diffget //3<CR>
+" fuzzy search
+nnoremap <C-e> :Files<CR>
+nnoremap <Leader>e :Files<CR>
+nnoremap <C-g> :GFiles<CR>
+nnoremap <Leader>p :Rg<CR>
+nnoremap <C-p> :Rg<CR>
+nnoremap <Leader>bl :Buffers<CR>
 
-nmap <Leader>e :Files<CR>
-nmap <Leader>p :Rg<CR>
-nmap <Leader>H :History<CR>
+" GIT
+nnoremap <Leader>gs :G<CR>
+nnoremap <Leader>g? :GFiles?<CR>
+nnoremap <Leader>gd :Gdiff<CR><C-w><C-w>
+nnoremap <Leader>gl :Commits<CR>
+"fugitive 3-way merge. //2 and //3 are left and right buffers respectively
+nnoremap <Leader>g[ :diffget //2<CR>
+nnoremap <Leader>g] :diffget //3<CR>
 
 "toggle status line
 let s:hidden_all = 1
@@ -65,10 +63,17 @@ endfunc
 nmap <silent> <Leader>n :call ToggleNumber()<CR>
 
 " Remove search highlights with backspace
-nmap <silent> <BS> :nohlsearch<CR>
+nnoremap <silent> <BS> :nohlsearch<CR>
 
 " reset syntax highlighting
-nmap <Leader>S :syntax sync fromstart<CR>
+nnoremap <Leader>S :syntax sync fromstart<CR>
+"
+"yank whole file
+nnoremap <leader>Y Gygg
+
+"move visual selection up/down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " next/previous line with same indentation
 nnoremap <silent> <C-[> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
@@ -83,8 +88,10 @@ nnoremap <C-k> <CMD>m .-2<CR>
 " search without regex by default
 nnoremap / /\v
 
-" Plugin mappings
+" EasyAlign
 
+" Align GitHub-flavored Markdown tables
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
