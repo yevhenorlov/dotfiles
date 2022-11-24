@@ -1,5 +1,8 @@
 # User configuration
 
+# set keybinding to vi mode
+# set -o vi # incompatible with bindkey, TODO try ZVM https://github.com/jeffreytse/zsh-vi-mode
+
 # include Z
 . /usr/local/etc/profile.d/z.sh
 

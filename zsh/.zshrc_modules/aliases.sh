@@ -88,3 +88,6 @@ alias gpon="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 function gn() {
 npx run-func getName.js getName $1 $2
 }
+
+# Where should I put you?
+bindkey -s ^F "tmux-sessionizer\n"

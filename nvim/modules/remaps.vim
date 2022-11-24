@@ -1,6 +1,12 @@
 " reload vim config
 nnoremap <Leader><CR> :so $MYVIMRC<CR>
 
+" make current file executable
+nnoremap <Leader>x :!chmod +x %<CR>
+
+"call tmux-sessionizer
+nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
+
 " Navigate between buffers
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
