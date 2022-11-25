@@ -47,8 +47,15 @@ ln -sfn "$DotfilesPath/nvim/modules/" "$ConfigPath/nvim/modules"
 ln -sfn "$DotfilesPath/nvim/keymap/" "$ConfigPath/nvim/keymap"
 ln -sfn "$DotfilesPath/nvim/init.vim" "$ConfigPath/nvim/init.vim"
 
+# tmux
+ln -sfn "$DotfilesPath/.tmux.conf" "$HOME/.tmux.conf"
+ln -sfn "$DotfilesPath/tmux-sessionizer" "/usr/local/bin/tmux-sessionizer"
+
 # kitty
 ln -sfn "$DotfilesPath/kitty/kitty.conf" "$ConfigPath/kitty/kitty.conf"
 ln -sfn "$DotfilesPath/kitty/gruvbox_dark.conf" "$ConfigPath/kitty/gruvbox_dark.conf"
 ln -sfn "$DotfilesPath/kitty/gruvbox_dark.conf" "$ConfigPath/kitty/gruvbox_light_soft.conf"
 ln -sfn "$DotfilesPath/kitty/ayu.conf" "$ConfigPath/kitty/ayu.conf"
+
+# npm stuff
+npm install -g tldr

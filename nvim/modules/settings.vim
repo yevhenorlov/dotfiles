@@ -40,7 +40,7 @@ set foldnestmax=10
 
 set signcolumn=yes             "always show signcolumn (aka gutter)
 set title                      "show filename and status in window title
-set statusline=%r%F\%=%{strftime('%Y\%m\%d\.%H\%M')}
+" set statusline=%r%F\%=%{strftime('%Y\%m\%d\.%H\%M')} "show date.time
 
 " ToggleHiddenAll() default state
 set noshowmode                 "no mode indicator
