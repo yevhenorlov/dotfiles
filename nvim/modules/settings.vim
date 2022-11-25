@@ -29,9 +29,9 @@ set incsearch                  "search as characters are entered
 set hlsearch                   "highlight matches
 set ignorecase smartcase       "turn on case-insensitive matches (but only when pattern is all-lowercase)
 
-"TODO folds
+" folds
 set foldenable                 "enable code folding
-set foldmethod=manual
+set foldmethod=indent
 set foldlevelstart=10          "open most folds by default
 set foldnestmax=10
 " save and load folds automatically

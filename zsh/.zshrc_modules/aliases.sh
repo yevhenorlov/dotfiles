@@ -8,14 +8,6 @@ function npmid() {
   npm install --save-dev $1
 }
 
-# captains log
-function le() {
-  LogEntry="$HOME/code/journal/journal.txt"
-  cd $HOME/code/journal
-  # open file and go to the last line
-  nvim -c :$ $LogEntry
-}
-
 # load file into node.js repl
 noderepl() {
     FILE_CONTENTS="$(< $1 )"
