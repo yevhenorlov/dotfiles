@@ -35,7 +35,11 @@ fi
 # zsh
 ln -sfn "$DotfilesPath/zsh/.zshrc" "$HOME/.zshrc"
 ln -sfn "$DotfilesPath/zsh/.zshrc_modules" "$HOME/.zshrc_modules"
-ln -sfn "$DotfilesPath/zsh/themes/lambda_minimal.zsh-theme" "$ZSH_CUSTOM/themes/lambda_minimal.zsh-theme"
+if [[ ! -d "$ZSH_CUSTOM" ]]; then 
+  echo "\$ZSH_CUSTOM not found, add symlink manually"
+else
+  ln -sfn "$DotfilesPath/zsh/themes/lambda_minimal.zsh-theme" "$ZSH_CUSTOM/themes/lambda_minimal.zsh-theme"
+fi
 
 # git
 ln -sfn "$DotfilesPath/.gitconfig" "$HOME/.gitconfig"
@@ -50,6 +54,7 @@ ln -sfn "$DotfilesPath/nvim/init.vim" "$ConfigPath/nvim/init.vim"
 # tmux
 ln -sfn "$DotfilesPath/.tmux.conf" "$HOME/.tmux.conf"
 ln -sfn "$DotfilesPath/tmux-sessionizer" "/usr/local/bin/tmux-sessionizer"
+ln -sfn "$DotfilesPath/tmux-cht.sh" "/usr/local/bin/tmux-cht.sh"
 
 # kitty
 ln -sfn "$DotfilesPath/kitty/kitty.conf" "$ConfigPath/kitty/kitty.conf"
@@ -58,4 +63,4 @@ ln -sfn "$DotfilesPath/kitty/gruvbox_dark.conf" "$ConfigPath/kitty/gruvbox_light
 ln -sfn "$DotfilesPath/kitty/ayu.conf" "$ConfigPath/kitty/ayu.conf"
 
 # npm stuff
-npm install -g tldr
+npm install -g prettier tldr

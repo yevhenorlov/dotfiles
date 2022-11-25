@@ -6,6 +6,7 @@ source $HOME/.zshrc_modules/plugins.sh
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc_modules/aliases.sh
 source $HOME/.zshrc_modules/settings.sh
+source $HOME/.zshrc_modules/tmux.sh
 
 # syntax-highlighting (must be at the end of the file)
 . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
