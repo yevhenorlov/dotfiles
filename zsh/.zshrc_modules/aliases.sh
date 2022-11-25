@@ -3,11 +3,6 @@ function chrome() {
   open -a "Google Chrome" $1
 }
 
-# Open in Firefox Dev Edition
-function ff() {
-  open -a "Firefox Developer Edition" $1
-}
-
 # npm install --save-dev shortcut
 function npmid() {
   npm install --save-dev $1
@@ -16,11 +11,6 @@ function npmid() {
 # captains log
 function le() {
   LogEntry="$HOME/code/journal/journal.txt"
-  if [[ -f $LogEntry ]]; then
-    : # noop
-  else
-    touch $LogEntry
-  fi
   cd $HOME/code/journal
   # open file and go to the last line
   nvim -c :$ $LogEntry
@@ -47,20 +37,16 @@ function t() {
   tree -I '.git|node_modules|.DS_Store' --dirsfirst --filelimit 150 -L ${1:-3} -aC $2
 }
 
-alias vim="nvim"
-alias grep="grep --color=auto"
-alias ls="ls -G" 
-alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
-alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
-alias pcs="node ~/code/perfect-circuit-scraper/index.js"
-alias ns="npm start"
-alias nd="npm run dev"
-alias nb="npm run build"
 alias cdc="cdd ~/code"
 alias cddf="cdd ~/code/dotfiles"
-alias cdcn="cdd ~/code/cn"
-alias cdjss="cdd ~/code/cn/jss-frontend"
-alias cdwww="cdd ~/code/cn/www-frontend"
+alias grep="grep --color=auto"
+alias ls="ls -G" 
+alias nb="npm run build"
+alias nd="npm run dev"
+alias ns="npm start"
+alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
+alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
+alias vim="nvim"
 
 # time, weather and the moon
 alias time='date +"%T"'
@@ -74,20 +60,16 @@ alias rzsh='. ~/.zshrc'
 # editing init.vim
 alias evim='vim ~/.config/nvim/init.vim'
 
-# editing alacritty.yml
-alias ealac='vim ~/.config/alacritty/alacritty.yml'
-
 # editing tmux.conf
 alias etmux='vim ~/.tmux.conf'
+
+# work
 # GlobalProtect
 alias gpoff="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias gpon="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
-
-# dnd
-
-function gn() {
-npx run-func getName.js getName $1 $2
-}
+alias cdcn="cdd ~/code/cn"
+alias cdjss="cdd ~/code/cn/jss-frontend"
+alias cdwww="cdd ~/code/cn/www-frontend"
 
 # Where should I put you?
 bindkey -s ^F "tmux-sessionizer\n"
