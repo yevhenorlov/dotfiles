@@ -62,5 +62,8 @@ ln -sfn "$DotfilesPath/kitty/gruvbox_dark.conf" "$ConfigPath/kitty/gruvbox_dark.
 ln -sfn "$DotfilesPath/kitty/gruvbox_dark.conf" "$ConfigPath/kitty/gruvbox_light_soft.conf"
 ln -sfn "$DotfilesPath/kitty/ayu.conf" "$ConfigPath/kitty/ayu.conf"
 
+# karabiner
+ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabiner.json"
+
 # npm stuff
 npm install -g prettier tldr
