@@ -12,7 +12,7 @@ nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
 
 " tree exploring
-nnoremap <Leader>rr :NERDTreeFind<CR>
+nnoremap <Leader>r :NERDTreeFind<CR>
 
 "bdo (buffer delete others) - delete all buffers, reopen last one
 nmap <Leader>bdo :%bd <bar> e#<CR>

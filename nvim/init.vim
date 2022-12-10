@@ -4,4 +4,5 @@ source $HOME/.config/nvim/modules/persist.vim
 source $HOME/.config/nvim/modules/theme.vim
 source $HOME/.config/nvim/modules/remaps.vim
 source $HOME/.config/nvim/modules/lua.vim
+" source $HOME/.config/nvim/modules/lspconfig.vim
 source $HOME/.config/nvim/modules/coc.vim

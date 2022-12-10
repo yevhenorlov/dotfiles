@@ -13,12 +13,6 @@ call plug#begin()
   "Comment stuff out
   Plug 'tpope/vim-commentary'
 
-  "A light and configurable statusline/tabline plugin for Vim
-  " Plug 'itchyny/lightline.vim'
-
-  "Nicer, clickable buffer tabs
-  " Plug 'mengelbrecht/lightline-bufferline'
-
   "A simple, easy-to-use Vim alignment plugin
   Plug 'junegunn/vim-easy-align'
 
@@ -26,7 +20,7 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 
-  "Gruvbox colorscheme 
+  "colorscheme 
   " Plug 'morhetz/gruvbox' "(UPD: replaced by colors/gruvbox_customized.vim)
   Plug 'ayu-theme/ayu-vim'
 
