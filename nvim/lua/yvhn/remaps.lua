@@ -10,6 +10,9 @@ nnoremap("<Leader>t", "<cmd>lua toggle_theme()<CR>")
 -- toggle zen mode
 nnoremap("<Leader>z", "<cmd>lua toggle_zen_mode()<CR>")
 
+-- toggle relative number
+nnoremap("<Leader>n", "<cmd>lua toggle_relative_number()<CR>")
+
 -- reload vim config
 nnoremap("<Leader><CR>", "<cmd>so $MYVIMRC<CR>")
 
@@ -61,7 +64,6 @@ nnoremap("<leader>Y", "Gygg")
 -- move visual selection up/down
 vnoremap("J", "<cmd>m '>+1<CR>gv=gv")
 vnoremap("K", "<cmd>m '<-2<CR>gv=gv")
-
 -- move lines up and down
 nnoremap("<C-j>", "<CMD>m .+1<CR>")
 nnoremap("<C-k>", "<CMD>m .-2<CR>")
@@ -73,18 +75,3 @@ nnoremap("/", "/\\v")
 -- sort words in visual selection (line)
 -- same-ident jumping navigation 
 
-
-
---[[
-nnoremap("<silent> <S-h> <cmd>call ToggleHiddenAll()<CR>
-" toggle line number/relativenumber
-function! ToggleNumber()
-    if(&relativenumber == 1)
-        set norelativenumber
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-nmap <silent> <Leader>n <cmd>call ToggleNumber()<CR>
---]]
