@@ -1,4 +1,3 @@
--- TODO finish migration from coc
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")	-- packer can manage itself
   use("neovim/nvim-lspconfig")-- Configurations for Nvim LSP
@@ -12,6 +11,9 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-nvim-lua")
   use("hrsh7th/cmp-nvim-lsp")
+
+  -- lsp loading status
+  use("j-hui/fidget.nvim")
 
   -- TODO rtfm
   use("L3MON4D3/LuaSnip")
@@ -33,6 +35,8 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf.vim")
 
 	use("lukas-reineke/indent-blankline.nvim") 	-- Indent guides
+
+  -- TODO cleanup coc legacy vvvvv
 
 	-- A simple, easy-to-use Vim alignment plugin
 	-- "junegunn/vim-easy-align"

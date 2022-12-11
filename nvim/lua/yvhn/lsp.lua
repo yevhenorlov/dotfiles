@@ -22,10 +22,9 @@ end
 
 -- SETUP
 
--- TODO fix startup errors in react ts files
 require'lspconfig'.volar.setup{ -- vue, npm install -g @volar/vue-language-server
 capabilites = capabilites,
-filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+-- filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}, -- takeover mode, kinda breaks other projects. more info: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
 on_attach = function()
   bootstrap_shared_bindings()
 end,
