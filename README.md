@@ -19,32 +19,32 @@
 
 1. [install `karabiner`](https://karabiner-elements.pqrs.org/docs/getting-started/installation/)
 
-1. [install `neovim`](https://github.com/neovim/neovim/wiki/Installing-Neovim):
+2. [install `neovim`](https://github.com/neovim/neovim/wiki/Installing-Neovim):
 
 ```sh
 brew install neovim
 ```
 
-1. [install `kitty`](https://sw.kovidgoyal.net/kitty/binary/):
+3. [install `kitty`](https://sw.kovidgoyal.net/kitty/binary/):
 
 ```sh
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
-1. clone repo to `~/code`
+4. clone repo to `~/code`
 
 ```sh
 git clone git@github.com:yevhenorlov/dotfiles.git ~/code/dotfiles
 ```
 
-1. add symlinks to pick up resources from dotfiles repo (for now this will probably break, hopefully in a graceful way)
+5. add symlinks to pick up resources from dotfiles repo (for now this will probably break, hopefully in a graceful way)
 
 ```sh
 cd ~/code/dotfiles
 ./install.sh
 ```
 
-1. install ripgrep (for fzf to work with it)
+6. install ripgrep (for fzf to work with it)
 
 ```sh
 brew install rg
