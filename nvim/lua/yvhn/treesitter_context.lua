@@ -1,4 +1,3 @@
-lua << EOF
 require'treesitter-context'.setup{
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -18,6 +17,9 @@ require'treesitter-context'.setup{
             'if',
             'switch',
             'case',
+            'interface',
+            'struct',
+            'enum',
         },
         -- Patterns for specific filetypes
         -- If a pattern is missing, *open a PR* so everyone can benefit.
@@ -27,10 +29,17 @@ require'treesitter-context'.setup{
             'subsection',
             'subsubsection',
         },
+        haskell = {
+            'adt'
+        },
         rust = {
             'impl_item',
-            'struct',
-            'enum',
+
+        },
+        terraform = {
+            'block',
+            'object_elem',
+            'attribute',
         },
         scala = {
             'object_definition',
@@ -56,6 +65,9 @@ require'treesitter-context'.setup{
         json = {
             'pair',
         },
+        typescript = {
+            'export_statement',
+        },
         yaml = {
             'block_mapping_pair',
         },
@@ -76,4 +88,3 @@ require'treesitter-context'.setup{
     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
     separator = nil,
 }
-EOF

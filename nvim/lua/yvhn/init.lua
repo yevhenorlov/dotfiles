@@ -2,7 +2,7 @@ require("yvhn.settings")
 require("yvhn.persist")
 require("yvhn.theme")
 require("yvhn.remaps")
--- TODO treesitter context
--- TODO lspconfig
+require("yvhn.lsp")
+require("yvhn.treesitter_context")
 -- TODO replace coc.vim
 

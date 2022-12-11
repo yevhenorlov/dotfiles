@@ -1,5 +1,6 @@
 -- input
-vim.opt.completeopt = "menuone" -- always show popup menu for insert mode completion
+-- vim.opt.completeopt = "menuone" -- always show popup menu for insert mode completion TODO remove?
+vim.opt.completeopt = {"menu", "menuone", "noselect"} -- always show popup menu for insert mode completion
 vim.opt.mouse = "a" -- enable mouse for all modes
 vim.opt.errorbells = false
 
@@ -35,7 +36,7 @@ vim.opt.foldnestmax = 10
 vim.opt.signcolumn = "yes" -- always show signcolumn (aka gutter)
 vim.opt.title = true -- show filename and status in window title
 
--- ToggleHiddenAll() default state
+-- zen mode default state
 vim.opt.showmode = false -- no mode indicator
 vim.opt.ruler = false -- no line/column number
 vim.opt.laststatus = 0

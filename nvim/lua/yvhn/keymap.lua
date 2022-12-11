@@ -1,4 +1,4 @@
-function bind(mode, outer_opts)
+local function bind(mode, outer_opts)
 	return function(lhs, rhs, opts)
 		opts = vim.tbl_extend("force", outer_opts or {}, opts or {})
 		vim.keymap.set(mode, lhs, rhs, opts)
@@ -11,7 +11,7 @@ M.vnoremap = bind("v")
 M.inoremap = bind("i")
 
 M.buf_nnoremap = bind("n", {buffer = 0})
-M.buf_nnoremap = bind("v", {buffer = 0})
-M.buf_nnoremap = bind("i", {buffer = 0})
+M.buf_vnoremap = bind("v", {buffer = 0})
+M.buf_inoremap = bind("i", {buffer = 0})
 
 return M
