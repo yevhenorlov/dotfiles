@@ -47,9 +47,8 @@ ln -sfn "$DotfilesPath/.gitignore_global" "$HOME/.gitignore_global"
 
 # neovim
 ln -sfn "$DotfilesPath/nvim/colors/" "$ConfigPath/nvim/colors"
-ln -sfn "$DotfilesPath/nvim/modules/" "$ConfigPath/nvim/modules"
-ln -sfn "$DotfilesPath/nvim/keymap/" "$ConfigPath/nvim/keymap"
-ln -sfn "$DotfilesPath/nvim/init.vim" "$ConfigPath/nvim/init.vim"
+ln -sfn "$DotfilesPath/nvim/lua/" "$ConfigPath/nvim/lua/"
+ln -sfn "$DotfilesPath/nvim/init.lua" "$ConfigPath/nvim/init.lua"
 
 # tmux
 ln -sfn "$DotfilesPath/.tmux.conf" "$HOME/.tmux.conf"
