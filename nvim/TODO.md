@@ -1,5 +1,5 @@
 - [x] move legacy to other folder
-- [ ] remove coc
+- [x] remove coc
 - [ ] configure lsp
 	- nvim lsp config plugin: language-specific lsp adapter
 - [ ] configure lua

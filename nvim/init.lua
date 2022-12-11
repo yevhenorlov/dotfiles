@@ -1,5 +1,4 @@
-require('yvhn');
 require('packer-plugins');
+require('yvhn');
 
-vim.o.relativenumber = true;
 
