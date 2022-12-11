@@ -1,12 +1,21 @@
--- server list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
--- for inspiration, ThePrimeagen config: https://github.com/ThePrimeagen/.dotfiles/blob/7cf9cdf7996010ae135fa81b5e54989796a8848c/nvim/.config/nvim/after/plugin/lsp.lua
-
 -- TODO finish migration from coc
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")	-- packer can manage itself
   use("neovim/nvim-lspconfig")-- Configurations for Nvim LSP
 	use("ayu-theme/ayu-vim") -- colorscheme
 	use("preservim/nerdtree") -- NERDTree - file explorer for vim
+
+  -- code completions (setup in cmp.lua)
+  use("onsails/lspkind-nvim")
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-nvim-lua")
+  use("hrsh7th/cmp-nvim-lsp")
+
+  -- TODO rtfm
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
 
 	-- Sticky headers
   use {
@@ -24,12 +33,6 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf.vim")
 
 	use("lukas-reineke/indent-blankline.nvim") 	-- Indent guides
-
-  -- TODO rtfm code completion
-  -- use("hrsh7th/nvim-cmp")
-  -- use("hrsh7th/cmp-nvim-lsp")
-  -- use("hrsh7th/cmp-buffer")
-  -- use("hrsh7th/cmp-path")
 
 	-- A simple, easy-to-use Vim alignment plugin
 	-- "junegunn/vim-easy-align"

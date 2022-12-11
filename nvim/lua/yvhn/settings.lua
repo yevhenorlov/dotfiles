@@ -1,6 +1,4 @@
 -- input
--- vim.opt.completeopt = "menuone" -- always show popup menu for insert mode completion TODO remove?
-vim.opt.completeopt = {"menu", "menuone", "noselect"} -- always show popup menu for insert mode completion
 vim.opt.mouse = "a" -- enable mouse for all modes
 vim.opt.errorbells = false
 

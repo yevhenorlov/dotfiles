@@ -4,6 +4,6 @@ require("yvhn.theme")
 require("yvhn.utils")
 require("yvhn.remaps")
 require("yvhn.lsp")
+require("yvhn.cmp")
 require("yvhn.treesitter_context")
--- TODO replace coc.vim
 
