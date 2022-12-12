@@ -18,6 +18,7 @@ local function bootstrap_shared_bindings()
   -- TODO :Telescope diagnostic
   buf_nnoremap("<localleader>r", vim.lsp.buf.rename)
   buf_nnoremap("<localleader>a", vim.lsp.buf.code_action)
+  buf_nnoremap("<localleader>f", vim.lsp.buf.format)
 end
 
 -- SETUP
@@ -40,4 +41,22 @@ end,
 require'lspconfig'.tailwindcss.setup{
 capabilites = capabilites,
 }
+
+require'lspconfig'.cssls.setup{ -- npm i -g vscode-langservers-extracted
+capabilites = capabilites,
+}
+
+-- FORMATTING
+
+local null_ls = require("null-ls")
+local formatting = null_ls.builtins.formatting
+
+null_ls.setup({
+  sources = {
+    formatting.prettier,
+  },
+  on_attach = function(client)
+    vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+  end
+})
 

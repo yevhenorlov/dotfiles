@@ -1,6 +1,10 @@
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")	-- packer can manage itself
+  use("nvim-lua/plenary.nvim") -- async core dependency
+
   use("neovim/nvim-lspconfig")-- Configurations for Nvim LSP
+  use("jose-elias-alvarez/null-ls.nvim") -- formatting, linting
+
 	use("ayu-theme/ayu-vim") -- colorscheme
 	use("preservim/nerdtree") -- NERDTree - file explorer for vim
 
