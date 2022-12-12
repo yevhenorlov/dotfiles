@@ -1,9 +1,6 @@
 " -----------------------------------------------------------------------------
-" File: gruvbox.vim
-" Description: Retro groove color scheme for Vim
-" Author: morhetz <morhetz@gmail.com>
+" Description: Gruvbox Color Theme (Hacked Edition)
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 12 Aug 2017
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -87,7 +84,8 @@ let s:gb = {}
 
 " fill it with absolute colors
 let s:gb.dark0_hard  = ['#1d2021', 234]     " 29-32-33
-let s:gb.dark0       = ['#282828', 235]     " 40-40-40
+" let s:gb.dark0       = ['#282828', 235]     " 40-40-40
+let s:gb.dark0       = ['#0e1419', 235]
 let s:gb.dark0_soft  = ['#32302f', 236]     " 50-48-47
 let s:gb.dark1       = ['#252525', 237]     " 60-56-54
 let s:gb.dark2       = ['#504945', 239]     " 80-73-69
@@ -108,9 +106,11 @@ let s:gb.light4      = ['#a89984', 246]     " 168-153-132
 let s:gb.light4_256  = ['#a89984', 246]     " 168-153-132
 
 let s:gb.bright_red     = ['#fb4934', 167]     " 251-73-52
-let s:gb.bright_green   = ['#b8bb26', 142]     " 184-187-38
+" let s:gb.bright_green   = ['#b8bb26', 142]     " 184-187-38
+let s:gb.bright_green   = ['#95ba26', 142]
 let s:gb.bright_yellow  = ['#fabd2f', 214]     " 250-189-47
-let s:gb.bright_blue    = ['#83a598', 109]     " 131-165-152
+" let s:gb.bright_blue    = ['#83a598', 109]     " 131-165-152
+let s:gb.bright_blue    = ['#2d85b1', 66]
 let s:gb.bright_purple  = ['#d3869b', 175]     " 211-134-155
 let s:gb.bright_aqua    = ['#8ec07c', 108]     " 142-192-124
 let s:gb.bright_orange  = ['#fe8019', 208]     " 254-128-25
@@ -614,7 +614,7 @@ hi! link Constant GruvboxPurple
 hi! link Character GruvboxPurple
 " String constant: "this is a string"
 if g:gruvbox_improved_strings == 0
-  call s:HL('String',  s:green, s:none, s:italicize_strings)
+  call s:HL('String',  s:yellow, s:none, s:italicize_strings)
 else
   call s:HL('String',  s:fg1, s:bg1, s:italicize_strings)
 endif
