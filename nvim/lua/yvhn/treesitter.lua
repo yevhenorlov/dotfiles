@@ -1,3 +1,4 @@
+-- kinda experimental as of late 2022, nightly nvim builds are recommended
 require'nvim-treesitter.configs'.setup{
   -- A list of parser names, or "all"
   ensure_installed = {

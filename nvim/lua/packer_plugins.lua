@@ -24,7 +24,7 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
-  use "nvim-treesitter/nvim-treesitter-context"
+  use("nvim-treesitter/nvim-treesitter-context")
 
 	use("tpope/vim-fugitive") 	-- A Git wrapper so awesome, it should be illegal
 	use("tpope/vim-commentary")	-- Comment stuff out
@@ -35,28 +35,27 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf.vim")
 
 	use("lukas-reineke/indent-blankline.nvim") 	-- Indent guides
+	use("editorconfig/editorconfig-vim") -- Generic .editorconfig standard support for Vim
+	use("junegunn/vim-easy-align") -- A simple, easy-to-use Vim alignment plugin
 
-  -- TODO cleanup coc legacy vvvvv
+  -- TODO to checkout:
+  -- Telescope (better Rg?) https://github.com/nvim-telescope/telescope.nvim
+  -- Harpoon (persistent project-level markers) https://github.com/ThePrimeagen/harpoon
+  -- Lua Gruvbox (might be easier to hack+support than the current gruvbox_customized.vim) https://github.com/ellisonleao/gruvbox.nvim
 
-	-- A simple, easy-to-use Vim alignment plugin
-	-- "junegunn/vim-easy-align"
+  --[[
+	"syntax highlighting
+	Plug "leafgarland/typescript-vim"
+	Plug "peitalin/vim-jsx-typescript"
+	Plug "evanleck/vim-svelte", {"branch": "main"}
+	Plug "godlygeek/tabular"
+	Plug "preservim/vim-markdown"
 
-	-- Generic .editorconfig standard support for Vim
-	-- use("editorconfig/editorconfig-vim")
-
-	-- "syntax highlighting
-	-- Plug "leafgarland/typescript-vim"
-	-- Plug "peitalin/vim-jsx-typescript"
-	-- Plug "evanleck/vim-svelte", {"branch": "main"}
-	-- Plug "godlygeek/tabular"
-	-- Plug "preservim/vim-markdown"
-
-	-- "Clojure tooling
-	-- Plug "Olical/conjure", {"tag": "v4.17.0"}
-	-- Plug "venantius/vim-cljfmt"
-
-
-	-- ""Twitter
-	-- "Plug "https://github.com/twitvim/twitvim.git"
+	"Clojure tooling
+	Plug "Olical/conjure", {"tag": "v4.17.0"}
+	Plug "venantius/vim-cljfmt"
+	""Twitter
+	"Plug "https://github.com/twitvim/twitvim.git"
+  --]]
 end
 )
