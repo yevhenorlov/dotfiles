@@ -26,7 +26,6 @@ vim.opt.foldenable = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevelstart = 10 -- open most folds by default
 vim.opt.foldnestmax = 10
-
 -- save and load folds automatically
 -- au BufWinLeave * mkview
 -- au BufWinEnter * silent! loadview
@@ -51,10 +50,6 @@ augroup END
 
 -- set filetypes as typescriptreact
 vim.cmd[[
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+  autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 ]]
 
--- exclude filepath from :Rg search (aka ripgrep aka fzf.vim aka ctrl-p)
-vim.cmd[[
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
-]]

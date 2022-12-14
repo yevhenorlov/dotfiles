@@ -1,5 +1,6 @@
 local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
+local telescope = require("telescope.builtin")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
@@ -35,13 +36,12 @@ nnoremap("<Leader>bdo", "<cmd>%bd <bar> e#<CR>")
 -- Shift+b (delete buffer without closing the window) - go to previous buffer, delete the one you just left
 nnoremap("<S-b>", "<cmd>bp<BAR>bd#<CR>")
 
--- fuzzy search
-nnoremap("<C-e>", "<cmd>Files<CR>")
-nnoremap("<Leader>e", "<cmd>Files<CR>")
-nnoremap("<C-g>", "<cmd>GFiles<CR>")
-nnoremap("<Leader>p", "<cmd>Rg<CR>")
-nnoremap("<C-p>", "<cmd>Rg<CR>")
-nnoremap("<Leader>bl", "<cmd>Buffers<CR>")
+-- Telescope search
+nnoremap("<leader>ff", telescope.find_files)
+nnoremap("<leader>fg", telescope.live_grep)
+nnoremap("<leader>fb", telescope.buffers)
+nnoremap("<leader>fh", telescope.help_tags)
+nnoremap("<leader>fs", telescope.search_history)
 
 -- GIT
 nnoremap("<Leader>gs", "<cmd>G<CR>")
