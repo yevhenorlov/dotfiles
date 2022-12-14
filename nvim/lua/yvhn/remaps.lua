@@ -9,7 +9,11 @@ vim.g.maplocalleader = ","
 nnoremap("<Leader>t", "<cmd>lua toggle_theme()<CR>")
 
 -- toggle zen mode
-nnoremap("<Leader>z", "<cmd>lua toggle_zen_mode()<CR>")
+nnoremap("<Leader>h", "<cmd>lua toggle_zen_mode()<CR>")
+
+-- toggle zoom (tmux-like)
+nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
+nnoremap("<Leader>zo", "<cmd>:tab close<CR>")
 
 -- toggle relative number
 nnoremap("<Leader>n", "<cmd>lua toggle_relative_number()<CR>")
