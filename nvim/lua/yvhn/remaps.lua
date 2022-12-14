@@ -75,3 +75,4 @@ nnoremap("/", "/\\v")
 -- sort words in visual selection (line)
 -- same-ident jumping navigation 
 
+

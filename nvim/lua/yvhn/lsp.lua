@@ -4,7 +4,7 @@
 local buf_nnoremap = require("yvhn.keymap").buf_nnoremap
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local function bootstrap_shared_bindings()
+local function bootstrap_config()
   buf_nnoremap("K",vim.lsp.buf.hover)
   buf_nnoremap("gr",vim.lsp.buf.references)
   buf_nnoremap("gd",vim.lsp.buf.definition)
@@ -15,6 +15,7 @@ local function bootstrap_shared_bindings()
   buf_nnoremap("gI","<cmd>vs<CR><cmd>lua vim.lsp.buf.implementation()<CR>")
   buf_nnoremap("]c", vim.diagnostic.goto_next)
   buf_nnoremap("[c", vim.diagnostic.goto_prev)
+  vim.diagnostic.config({virtual_text = false})
   -- TODO :Telescope diagnostic
   buf_nnoremap("<localleader>r", vim.lsp.buf.rename)
   buf_nnoremap("<localleader>a", vim.lsp.buf.code_action)
@@ -27,14 +28,14 @@ require'lspconfig'.volar.setup{ -- vue, npm install -g @volar/vue-language-serve
 capabilites = capabilites,
 -- filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}, -- takeover mode, kinda breaks other projects. more info: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#volar
 on_attach = function()
-  bootstrap_shared_bindings()
+  bootstrap_config()
 end,
 } 
 
 require'lspconfig'.tsserver.setup{
 capabilites = capabilites,
 on_attach = function()
-  bootstrap_shared_bindings()
+  bootstrap_config()
 end,
 }
 
@@ -44,6 +45,9 @@ capabilites = capabilites,
 
 require'lspconfig'.cssls.setup{ -- npm i -g vscode-langservers-extracted
 capabilites = capabilites,
+on_attach = function()
+  bootstrap_config()
+end,
 }
 
 -- FORMATTING

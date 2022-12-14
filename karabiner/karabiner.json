@@ -158,27 +158,8 @@
             ]
           },
           {
-            "description": "Hyper + i/j/k/l == vim directional Keys",
+            "description": "Hyper + h/j/k/l == vim directional Keys",
             "manipulators": [
-              {
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_shift",
-                      "left_command",
-                      "left_control",
-                      "left_option"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "up_arrow"
-                  }
-                ],
-                "type": "basic"
-              },
               {
                 "from": {
                   "key_code": "h",
@@ -219,6 +200,25 @@
               },
               {
                 "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_shift",
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "up_arrow"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "from": {
                   "key_code": "l",
                   "modifiers": {
                     "mandatory": [
@@ -235,10 +235,15 @@
                   }
                 ],
                 "type": "basic"
-              },
+              }
+            ]
+          },
+          {
+            "description": "Hyper + x : Backspace",
+            "manipulators": [
               {
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "x",
                   "modifiers": {
                     "mandatory": [
                       "left_shift",
@@ -250,8 +255,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "right_arrow",
-                    "modifiers": ["left_command"]
+                    "key_code": "delete_or_backspace"
                   }
                 ],
                 "type": "basic"
