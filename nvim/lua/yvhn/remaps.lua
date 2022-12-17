@@ -15,6 +15,15 @@ nnoremap("<Leader>h", "<cmd>lua toggle_zen_mode()<CR>")
 nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
 nnoremap("<Leader>zo", "<cmd>:tab close<CR>")
 
+-- less dizzy navigation
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("n", "nzzzv")
+nnoremap("N", "Nzzzv")
+
+-- paste over selected text, but preserve clipboard
+vnoremap("<Leader>p", "\"_dP")
+
 -- toggle relative number
 nnoremap("<Leader>n", "<cmd>lua toggle_relative_number()<CR>")
 

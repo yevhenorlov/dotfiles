@@ -16,7 +16,6 @@ local function bootstrap_config()
   buf_nnoremap("]c", vim.diagnostic.goto_next)
   buf_nnoremap("[c", vim.diagnostic.goto_prev)
   vim.diagnostic.config({virtual_text = false})
-  -- TODO :Telescope diagnostic
   buf_nnoremap("<localleader>r", vim.lsp.buf.rename)
   buf_nnoremap("<localleader>a", vim.lsp.buf.code_action)
   buf_nnoremap("<localleader>f", vim.lsp.buf.format)

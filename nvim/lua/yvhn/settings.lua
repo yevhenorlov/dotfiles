@@ -34,10 +34,10 @@ vim.opt.signcolumn = "yes" -- always show signcolumn (aka gutter)
 vim.opt.title = true -- show filename and status in window title
 
 -- zen mode default state
-vim.opt.showmode = false -- no mode indicator
-vim.opt.ruler = false -- no line/column number
-vim.opt.laststatus = 0
-vim.opt.number = false
+vim.opt.showmode = true -- mode indicator
+vim.opt.ruler = true -- line/column number
+vim.opt.laststatus = 2
+vim.opt.number = true
 vim.opt.relativenumber = false
 
 -- highlight on yank

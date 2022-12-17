@@ -3,6 +3,7 @@ require'nvim-treesitter.configs'.setup{
   -- A list of parser names, or "all"
   ensure_installed = {
     "c",
+    "help",
     "html",
     "javascript",
     "json",
@@ -89,7 +90,6 @@ require'treesitter-context'.setup{
         },
         rust = {
             'impl_item',
-
         },
         terraform = {
             'block',
@@ -143,3 +143,4 @@ require'treesitter-context'.setup{
     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
     separator = nil,
 }
+
