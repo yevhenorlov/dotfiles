@@ -2,8 +2,10 @@ local is_dark_theme = true
 function toggle_theme()
   if is_dark_theme then
     vim.g.ayucolor = "light"
+    vim.cmd(":set background=light")
   else
     vim.g.ayucolor = "dark"
+    vim.cmd(":set background=dark")
   end
   is_dark_theme = not is_dark_theme
   vim.cmd("colorscheme " .. vim.g.yvhn_colorscheme)
