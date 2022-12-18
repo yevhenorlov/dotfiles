@@ -50,7 +50,7 @@ nnoremap("<Leader>bdo", "<cmd>%bd <bar> e#<CR>")
 nnoremap("<S-b>", "<cmd>bp<BAR>bd#<CR>")
 
 -- Telescope search
-nnoremap("<leader>ff", telescope.find_files)
+nnoremap("<leader>ff", telescope.git_files)
 nnoremap("<leader>fg", telescope.live_grep)
 nnoremap("<leader>fb", telescope.buffers)
 nnoremap("<leader>fh", telescope.help_tags)
