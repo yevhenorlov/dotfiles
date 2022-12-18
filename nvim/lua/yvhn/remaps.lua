@@ -84,8 +84,10 @@ nnoremap("<C-k>", "<CMD>m .-2<CR>")
 -- search without regex by default
 nnoremap("/", "/\\v")
 
+-- substitute word under cursor
+nnoremap("<Leader>s", ":%s/<C-r><C-w>//g<left><left>")
+
 -- TODO ideas
 -- sort words in visual selection (line)
 -- same-ident jumping navigation 
-
 
