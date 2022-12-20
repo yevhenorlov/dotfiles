@@ -40,3 +40,15 @@ function toggle_relative_number()
   end
   is_relative_number = not is_relative_number
 end
+
+local is_lsp_on = true
+function toggle_lsp()
+  if is_lsp_on then
+    vim.cmd(":LspStop")
+    print(":LspStop") -- TODO figure out why cmd doesn't print automatically
+  else
+    vim.cmd(":LspStart")
+    print(":LspStart")
+  end
+  is_lsp_on = not is_lsp_on
+end

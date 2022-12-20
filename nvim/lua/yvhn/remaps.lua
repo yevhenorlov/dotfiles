@@ -11,6 +11,9 @@ nnoremap("<Leader>t", "<cmd>lua toggle_theme()<CR>")
 -- toggle zen mode
 nnoremap("<Leader>h", "<cmd>lua toggle_zen_mode()<CR>")
 
+-- toggle lsp
+nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
+
 -- toggle zoom (tmux-like)
 nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
 nnoremap("<Leader>zo", "<cmd>:tab close<CR>")

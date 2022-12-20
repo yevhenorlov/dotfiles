@@ -49,6 +49,13 @@ on_attach = function()
 end,
 }
 
+require'lspconfig'.rust_analyzer.setup{ -- https://rust-analyzer.github.io/manual.html#installation
+capabilites = capabilites,
+on_attach = function()
+  bootstrap_config()
+end,
+}
+
 -- FORMATTING
 
 local null_ls = require("null-ls")
