@@ -11,6 +11,9 @@ nnoremap("<Leader>t", "<cmd>lua toggle_theme()<CR>")
 -- toggle zen mode
 nnoremap("<Leader>h", "<cmd>lua toggle_zen_mode()<CR>")
 
+-- toggle wrap
+nnoremap("<Leader>w", "<cmd>lua toggle_wrap()<CR>")
+
 -- toggle lsp
 nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
 

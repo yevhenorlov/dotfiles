@@ -1,3 +1,6 @@
+local nnoremap = require("yvhn.keymap").nnoremap
+local vnoremap = require("yvhn.keymap").vnoremap
+
 local is_dark_theme = true
 function toggle_theme()
   if is_dark_theme then
@@ -52,3 +55,36 @@ function toggle_lsp()
   end
   is_lsp_on = not is_lsp_on
 end
+
+local is_wrap_enabled = false
+function toggle_wrap()
+  vim.opt.wrap = true
+  vim.opt.list = false
+  if is_wrap_enabled then
+    vim.opt.linebreak = false
+    vim.keymap.del('n', 'j')
+    vim.keymap.del('n', 'k')
+    vim.keymap.del('n', '0')
+    vim.keymap.del('n', '^')
+    vim.keymap.del('n', '$')
+    vim.keymap.del('v', 'j')
+    vim.keymap.del('v', 'k')
+    vim.keymap.del('v', '0')
+    vim.keymap.del('v', '^')
+    vim.keymap.del('v', '$')
+  else
+    vim.opt.linebreak = true
+    nnoremap("j", "gj")
+    nnoremap("k", "gk")
+    nnoremap("0", "g0")
+    nnoremap("^", "g^")
+    nnoremap("$", "g$")
+    vnoremap("j", "gj")
+    vnoremap("k", "gk")
+    vnoremap("0", "g0")
+    vnoremap("^", "g^")
+    vnoremap("$", "g$")
+  end
+  is_wrap_enabled = not is_wrap_enabled
+end
+
