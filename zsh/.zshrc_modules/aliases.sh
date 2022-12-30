@@ -40,6 +40,8 @@ alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias vim="nvim"
 
+alias nuke_modules="find . -name node_modules -type d -prune -exec trash {} +"
+
 # time, weather and the moon
 alias time='date +"%T"'
 alias weather='curl -4 http://wttr.in/Uithoorn'
