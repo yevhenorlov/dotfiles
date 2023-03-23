@@ -11,6 +11,7 @@
 1. Code editor - [neovim](https://github.com/neovim/neovim/) with a [custom theme](./nvim/colors/gruvbox_customized.vim) based on [Gruvbox](https://github.com/morhetz/gruvbox)
 1. Font - [Monocraft](https://github.com/IdreesInc/Monocraft)
 1. Keyboard remapper - [Karabiner](https://karabiner-elements.pqrs.org/docs/getting-started/installation/)
+1. Tile manager - [Rectangle](https://rectangleapp.com/)
 1. Neat terminal plugins:
 
 - [pomodoro](https://github.com/carlmjohnson/pomodoro)
