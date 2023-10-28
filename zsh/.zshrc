@@ -1,3 +1,7 @@
+# env
+source $HOME/code/dotfiles/.env
+export OPENAI_KEY
+
 # modules
 source $HOME/.zshrc_modules/fzf.sh
 source $HOME/.zshrc_modules/paths.sh

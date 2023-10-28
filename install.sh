@@ -41,6 +41,9 @@ else
   ln -sfn "$DotfilesPath/zsh/themes/lambda_minimal.zsh-theme" "$ZSH_CUSTOM/themes/lambda_minimal.zsh-theme"
 fi
 
+# cli scripts
+ln -sfn "$DotfilesPath/chatgpt.sh" "$HOME/chatgpt.sh"
+
 # git
 ln -sfn "$DotfilesPath/.gitconfig" "$HOME/.gitconfig"
 ln -sfn "$DotfilesPath/.gitignore_global" "$HOME/.gitignore_global"
