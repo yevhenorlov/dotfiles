@@ -1,3 +1,6 @@
+# secrets
+.env
+
 # cache
 .DS_Store
 DS_Store?
@@ -21,3 +24,4 @@ __pycache__
 # no thx
 venv
 node_modules
+
