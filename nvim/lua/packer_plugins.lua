@@ -32,6 +32,7 @@ return require("packer").startup(function(use)
 
 	use("tpope/vim-fugitive") 	-- A Git wrapper so awesome, it should be illegal
 	use("tpope/vim-commentary")	-- Comment stuff out
+	use("tpope/vim-surround")	-- Surround words with brackets
 
   -- neovim-native fuzzy finder
   use {

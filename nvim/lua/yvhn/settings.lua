@@ -9,7 +9,6 @@ vim.opt.swapfile = false -- no swap files for buffers
 vim.opt.clipboard = "unnamed" -- use os clipboard
 
 -- formatting
-vim.opt.wrap = true --wrap to new line
 vim.opt.expandtab = true --use spaces when pressing tab
 vim.opt.tabstop = 2 --number of visual spaces per tab
 vim.opt.shiftwidth = 2 --when indenting with '>', use 2 spaces width
@@ -40,6 +39,10 @@ vim.opt.ruler = true -- line/column number
 vim.opt.laststatus = 2
 vim.opt.number = true
 vim.opt.relativenumber = false
+
+-- fugitive split diffs only vertically
+vim.opt.diffopt = "vertical"
+
 
 -- highlight on yank
 vim.cmd[[
