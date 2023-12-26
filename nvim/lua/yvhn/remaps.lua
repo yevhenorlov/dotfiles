@@ -21,6 +21,10 @@ nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
 nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
 nnoremap("<Leader>zo", "<cmd>:tab close<CR>")
 
+-- toggle copilot
+nnoremap("<Leader>cc", "<cmd>lua toggle_copilot()<CR>")
+nnoremap("<Leader>cs", "<cmd>:Copilot status<CR>")
+
 -- less dizzy navigation
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")

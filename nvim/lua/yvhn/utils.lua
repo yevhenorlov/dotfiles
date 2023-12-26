@@ -56,6 +56,18 @@ function toggle_lsp()
   is_lsp_on = not is_lsp_on
 end
 
+local is_copilot_enabled = true
+function toggle_copilot()
+  if is_copilot_enabled then
+    vim.cmd(":Copilot disable")
+    print(":Copilot disable") -- TODO figure out why cmd doesn't print automatically
+  else
+    vim.cmd(":Copilot enable")
+    print(":Copilot enable")
+  end
+  is_copilot_enabled = not is_copilot_enabled
+end
+
 local is_wrap_enabled = false
 function toggle_wrap()
   vim.opt.wrap = true
