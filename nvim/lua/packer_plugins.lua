@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim") 	-- Indent guides
 	use("editorconfig/editorconfig-vim") -- Generic .editorconfig standard support for Vim
 	use("junegunn/vim-easy-align") -- A simple, easy-to-use Vim alignment plugin
+	use("github/copilot.vim") -- Github copilot
 
   -- TODO to checkout:
   -- Harpoon (persistent project-level markers) https://github.com/ThePrimeagen/harpoon
