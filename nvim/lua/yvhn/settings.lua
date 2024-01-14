@@ -13,7 +13,7 @@ vim.opt.expandtab = true --use spaces when pressing tab
 vim.opt.tabstop = 2 --number of visual spaces per tab
 vim.opt.shiftwidth = 2 --when indenting with '>', use 2 spaces width
 vim.opt.smartindent = true
-vim.opt.textwidth = 80 -- for gq to work. disable if it affects existing conventions
+-- vim.opt.textwidth = 80 -- for gq to work. disable if it affects existing conventions
 
 -- search
 vim.opt.incsearch = true
