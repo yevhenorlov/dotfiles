@@ -1,18 +1,22 @@
 local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
+local inoremap = require("yvhn.keymap").inoremap
 local telescope = require("telescope.builtin")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
--- toggle color theme
-nnoremap("<Leader>t", "<cmd>lua toggle_theme()<CR>")
+-- toggle relative number
+nnoremap("<Leader>tn", "<cmd>lua toggle_relative_number()<CR>")
 
--- toggle zen mode
-nnoremap("<Leader>h", "<cmd>lua toggle_zen_mode()<CR>")
+-- toggle color theme
+nnoremap("<Leader>tt", "<cmd>lua toggle_theme()<CR>")
 
 -- toggle wrap
-nnoremap("<Leader>w", "<cmd>lua toggle_wrap()<CR>")
+nnoremap("<Leader>tw", "<cmd>lua toggle_wrap()<CR>")
+
+-- toggle zen mode
+nnoremap("<Leader>tz", "<cmd>lua toggle_zen_mode()<CR>")
 
 -- toggle lsp
 nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
@@ -31,12 +35,6 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 
--- paste over selected text, but preserve clipboard
-vnoremap("<Leader>p", "\"_dP")
-
--- toggle relative number
-nnoremap("<Leader>n", "<cmd>lua toggle_relative_number()<CR>")
-
 -- reload vim config
 nnoremap("<Leader><CR>", "<cmd>so $MYVIMRC<CR>")
 
@@ -45,10 +43,6 @@ nnoremap("<Leader>x", "<cmd>!chmod +x %<CR>")
 
 -- call tmux-sessionizer
 nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
--- Navigate between buffers
-nnoremap("<C-h>", "<cmd>bprev<CR>")
-nnoremap("<C-l>", "<cmd>bnext<CR>")
 
 -- tree exploring
 nnoremap("<leader>R", "<cmd>Vex<CR>")
@@ -84,12 +78,9 @@ nnoremap("<Leader>S", "<cmd>syntax sync fromstart<CR>")
 -- yank whole file
 nnoremap("<leader>Y", "Gygg")
 
--- move visual selection up/down
-vnoremap("J", "<cmd>m '>+1<CR>gv=gv")
-vnoremap("K", "<cmd>m '<-2<CR>gv=gv")
--- move lines up and down
-nnoremap("<C-j>", "<CMD>m .+1<CR>")
-nnoremap("<C-k>", "<CMD>m .-2<CR>")
+-- move line up/down (only in insert mode)
+inoremap("<C-j>", "<CMD>m .+1<CR>")
+inoremap("<C-k>", "<CMD>m .-2<CR>")
 
 -- search without regex by default
 nnoremap("/", "/\\v")

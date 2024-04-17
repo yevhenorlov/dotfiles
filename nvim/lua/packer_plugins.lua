@@ -39,14 +39,12 @@ return require("packer").startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  require("telescope").setup{
-    pickers = {
-      live_grep = {
-        additional_args = function(opts)
-          return {"--hidden"}
-        end
-      },
-    },
+
+  -- Harpoon (persistent project-level markers)
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
   }
 
 	use("lukas-reineke/indent-blankline.nvim") 	-- Indent guides

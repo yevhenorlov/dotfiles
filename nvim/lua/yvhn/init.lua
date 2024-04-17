@@ -4,6 +4,8 @@ require("yvhn.theme")
 require("yvhn.utils")
 require("yvhn.remaps")
 require("yvhn.lsp")
+require("yvhn.telescope")
+require("yvhn.harpoon")
 require("yvhn.cmp")
 require("yvhn.treesitter")
 
