@@ -71,5 +71,5 @@ ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabine
 # npm stuff
 # to update the list, check 
 # npm list -g --depth 0
-npm install -g @tailwindcss/language-server @volar/vue-language-server prettier tldr typescript typescript-language-server vscode-langservers-extracted
+npm install -g @tailwindcss/language-server @volar/vue-language-server prettier tldr typescript typescript-language-server vscode-langservers-extracted emmet-ls
 
