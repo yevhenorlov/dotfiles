@@ -89,12 +89,14 @@ null_ls.setup({
 -- LINTING
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
--- require'lspconfig'.eslint.setup{}
-require'lspconfig'.eslint.setup{
-   on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
-  end,
-}
+require'lspconfig'.eslint.setup{}
+
+-- really slow, and not sure if it's worth it since I have prettier already
+-- require'lspconfig'.eslint.setup{
+--    on_attach = function(client, bufnr)
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       buffer = bufnr,
+--       command = "EslintFixAll",
+--     })
+--   end,
+-- }
