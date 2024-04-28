@@ -17,6 +17,10 @@ nnoremap("<Leader>tw", "<cmd>lua toggle_wrap()<CR>")
 
 -- toggle zen mode
 nnoremap("<Leader>tz", "<cmd>lua toggle_zen_mode()<CR>")
+-- toggle copilot
+
+nnoremap("<Leader>tc", "<cmd>lua toggle_copilot()<CR>")
+nnoremap("<Leader>cs", "<cmd>:Copilot status<CR>")
 
 -- toggle lsp
 nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
@@ -24,10 +28,6 @@ nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
 -- toggle zoom (tmux-like)
 nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
 nnoremap("<Leader>zo", "<cmd>:tab close<CR>")
-
--- toggle copilot
-nnoremap("<Leader>cc", "<cmd>lua toggle_copilot()<CR>")
-nnoremap("<Leader>cs", "<cmd>:Copilot status<CR>")
 
 -- less dizzy navigation
 nnoremap("<C-d>", "<C-d>zz")
