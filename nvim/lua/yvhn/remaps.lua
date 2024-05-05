@@ -3,9 +3,6 @@ local vnoremap = require("yvhn.keymap").vnoremap
 local inoremap = require("yvhn.keymap").inoremap
 local telescope = require("telescope.builtin")
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
-
 -- toggle relative number
 nnoremap("<Leader>tn", "<cmd>lua toggle_relative_number()<CR>")
 
