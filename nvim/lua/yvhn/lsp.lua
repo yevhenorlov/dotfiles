@@ -72,6 +72,8 @@ require'lspconfig'.emmet_ls.setup({
     }
 })
 
+require'lspconfig'.prismals.setup{}
+
 -- FORMATTING
 
 local null_ls = require("null-ls")
