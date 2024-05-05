@@ -5,8 +5,7 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig")-- Configurations for Nvim LSP
   use("jose-elias-alvarez/null-ls.nvim") -- formatting, linting
 
-	use("folke/tokyonight.nvim") -- colorscheme
-	-- use("ayu-theme/ayu-vim") -- colorscheme
+	use{'rose-pine/neovim', as = 'rose-pine'} -- colorscheme
 	use("preservim/nerdtree") -- NERDTree - file explorer for vim
 
   -- code completions (setup in cmp.lua)
