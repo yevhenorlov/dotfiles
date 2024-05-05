@@ -54,7 +54,6 @@ return {
 				prismals = true,
 				rust_analyzer = true,
 				tailwindcss = true,
-				-- ocamllsp = true,
 				vue_ls = true, -- runs in tandem with ts_ls (formerly tsserver) (https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L33)
 
 				ts_ls = {
@@ -131,7 +130,6 @@ return {
 			local ensure_installed = {
 				"eslint_d",
 				"lua_ls",
-				-- "ocamlformat",
 				"prettierd",
 				"shfmt",
 				"stylua",
@@ -198,7 +196,6 @@ return {
 				formatters_by_ft = {
 					bash = { "shfmt" },
 					lua = { "stylua" },
-					-- ocaml = { "ocamlformat" },
 					typescript = { "eslint_d", "prettierd" },
 					typescriptreact = { "eslint_d", "prettierd" },
 					javascript = { "eslint_d", "prettierd" },
