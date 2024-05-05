@@ -6,7 +6,7 @@ vim.opt.errorbells = false
 vim.opt.backup = false -- no backup files
 vim.opt.writebackup = false
 vim.opt.swapfile = false -- no swap files for buffers
-vim.opt.clipboard = "unnamed" -- use os clipboard
+vim.opt.clipboard = "unnamedplus" -- use os clipboard
 
 -- formatting
 vim.opt.expandtab = true --use spaces when pressing tab
@@ -33,9 +33,11 @@ vim.opt.foldnestmax = 10
 vim.opt.signcolumn = "yes" -- always show signcolumn (aka gutter)
 vim.opt.title = true -- show filename and status in window title
 
+-- Don't show the mode and the ruler, since they're already in the status line
+vim.opt.showmode = false
+vim.opt.ruler = false
+
 -- zen mode default state
-vim.opt.showmode = true -- mode indicator
-vim.opt.ruler = true -- line/column number
 vim.opt.laststatus = 2
 vim.opt.number = true
 vim.opt.relativenumber = false

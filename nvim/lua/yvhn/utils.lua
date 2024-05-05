@@ -18,15 +18,11 @@ local is_zen_mode = false
 function toggle_zen_mode()
   if is_zen_mode then
     vim.opt.showcmd = false
-    vim.opt.showmode = false 
-    vim.opt.ruler = false 
     vim.opt.laststatus = 0
     vim.opt.number = false
     vim.opt.relativenumber = false
   else
     vim.opt.showcmd = true
-    vim.opt.showmode = true 
-    vim.opt.ruler = true 
     vim.opt.laststatus = 2
     vim.opt.number = true
     vim.opt.relativenumber = false
