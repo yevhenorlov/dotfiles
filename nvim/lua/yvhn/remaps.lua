@@ -56,6 +56,7 @@ nnoremap("<leader>fg", telescope.live_grep)
 nnoremap("<leader>fb", telescope.buffers)
 nnoremap("<leader>fh", telescope.help_tags)
 nnoremap("<leader>fs", telescope.search_history)
+nnoremap("<leader>f/", telescope.current_buffer_fuzzy_find)
 
 -- GIT
 nnoremap("<Leader>gs", "<cmd>G<CR>")
