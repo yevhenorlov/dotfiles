@@ -21,6 +21,9 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
 -- folds
 vim.opt.foldenable = true
 vim.opt.foldmethod = "indent"

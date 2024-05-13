@@ -18,7 +18,7 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",-- Configurations for Nvim LSP
   "jose-elias-alvarez/null-ls.nvim", -- formatting, linting
 
-	{'rose-pine/neovim', as = 'rose-pine', priority = 1000, }, -- colorscheme
+	{'rose-pine/neovim', name = 'rose-pine', priority = 1000, }, -- colorscheme
 	"preservim/nerdtree", -- NERDTree - file explorer for vim
 
   -- code completions (setup in cmp.lua)

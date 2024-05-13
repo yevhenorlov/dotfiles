@@ -56,6 +56,8 @@ on_attach = function()
 end,
 }
 
+require'lspconfig'.gopls.setup{}
+
 local emmet_capabilities = vim.lsp.protocol.make_client_capabilities()
 emmet_capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.emmet_ls.setup({
