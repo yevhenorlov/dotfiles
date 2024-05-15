@@ -15,6 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.have_nerd_font = true
 
 require("lazy").setup({
+  {
+    'numToStr/Comment.nvim', 
+    opts = {}, 
+    lazy = false,
+    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring', }
+  }, -- Comment stuff out
+
   "neovim/nvim-lspconfig",-- Configurations for Nvim LSP
   "jose-elias-alvarez/null-ls.nvim", -- formatting, linting
 
@@ -41,7 +48,6 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter-context",
 
 	"tpope/vim-fugitive", 	-- A Git wrapper so awesome, it should be illegal
-	"tpope/vim-commentary",	-- Comment stuff out
 	"tpope/vim-surround",	-- Surround words with brackets
 
   -- neovim-native fuzzy finder
