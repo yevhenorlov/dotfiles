@@ -25,8 +25,13 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",-- Configurations for Nvim LSP
   "jose-elias-alvarez/null-ls.nvim", -- formatting, linting
 
-	{'rose-pine/neovim', name = 'rose-pine', priority = 1000, }, -- colorscheme
-	"preservim/nerdtree", -- NERDTree - file explorer for vim
+  {'rose-pine/neovim', name = 'rose-pine', priority = 1000, }, -- colorscheme
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  }, -- file explorer
 
   -- code completions (setup in cmp.lua)
   "onsails/lspkind-nvim",
@@ -48,7 +53,6 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter-context",
 
 	"tpope/vim-fugitive", 	-- A Git wrapper so awesome, it should be illegal
-	"tpope/vim-surround",	-- Surround words with brackets
 
   -- neovim-native fuzzy finder
   { 'nvim-telescope/telescope.nvim', 

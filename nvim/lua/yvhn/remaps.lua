@@ -43,7 +43,7 @@ nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- tree exploring
 nnoremap("<leader>R", "<cmd>Vex<CR>")
-nnoremap("<leader>r", "<cmd>NERDTreeFind<CR>")
+nnoremap("-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 
 -- bdo (buffer delete others) - delete all buffers, reopen last one
 nnoremap("<Leader>bdo", "<cmd>%bd <bar> e#<CR>")
