@@ -28,7 +28,12 @@ require("lazy").setup({
   {'rose-pine/neovim', name = 'rose-pine', priority = 1000, }, -- colorscheme
   {
     'stevearc/oil.nvim',
-    opts = {},
+    opts = {
+      view_options = {
+        -- Show files and directories that start with "."
+        show_hidden = true,
+      },
+    },
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   }, -- file explorer
