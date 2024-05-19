@@ -1,3 +1,4 @@
+-- require("yvhn.setup")
 require("yvhn.settings")
 require("yvhn.persist")
 require("yvhn.theme")
