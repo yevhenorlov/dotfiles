@@ -80,6 +80,7 @@ ls.config.set_config({
 	updateevents = "TextChanged,TextChangedI",
 })
 
+-- Load snippets (TODO test if this path works)
 for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/yvhn/snippets/*.lua", true)) do
 	loadfile(ft_path)()
 end

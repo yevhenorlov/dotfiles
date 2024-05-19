@@ -52,9 +52,9 @@ nnoremap("<Leader>S", "<cmd>syntax sync fromstart<CR>")
 -- yank whole file
 nnoremap("<leader>Y", "Gygg")
 
--- move line up/down (only in insert mode)
-inoremap("<C-j>", "<CMD>m .+1<CR>")
-inoremap("<C-k>", "<CMD>m .-2<CR>")
+-- -- move line up/down (only in insert mode)
+-- inoremap("<C-j>", "<CMD>m .+1<CR>")
+-- inoremap("<C-k>", "<CMD>m .-2<CR>")
 
 -- search without regex by default
 nnoremap("/", "/\\v")
