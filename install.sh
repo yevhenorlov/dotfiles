@@ -73,3 +73,6 @@ ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabine
 # npm list -g --depth 0
 npm install -g @tailwindcss/language-server @volar/vue-language-server prettier tldr typescript typescript-language-server vscode-langservers-extracted emmet-ls @prisma/language-server
 
+# for faster search from Telescope.nvim
+brew install ripgrep
+
