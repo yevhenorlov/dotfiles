@@ -1,15 +1,15 @@
 local nnoremap = require("yvhn.keymap").nnoremap
 local builtin = require("telescope.builtin")
 
-require("telescope").setup{
-  pickers = {
-    live_grep = {
-      -- additional_args = function(opts)
-      --   return {"--hidden"}
-      -- end
-    },
-  },
-}
+require("telescope").setup({
+	pickers = {
+		live_grep = {
+			-- additional_args = function(opts)
+			--   return {"--hidden"}
+			-- end
+		},
+	},
+})
 
 -- Telescope search
 nnoremap("<leader>ff", builtin.git_files)
