@@ -1,7 +1,7 @@
+-- TODO move all to respective modules
 local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
 local inoremap = require("yvhn.keymap").inoremap
-local telescope = require("telescope.builtin")
 
 -- toggle relative number
 nnoremap("<Leader>tn", "<cmd>lua toggle_relative_number()<CR>")
@@ -49,14 +49,6 @@ nnoremap("-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 nnoremap("<Leader>bdo", "<cmd>%bd <bar> e#<CR>")
 -- Shift+b (delete buffer without closing the window) - go to previous buffer, delete the one you just left
 nnoremap("<S-b>", "<cmd>bp<BAR>bd#<CR>")
-
--- Telescope search
-nnoremap("<leader>ff", telescope.git_files)
-nnoremap("<leader>fg", telescope.live_grep)
-nnoremap("<leader>fb", telescope.buffers)
-nnoremap("<leader>fh", telescope.help_tags)
-nnoremap("<leader>fs", telescope.search_history)
-nnoremap("<leader>f/", telescope.current_buffer_fuzzy_find)
 
 -- GIT
 nnoremap("<Leader>gs", "<cmd>G<CR>")
