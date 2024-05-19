@@ -1,12 +1,8 @@
 -- file explorer
 return {
-    'stevearc/oil.nvim',
-    opts = {
-      view_options = {
-        -- Show files and directories that start with "."
-        show_hidden = true,
-      },
-    },
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+	"stevearc/oil.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+	config = function()
+		require("yvhn.oil")
+	end,
 }

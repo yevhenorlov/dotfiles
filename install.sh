@@ -68,10 +68,10 @@ ln -sfn "$DotfilesPath/kitty/monotone.conf" "$ConfigPath/kitty/monotone.conf"
 # karabiner
 ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabiner.json"
 
-# npm stuff
+# npm dependencies that were not handled by mason.nvim etc.
 # to update the list, check 
 # npm list -g --depth 0
-npm install -g @tailwindcss/language-server @volar/vue-language-server prettier tldr typescript typescript-language-server vscode-langservers-extracted emmet-ls @prisma/language-server
+npm install -g prettier tldr typescript
 
 # for faster search from Telescope.nvim
 brew install ripgrep
