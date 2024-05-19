@@ -3,6 +3,10 @@ local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
 local inoremap = require("yvhn.keymap").inoremap
 
+-- navigate diagnostics
+nnoremap("]d", vim.diagnostic.goto_next)
+nnoremap("[d", vim.diagnostic.goto_prev)
+
 -- toggle relative number
 nnoremap("<Leader>tn", "<cmd>lua toggle_relative_number()<CR>")
 
@@ -80,5 +84,4 @@ nnoremap("<Leader>s", ":%s/<C-r><C-w>//g<left><left>")
 
 -- TODO ideas
 -- sort words in visual selection (line)
--- same-ident jumping navigation 
-
+-- same-ident jumping navigation
