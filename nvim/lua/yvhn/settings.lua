@@ -22,7 +22,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- folds
 vim.opt.foldenable = true
@@ -50,19 +50,18 @@ vim.opt.diffopt = "vertical"
 
 -- diagnostics
 vim.diagnostic.config({
-  -- virtual_text = false -- set to false if diagnostics get spammy
+	-- virtual_text = false -- set to false if diagnostics get spammy
 })
 
 -- highlight on yank
-vim.cmd[[
+vim.cmd([[
 augroup highlight_yank
   autocmd!
   au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=100 }
 augroup END
-]]
+]])
 
 -- set filetypes as typescriptreact
-vim.cmd[[
+vim.cmd([[
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
-]]
-
+]])
