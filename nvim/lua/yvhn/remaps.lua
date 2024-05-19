@@ -1,6 +1,5 @@
 -- TODO move all to respective modules
 local nnoremap = require("yvhn.keymap").nnoremap
-local vnoremap = require("yvhn.keymap").vnoremap
 local inoremap = require("yvhn.keymap").inoremap
 
 -- navigate diagnostics
@@ -36,32 +35,13 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 
--- reload vim config
-nnoremap("<Leader><CR>", "<cmd>so $MYVIMRC<CR>")
-
--- make current file executable
-nnoremap("<Leader>x", "<cmd>!chmod +x %<CR>")
-
 -- call tmux-sessionizer
 nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
--- tree exploring
-nnoremap("<leader>R", "<cmd>Vex<CR>")
-nnoremap("-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
 
 -- bdo (buffer delete others) - delete all buffers, reopen last one
 nnoremap("<Leader>bdo", "<cmd>%bd <bar> e#<CR>")
 -- Shift+b (delete buffer without closing the window) - go to previous buffer, delete the one you just left
 nnoremap("<S-b>", "<cmd>bp<BAR>bd#<CR>")
-
--- GIT
-nnoremap("<Leader>gs", "<cmd>G<CR>")
-nnoremap("<Leader>g?", "<cmd>GFiles?<CR>")
-nnoremap("<Leader>gd", "<cmd>Gdiff<CR><C-w><C-w>")
-nnoremap("<Leader>gl", "<cmd>Commits<CR>")
--- fugitive 3-way merge. //2 and //3 are left and right buffers respectively
-nnoremap("<Leader>g[", "<cmd>diffget //2<CR>")
-nnoremap("<Leader>g]", "<cmd>diffget //3<CR>")
 
 -- Remove search highlights with backspace
 nnoremap("<BS>", "<cmd>nohlsearch<CR>")

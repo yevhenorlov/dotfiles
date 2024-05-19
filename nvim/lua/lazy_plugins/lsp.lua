@@ -96,6 +96,7 @@ return {
 
 				eslint = {
 					-- TODO is still needed? how does it interact with conform?
+					---@diagnostic disable-next-line: unused-local
 					on_attach = function(client, bufnr)
 						vim.api.nvim_create_autocmd("BufWritePre", {
 							buffer = bufnr,
