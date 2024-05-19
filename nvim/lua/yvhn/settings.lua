@@ -48,6 +48,10 @@ vim.opt.relativenumber = false
 -- fugitive split diffs only vertically
 vim.opt.diffopt = "vertical"
 
+-- diagnostics
+vim.diagnostic.config({
+  -- virtual_text = false -- set to false if diagnostics get spammy
+})
 
 -- highlight on yank
 vim.cmd[[
