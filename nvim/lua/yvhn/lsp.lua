@@ -77,6 +77,7 @@ require'lspconfig'.emmet_ls.setup({
 require'lspconfig'.prismals.setup{}
 
 -- FORMATTING
+-- TODO null_ls is deprecated, is conform.nvim a good alternative?
 
 local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
