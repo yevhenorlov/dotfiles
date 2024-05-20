@@ -119,6 +119,7 @@ return {
 			local ensure_installed = {
 				"stylua",
 				"lua_ls",
+				"shfmt",
 				-- "delve",
 				-- "tailwind-language-server",
 			}
@@ -174,6 +175,7 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+					bash = { "shfmt" },
 					-- Conform will run multiple formatters sequentially, e.g.:
 					-- python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter, e.g.:
