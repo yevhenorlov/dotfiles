@@ -1,37 +1,19 @@
 -- TODO move all to respective modules
 local nnoremap = require("yvhn.keymap").nnoremap
+local vnoremap = require("yvhn.keymap").vnoremap
+
+-- restart lsp
+nnoremap("<Leader>L", function()
+	print("Restarting LSP servers...")
+	vim.cmd.LspRestart()
+end)
+
+-- call tmux-sessionizer
+nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- navigate diagnostics
 nnoremap("]d", vim.diagnostic.goto_next)
 nnoremap("[d", vim.diagnostic.goto_prev)
-
--- toggle relative number
-vim.api.nvim_create_user_command("ToggleRelativeNumber", function()
-	local is_relative_number = vim.o.relativenumber
-	if is_relative_number then
-		vim.o.relativenumber = false
-	else
-		vim.o.relativenumber = true
-	end
-end, {})
-
-nnoremap("<Leader>tn", vim.cmd.ToggleRelativeNumber, {
-	desc = "Toggle between absolute and relative line numbers",
-	silent = true,
-})
-
--- toggle wrap
-nnoremap("<Leader>tw", "<cmd>lua toggle_wrap()<CR>")
-
--- toggle zen mode
-nnoremap("<Leader>tz", "<cmd>lua toggle_zen_mode()<CR>")
-
--- toggle copilot
-nnoremap("<Leader>tc", "<cmd>lua toggle_copilot()<CR>")
-nnoremap("<Leader>cs", "<cmd>:Copilot status<CR>")
-
--- toggle lsp
-nnoremap("<Leader>L", "<cmd>lua toggle_lsp()<CR>")
 
 -- toggle zoom (tmux-like)
 nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
@@ -42,9 +24,6 @@ nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
-
--- call tmux-sessionizer
-nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- bdo (buffer delete others) - delete all buffers, reopen last one
 nnoremap("<Leader>bdo", "<cmd>%bd <bar> e#<CR>")
@@ -61,8 +40,11 @@ nnoremap("<Leader>S", "<cmd>syntax sync fromstart<CR>")
 nnoremap("<leader>Y", "Gygg")
 
 -- -- move line up/down (only in insert mode)
--- inoremap("<C-j>", "<CMD>m .+1<CR>")
--- inoremap("<C-k>", "<CMD>m .-2<CR>")
+-- meta keys and mac usually don't play well together ( because of alt/option shenanigans), this is working because of the `macos_option_as_alt` setting enabled in kitty.conf
+nnoremap("<M-j>", "<CMD>m .+1<CR>")
+nnoremap("<M-k>", "<CMD>m .-2<CR>")
+vnoremap("<M-j>", "<CMD>m .+1<CR>")
+vnoremap("<M-k>", "<CMD>m .-2<CR>")
 
 -- search without regex by default
 nnoremap("/", "/\\v")
