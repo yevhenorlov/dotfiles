@@ -1,6 +1,5 @@
 -- TODO move all to respective modules
 local nnoremap = require("yvhn.keymap").nnoremap
-local inoremap = require("yvhn.keymap").inoremap
 
 -- navigate diagnostics
 nnoremap("]d", vim.diagnostic.goto_next)
@@ -8,9 +7,6 @@ nnoremap("[d", vim.diagnostic.goto_prev)
 
 -- toggle relative number
 nnoremap("<Leader>tn", "<cmd>lua toggle_relative_number()<CR>")
-
--- toggle color theme
-nnoremap("<Leader>tt", "<cmd>lua toggle_theme()<CR>")
 
 -- toggle wrap
 nnoremap("<Leader>tw", "<cmd>lua toggle_wrap()<CR>")
