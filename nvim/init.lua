@@ -24,4 +24,4 @@ require("lazy").setup("lazy_plugins", {
 		notify = false,
 	},
 })
-require("yvhn") -- TODO check if can be initialized automatically
+require("yvhn")
