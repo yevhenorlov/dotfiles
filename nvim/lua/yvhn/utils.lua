@@ -2,19 +2,6 @@ local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
 -- TODO move these functions into their respective modules and call them natively from lua
 
-local is_dark_theme = true
-function toggle_theme()
-	if is_dark_theme then
-		vim.g.ayucolor = "light"
-		vim.cmd(":set background=light")
-	else
-		vim.g.ayucolor = "dark"
-		vim.cmd(":set background=dark")
-	end
-	is_dark_theme = not is_dark_theme
-	vim.cmd("colorscheme " .. vim.g.yvhn_colorscheme)
-end
-
 local is_zen_mode = false
 function toggle_zen_mode()
 	if is_zen_mode then

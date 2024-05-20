@@ -71,3 +71,18 @@ require("rose-pine").setup({
 vim.g.yvhn_colorscheme = "rose-pine"
 
 vim.cmd("colorscheme " .. vim.g.yvhn_colorscheme)
+
+vim.api.nvim_create_user_command("ToggleTheme", function()
+	local current_bg = vim.o.background
+	if current_bg == "dark" then
+		vim.o.background = "light"
+	else
+		vim.o.background = "dark"
+	end
+end, {})
+
+local nnoremap = require("yvhn.keymap").nnoremap
+nnoremap("<Leader>tt", vim.cmd.ToggleTheme, {
+	desc = "Toggle between light and dark theme",
+	silent = true,
+})
