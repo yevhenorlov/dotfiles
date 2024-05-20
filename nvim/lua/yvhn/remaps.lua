@@ -1,4 +1,3 @@
--- TODO move all to respective modules
 local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
 
@@ -43,8 +42,8 @@ nnoremap("<leader>Y", "Gygg")
 -- meta keys and mac usually don't play well together ( because of alt/option shenanigans), this is working because of the `macos_option_as_alt` setting enabled in kitty.conf
 nnoremap("<M-j>", "<CMD>m .+1<CR>")
 nnoremap("<M-k>", "<CMD>m .-2<CR>")
-vnoremap("<M-j>", "<CMD>m .+1<CR>")
-vnoremap("<M-k>", "<CMD>m .-2<CR>")
+vnoremap("<M-j>", ":m '>+1<CR>gv=gv")
+vnoremap("<M-k>", ":m '<-2<CR>gv=gv")
 
 -- search without regex by default
 nnoremap("/", "/\\v")
