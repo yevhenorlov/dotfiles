@@ -1,4 +1,4 @@
 require("yvhn.settings")
 require("yvhn.persist")
-require("yvhn.utils")
+require("yvhn.commands")
 require("yvhn.remaps")

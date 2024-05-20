@@ -6,15 +6,27 @@ nnoremap("]d", vim.diagnostic.goto_next)
 nnoremap("[d", vim.diagnostic.goto_prev)
 
 -- toggle relative number
-nnoremap("<Leader>tn", "<cmd>lua toggle_relative_number()<CR>")
+vim.api.nvim_create_user_command("ToggleRelativeNumber", function()
+	local is_relative_number = vim.o.relativenumber
+	if is_relative_number then
+		vim.o.relativenumber = false
+	else
+		vim.o.relativenumber = true
+	end
+end, {})
+
+nnoremap("<Leader>tn", vim.cmd.ToggleRelativeNumber, {
+	desc = "Toggle between absolute and relative line numbers",
+	silent = true,
+})
 
 -- toggle wrap
 nnoremap("<Leader>tw", "<cmd>lua toggle_wrap()<CR>")
 
 -- toggle zen mode
 nnoremap("<Leader>tz", "<cmd>lua toggle_zen_mode()<CR>")
--- toggle copilot
 
+-- toggle copilot
 nnoremap("<Leader>tc", "<cmd>lua toggle_copilot()<CR>")
 nnoremap("<Leader>cs", "<cmd>:Copilot status<CR>")
 

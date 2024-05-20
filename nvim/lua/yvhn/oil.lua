@@ -6,4 +6,4 @@ require("oil").setup({
 })
 
 local nnoremap = require("yvhn.keymap").nnoremap
-nnoremap("-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
+nnoremap("-", vim.cmd.Oil, { desc = "Open parent directory" })
