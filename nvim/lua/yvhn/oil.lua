@@ -7,3 +7,4 @@ require("oil").setup({
 
 local nnoremap = require("yvhn.keymap").nnoremap
 nnoremap("-", vim.cmd.Oil, { desc = "Open parent directory" })
+nnoremap("<leader>-", require("oil").toggle_float)
