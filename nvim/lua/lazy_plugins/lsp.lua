@@ -176,6 +176,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					bash = { "shfmt" },
+					vue = { "eslint", "prettier" },
 					-- Conform will run multiple formatters sequentially, e.g.:
 					-- python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter, e.g.:
