@@ -207,8 +207,9 @@ return {
 				callback = function(args)
 					require("conform").format({
 						bufnr = args.buf,
-						lsp_fallback = true,
-						quiet = true,
+						lsp_format = "fallback",
+						quiet = false,
+						timeout_ms = 1000,
 					})
 				end,
 			})
