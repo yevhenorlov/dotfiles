@@ -116,17 +116,6 @@ return {
 						},
 					},
 				},
-
-				eslint = {
-					-- FIXME is still needed? how does it interact with conform?
-					---@diagnostic disable-next-line: unused-local
-					on_attach = function(client, bufnr)
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							buffer = bufnr,
-							command = "EslintFixAll",
-						})
-					end,
-				},
 			}
 
 			local servers_to_install = vim.tbl_filter(function(key)
@@ -140,9 +129,10 @@ return {
 
 			require("mason").setup()
 			local ensure_installed = {
-				"stylua",
+				"eslint_d",
 				"lua_ls",
 				"shfmt",
+				"stylua",
 				-- "delve",
 				-- "tailwind-language-server",
 			}
@@ -186,15 +176,26 @@ return {
 					if disable_semantic_tokens[filetype] then
 						client.server_capabilities.semanticTokensProvider = nil
 					end
+
+					require("lint").try_lint()
 				end,
 			})
+
+			-- Linting Setup
+			require("lint").linters_by_ft = {
+				typescript = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
+				javascript = { "eslint_d" },
+				javascriptreact = { "eslint_d" },
+				vue = { "eslint_d" },
+			}
 
 			-- Autoformatting Setup
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
 					bash = { "shfmt" },
-					vue = { "eslint", "prettier" },
+					vue = { "eslint_d", "prettier" },
 					-- Conform will run multiple formatters sequentially, e.g.:
 					-- python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter, e.g.:
@@ -209,6 +210,13 @@ return {
 						lsp_fallback = true,
 						quiet = true,
 					})
+				end,
+			})
+
+			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+				callback = function()
+					-- try_lint without arguments runs the linters defined in `linters_by_ft` for the current filetype
+					require("lint").try_lint()
 				end,
 			})
 		end,
