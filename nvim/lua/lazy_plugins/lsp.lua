@@ -43,8 +43,8 @@ return {
 			-- (source: https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L40)
 			--
 			-- for now the workaround way to get it is to run the expression above via :lua=... and copy the output path here
-			local vue_language_server_path =
-				"/Users/yevhenorlov/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
+			local vue_language_server_path = os.getenv("HOME")
+				.. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
 
 			local servers = {
 				bashls = true,
