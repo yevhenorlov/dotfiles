@@ -24,15 +24,28 @@ return {
 				-- },
 			})
 
-			local capabilities = nil
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			if pcall(require, "cmp_nvim_lsp") then
-				capabilities = require("cmp_nvim_lsp").default_capabilities()
+				capabilities =
+					vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			end
 
 			local lspconfig = require("lspconfig")
 
 			local emmet_capabilities = vim.lsp.protocol.make_client_capabilities()
 			emmet_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			-- FIXME ideally this path should be fetched dynamically like so:
+			-- ```
+			-- local mason_registry = require("mason-registry")
+			-- local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path()
+			-- ```
+			-- but it currently cannot find the package by that name.
+			-- (source: https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L40)
+			--
+			-- for now the workaround way to get it is to run `npm list -g --depth=0` and copy the path here
+			local vue_language_server_path =
+				"/Users/y.orlov/.nvm/versions/node/v18.20.2/lib/node_modules/@vue/language-server"
 
 			local servers = {
 				bashls = true,
@@ -42,10 +55,20 @@ return {
 				prismals = true,
 				rust_analyzer = true,
 				tailwindcss = true,
-				volar = true,
+				volar = true, -- runs in tandem with tsserver (https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L33)
 
-				-- Probably want to disable formatting for this lang server (TODO why, Teej?)
-				tsserver = true,
+				tsserver = {
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = vue_language_server_path,
+								languages = { "vue" },
+							},
+						},
+					},
+					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+				},
 
 				emmet_ls = {
 					capabilities = emmet_capabilities,

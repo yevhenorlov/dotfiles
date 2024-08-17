@@ -3,7 +3,6 @@ local vnoremap = require("yvhn.keymap").vnoremap
 
 -- restart lsp
 nnoremap("<Leader>L", function()
-	print("Restarting LSP servers...")
 	vim.cmd.LspRestart()
 end)
 
@@ -53,4 +52,4 @@ nnoremap("<Leader>s", ":%s/<C-r><C-w>//g<left><left>")
 
 -- TODO ideas
 -- sort words in visual selection (line)
--- same-ident jumping navigation
+-- same-indent jumping navigation
