@@ -21,7 +21,7 @@ https://github.com/user-attachments/assets/9c1fced2-ccd1-4956-ab56-db37d8cdf0a0
 
 1. [install `karabiner`](https://karabiner-elements.pqrs.org/docs/getting-started/installation/)
 
-2. [install `neovim`](https://github.com/neovim/neovim/wiki/Installing-Neovim):
+2. [install `neovim`](https://github.com/neovim/neovim?tab=readme-ov-file#install-from-package):
 
 ```sh
 brew install neovim
