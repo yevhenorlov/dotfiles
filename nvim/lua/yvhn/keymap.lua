@@ -10,8 +10,8 @@ M.nnoremap = bind("n")
 M.vnoremap = bind("v")
 M.inoremap = bind("i")
 
-M.buf_nnoremap = bind("n", {buffer = 0})
-M.buf_vnoremap = bind("v", {buffer = 0})
-M.buf_inoremap = bind("i", {buffer = 0})
+M.buf_nnoremap = bind("n", { buffer = 0 })
+M.buf_vnoremap = bind("v", { buffer = 0 })
+M.buf_inoremap = bind("i", { buffer = 0 })
 
 return M
