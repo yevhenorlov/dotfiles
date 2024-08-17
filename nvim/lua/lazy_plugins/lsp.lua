@@ -118,7 +118,7 @@ return {
 				},
 
 				eslint = {
-					-- TODO is still needed? how does it interact with conform?
+					-- FIXME is still needed? how does it interact with conform?
 					---@diagnostic disable-next-line: unused-local
 					on_attach = function(client, bufnr)
 						vim.api.nvim_create_autocmd("BufWritePre", {
@@ -154,14 +154,9 @@ return {
 				if config == true then
 					config = {}
 				end
-				config = vim.tbl_deep_extend(
-					"force",
-					{},
-					{ -- TODO which one is overriden via `force`? emmet needs custom capabilities
-						capabilities = capabilities,
-					},
-					config
-				)
+				config = vim.tbl_deep_extend("force", {}, {
+					capabilities = capabilities,
+				}, config)
 
 				lspconfig[name].setup(config)
 			end
