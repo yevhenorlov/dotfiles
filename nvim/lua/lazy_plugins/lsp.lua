@@ -37,15 +37,14 @@ return {
 
 			-- FIXME ideally this path should be fetched dynamically like so:
 			-- ```
-			-- local mason_registry = require("mason-registry")
-			-- local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path()
+			-- local vue_language_server_path = require("mason-registry").get_package('vue-language-server'):get_install_path()
 			-- ```
 			-- but it currently cannot find the package by that name.
 			-- (source: https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L40)
 			--
-			-- for now the workaround way to get it is to run `npm list -g --depth=0` and copy the path here
+			-- for now the workaround way to get it is to run the expression above via :lua=... and copy the output path here
 			local vue_language_server_path =
-				"/Users/y.orlov/.nvm/versions/node/v18.20.2/lib/node_modules/@vue/language-server"
+				"/Users/yevhenorlov/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
 
 			local servers = {
 				bashls = true,
