@@ -2,7 +2,8 @@
 
 🌐 dotfiles &amp; global configs
 
-![demo](demo.mp4)
+https://github.com/user-attachments/assets/9c1fced2-ccd1-4956-ab56-db37d8cdf0a0
+
 
 ## Software
 
