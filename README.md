@@ -2,14 +2,14 @@
 
 🌐 dotfiles &amp; global configs
 
-![screenshot](screenshot.png)
+![demo](demo.mp4)
 
 ## Software
 
 1. Terminal - [kitty](https://sw.kovidgoyal.net/kitty/)
 1. Shell - [oh-my-zsh](https://ohmyz.sh/)
-1. Code editor - [neovim](https://github.com/neovim/neovim/) with a [custom theme](./nvim/colors/gruvbox_customized.vim) based on [Gruvbox](https://github.com/morhetz/gruvbox)
-1. Font - [Monocraft](https://github.com/IdreesInc/Monocraft)
+1. Code editor - [neovim](https://github.com/neovim/neovim/) with [rose-pine theme](https://github.com/rose-pine/neovim)
+1. Font - [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/)
 1. Keyboard remapper - [Karabiner](https://karabiner-elements.pqrs.org/docs/getting-started/installation/)
 1. Tile manager - [Rectangle](https://rectangleapp.com/)
 1. Neat terminal plugins:
@@ -45,4 +45,4 @@ cd ~/code/dotfiles
 ./install.sh
 ```
 
-6. Install missing dependencies until terminal stops yelling at you (TODO automate this).
+6. Install missing dependencies until terminal stops yelling at you.
