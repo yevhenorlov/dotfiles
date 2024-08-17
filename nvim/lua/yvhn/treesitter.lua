@@ -36,8 +36,9 @@ require("nvim-treesitter.configs").setup({
 		-- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
 		-- the name of the parser)
 		-- list of language that will be disabled
-		disable = { "c", "rust" },
+		-- disable = { "c", "rust" },
 		-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+		---@diagnostic disable-next-line: unused-local
 		disable = function(lang, buf)
 			local max_filesize = 100 * 1024 -- 100 KB
 			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
