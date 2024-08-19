@@ -132,7 +132,7 @@ return {
 				"lua_ls",
 				"shfmt",
 				"stylua",
-				"prettier",
+				"prettierd",
 				-- "delve",
 				-- "tailwind-language-server",
 			}
@@ -195,7 +195,10 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					bash = { "shfmt" },
-					vue = { "eslint_d", "prettier" },
+					vue = { "eslint_d", "prettierd" },
+					typescript = { "eslint_d", "prettierd" },
+					typescriptreact = { "eslint_d", "prettierd" },
+					javascript = { "eslint_d", "prettierd" },
 					-- Conform will run multiple formatters sequentially, e.g.:
 					-- python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter, e.g.:
