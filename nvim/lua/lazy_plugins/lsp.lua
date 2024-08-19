@@ -132,6 +132,7 @@ return {
 				"lua_ls",
 				"shfmt",
 				"stylua",
+				"prettier",
 				-- "delve",
 				-- "tailwind-language-server",
 			}
