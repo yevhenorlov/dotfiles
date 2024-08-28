@@ -55,8 +55,9 @@ alias rzsh='. ~/.zshrc'
 # editing init.vim
 alias evim='vim ~/.config/nvim/init.vim'
 
-# editing tmux.conf
+# tmux.conf
 alias etmux='vim ~/.tmux.conf'
+alias trw='tmux rotate-window'
 
 # work
 # GlobalProtect

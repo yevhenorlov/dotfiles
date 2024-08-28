@@ -212,7 +212,7 @@ return {
 						bufnr = args.buf,
 						lsp_format = "fallback",
 						quiet = false,
-						timeout_ms = 1000,
+						timeout_ms = 5000,
 					})
 				end,
 			})
