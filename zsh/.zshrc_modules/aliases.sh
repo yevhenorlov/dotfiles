@@ -57,7 +57,7 @@ alias evim='vim ~/.config/nvim/init.vim'
 
 # tmux.conf
 alias etmux='vim ~/.tmux.conf'
-alias trw='tmux rotate-window'
+alias trw='tmux rotate-window \; select-pane -t :.+'
 
 # work
 # GlobalProtect
