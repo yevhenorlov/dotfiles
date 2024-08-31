@@ -202,6 +202,7 @@ return {
 					typescript = { "eslint_d", "prettierd" },
 					typescriptreact = { "eslint_d", "prettierd" },
 					vue = { "eslint_d", "prettierd" },
+					go = { "goimports", "gofmt" },
 					-- Conform will run multiple formatters sequentially, e.g.:
 					-- python = { "isort", "black" },
 					-- Use a sub-list to run only the first available formatter, e.g.:
