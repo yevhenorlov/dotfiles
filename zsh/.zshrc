@@ -41,3 +41,12 @@ export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 
 # syntax-highlighting (must be at the end of the file)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/yevhenorlov/.opam/opam-init/init.zsh' ]] || source '/Users/yevhenorlov/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
