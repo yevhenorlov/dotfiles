@@ -8,5 +8,6 @@ plugins=(
   npm
   extract
   zsh-autosuggestions
+  direnv
 )
 
