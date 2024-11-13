@@ -196,11 +196,11 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					bash = { "shfmt" },
-					javascript = { "eslint_d", "prettierd" },
 					lua = { "stylua" },
 					ocaml = { "ocamlformat" },
 					typescript = { "eslint_d", "prettierd" },
 					typescriptreact = { "eslint_d", "prettierd" },
+					javascript = { "eslint_d", "prettierd" },
 					vue = { "eslint_d", "prettierd" },
 					go = { "goimports", "gofmt" },
 					-- Conform will run multiple formatters sequentially, e.g.:
@@ -216,7 +216,7 @@ return {
 						bufnr = args.buf,
 						lsp_format = "fallback",
 						quiet = false,
-						timeout_ms = 5000,
+						timeout_ms = 2000,
 					})
 				end,
 			})

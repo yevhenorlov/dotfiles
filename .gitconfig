@@ -13,6 +13,7 @@
   amend = commit --amend --all
   hreset = reset --hard
   co = checkout
+  cp = cherry-pick
   df = diff --color --color-words --abbrev
   hh = diff --color --color-words --abbrev HEAD^ HEAD
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
