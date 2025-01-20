@@ -317,7 +317,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a '/Applications/Music.app'"
+                    "shell_command": "open -a '/System/Applications/Music.app'"
                   }
                 ],
                 "type": "basic"
