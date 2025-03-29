@@ -1,5 +1,6 @@
 local nnoremap = require("yvhn.keymap").nnoremap
 local vnoremap = require("yvhn.keymap").vnoremap
+local cnoremap = require("yvhn.keymap").cnoremap
 
 -- restart lsp
 nnoremap("<Leader>L", function()
@@ -8,6 +9,9 @@ end)
 
 -- call tmux-sessionizer
 nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- remap :split to :hs (for consistency with :vs)
+cnoremap("hs", "split")
 
 -- navigate diagnostics
 nnoremap("]d", vim.diagnostic.goto_next)
