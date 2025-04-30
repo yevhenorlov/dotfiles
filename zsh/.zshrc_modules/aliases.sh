@@ -40,6 +40,7 @@ alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias vim="nvim"
 alias gpt="~/chatgpt.sh"
+alias ding="~/code/ding/ding"
 
 alias nuke_modules="find . -name node_modules -type d -prune -exec trash {} +"
 
