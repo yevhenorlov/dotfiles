@@ -45,6 +45,7 @@ alias nuke_modules="find . -name node_modules -type d -prune -exec trash {} +"
 
 # time, weather and the moon
 alias time='date +"%T"'
+alias clock='~/code/cli-clock/clock'
 alias weather='curl -4 "http://wttr.in/Uithoorn?T"'
 alias moon='curl -4 "http://wttr.in/Moon?T"'
 
