@@ -2,7 +2,7 @@
 
 🌐 dotfiles &amp; global configs
 
-https://github.com/user-attachments/assets/9c1fced2-ccd1-4956-ab56-db37d8cdf0a0
+<img width="3008" alt="Screenshot 2025-06-18 at 21 43 56" src="https://github.com/user-attachments/assets/45ad2842-1c12-4270-ae93-514c41315e9b" />
 
 ## Software
 
