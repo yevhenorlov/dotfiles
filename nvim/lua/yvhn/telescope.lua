@@ -4,9 +4,9 @@ local builtin = require("telescope.builtin")
 require("telescope").setup({
 	pickers = {
 		live_grep = {
-			-- additional_args = function(opts)
-			--   return {"--hidden"}
-			-- end
+			additional_args = function(opts)
+				return { "--no-ignore", "--hidden", "--glob", "!.git" }
+			end,
 		},
 	},
 })
