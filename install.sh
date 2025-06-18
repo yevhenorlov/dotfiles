@@ -24,13 +24,6 @@ else
   echo "Creating nvim directory..."
   mkdir -p "$ConfigPath/nvim"
 fi
-# check if kitty directory exists
-if [[ -d "$ConfigPath/kitty" ]]; then
-  : # noop
-else
-  echo "Creating kitty directory..."
-  mkdir -p "$ConfigPath/kitty"
-fi
 
 # zsh
 ln -sfn "$DotfilesPath/zsh/.zshrc" "$HOME/.zshrc"
@@ -40,9 +33,6 @@ if [[ ! -d "$ZSH_CUSTOM" ]]; then
 else
   ln -sfn "$DotfilesPath/zsh/themes/lambda_minimal.zsh-theme" "$ZSH_CUSTOM/themes/lambda_minimal.zsh-theme"
 fi
-
-# cli scripts
-ln -sfn "$DotfilesPath/chatgpt.sh" "$HOME/chatgpt.sh"
 
 # git
 ln -sfn "$DotfilesPath/.gitconfig" "$HOME/.gitconfig"
@@ -57,9 +47,6 @@ ln -sfn "$DotfilesPath/nvim/init.lua" "$ConfigPath/nvim/init.lua"
 ln -sfn "$DotfilesPath/.tmux.conf" "$HOME/.tmux.conf"
 ln -sfn "$DotfilesPath/tmux-sessionizer" "/usr/local/bin/tmux-sessionizer"
 ln -sfn "$DotfilesPath/tmux-cht.sh" "/usr/local/bin/tmux-cht.sh"
-
-# kitty
-ln -sfn "$DotfilesPath/kitty/kitty.conf" "$ConfigPath/kitty/kitty.conf"
 
 # karabiner
 ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabiner.json"

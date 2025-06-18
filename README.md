@@ -4,10 +4,9 @@
 
 https://github.com/user-attachments/assets/9c1fced2-ccd1-4956-ab56-db37d8cdf0a0
 
-
 ## Software
 
-1. Terminal - [kitty](https://sw.kovidgoyal.net/kitty/)
+1. Terminal - [Ghostty](https://ghostty.org/)
 1. Shell - [oh-my-zsh](https://ohmyz.sh/)
 1. Code editor - [neovim](https://github.com/neovim/neovim/) with [rose-pine theme](https://github.com/rose-pine/neovim)
 1. Font - [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/)
@@ -27,11 +26,7 @@ https://github.com/user-attachments/assets/9c1fced2-ccd1-4956-ab56-db37d8cdf0a0
 brew install neovim
 ```
 
-3. [install `kitty`](https://sw.kovidgoyal.net/kitty/binary/):
-
-```sh
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-```
+3. [install `ghostty`](https://ghostty.org/download)
 
 4. clone repo to `~/code`
 

@@ -38,7 +38,7 @@ nnoremap("<Leader>S", "<cmd>syntax sync fromstart<CR>")
 nnoremap("<leader>Y", "Gygg")
 
 -- -- move line up/down (only in insert mode)
--- meta keys and mac usually don't play well together ( because of alt/option shenanigans), this is working because of the `macos_option_as_alt` setting enabled in kitty.conf
+-- meta keys and mac usually don't play well together ( because of alt/option shenanigans), this is working because of the setting enabled in the ghostty config
 nnoremap("<M-j>", "<CMD>m .+1<CR>")
 nnoremap("<M-k>", "<CMD>m .-2<CR>")
 vnoremap("<M-j>", ":m '>+1<CR>gv=gv")

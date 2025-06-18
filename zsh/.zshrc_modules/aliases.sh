@@ -39,7 +39,6 @@ alias ns="npm start"
 alias pomodoro="~/code/pomodoro-go/pomodoro && pop"
 alias pop="osascript -e 'display notification \"Done\" with title \"CLI\"'"
 alias vim="nvim"
-alias gpt="~/chatgpt.sh"
 alias ding="~/code/ding/ding -m 'Work complete! 👷' -f $HOME/code/ding/assets/work_complete.mp3"
 
 alias nuke_modules="find . -name node_modules -type d -prune -exec trash {} +"
