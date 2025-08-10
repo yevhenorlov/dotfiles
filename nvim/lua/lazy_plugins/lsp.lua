@@ -173,6 +173,7 @@ return {
 					buf_nnoremap("<localleader>r", vim.lsp.buf.rename)
 					buf_nnoremap("<localleader>a", vim.lsp.buf.code_action)
 					buf_nnoremap("<localleader>f", vim.lsp.buf.format)
+					buf_nnoremap("<localleader>cp", '<cmd>let @+ = expand("%:p")<cr>') -- copy path to current buffer
 
 					local filetype = vim.bo[bufnr].filetype
 					if disable_semantic_tokens[filetype] then
