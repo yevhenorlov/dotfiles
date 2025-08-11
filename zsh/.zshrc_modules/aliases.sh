@@ -10,8 +10,8 @@ function npmid() {
 
 # load file into node.js repl
 noderepl() {
-    FILE_CONTENTS="$(< $1 )"
-    node -i -e "$FILE_CONTENTS"
+  FILE_CONTENTS="$(<$1)"
+  node -i -e "$FILE_CONTENTS"
 }
 
 # Change directory and list its content
@@ -21,7 +21,7 @@ function cdd() {
   printf "\n"
 }
 
-# Tree with sensible defaults 
+# Tree with sensible defaults
 # (brew install tree first)
 function t() {
   # Defaults to 3 levels deep, do more with `t 5` or less with `t 1`
@@ -32,7 +32,7 @@ function t() {
 alias cdc="cdd ~/code"
 alias cddf="cdd ~/code/dotfiles"
 alias grep="grep --color=auto"
-alias ls="ls -G" 
+alias ls="ls -G"
 alias nb="npm run build"
 alias nd="npm run dev"
 alias ns="npm start"
@@ -45,8 +45,8 @@ alias nuke_modules="find . -name node_modules -type d -prune -exec trash {} +"
 
 # time, weather and the moon
 alias time='date +"%T"'
-alias weather='curl -4 http://wttr.in/Uithoorn'
-alias moon='curl -4 http://wttr.in/Moon'
+alias weather='curl -4 "http://wttr.in/Uithoorn?T"'
+alias moon='curl -4 "http://wttr.in/Moon?T"'
 
 # editing and reloading zsh
 alias ezsh='vim ~/.zshrc'
