@@ -28,6 +28,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export PATH="/Users/yevhenorlov/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
+export GOROOT=$(brew --prefix go)/libexec
+export PATH=$PATH:$GOROOT/bin
+
 loadenv() {
   set -o allexport
   source .dev
