@@ -13,7 +13,6 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"vimdoc",
 		"vue",
-		"ocaml",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

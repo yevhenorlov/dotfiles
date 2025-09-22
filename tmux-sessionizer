@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # TODO include in $PATH and automate setup
-session=$(find ~ ~/code -type d -mindepth 1 -maxdepth 1 | fzf)
+session=$(find ~ ~/code ~/code/trengo -type d -mindepth 1 -maxdepth 1 | fzf)
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name" 2>/dev/null; then
