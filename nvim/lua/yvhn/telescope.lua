@@ -5,7 +5,7 @@ require("telescope").setup({
 	pickers = {
 		live_grep = {
 			additional_args = function(opts)
-				return { "--no-ignore", "--hidden", "--glob", "!.git" }
+				return { "--no-ignore", "--hidden", "--glob", "!.git", "--glob", "!node_modules" }
 			end,
 		},
 	},
