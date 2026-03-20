@@ -27,6 +27,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export PATH="/Users/yevhenorlov/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export GOROOT=$(brew --prefix go)/libexec
 export PATH=$PATH:$GOROOT/bin
@@ -44,3 +45,6 @@ export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 
 # syntax-highlighting (must be at the end of the file)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
