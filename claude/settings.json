@@ -7,7 +7,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; (alerter --title \"$TITLE\" --message \"Needs your attention\" --app-icon ~/.claude/claude.svg </dev/null &>/dev/null &); afplay /System/Library/Sounds/Glass.aiff"
+            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; afplay /System/Library/Sounds/Glass.aiff & RESULT=$(alerter --title \"$TITLE\" --message \"Needs your attention\" --app-icon ~/.claude/claude.svg --actions \"Open Ghostty\" 2>/dev/null); [ \"$RESULT\" = \"Open Ghostty\" ] && open -a Ghostty || true",
+            "async": true
           }
         ]
       }
@@ -18,7 +19,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; (alerter --title \"$TITLE\" --message \"Done\" --app-icon ~/.claude/claude.svg </dev/null &>/dev/null &); afplay /System/Library/Sounds/Funk.aiff"
+            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; afplay /System/Library/Sounds/Funk.aiff & RESULT=$(alerter --title \"$TITLE\" --message \"Done\" --app-icon ~/.claude/claude.svg --actions \"Open Ghostty\" 2>/dev/null); [ \"$RESULT\" = \"Open Ghostty\" ] && open -a Ghostty || true",
+            "async": true
           }
         ]
       }
