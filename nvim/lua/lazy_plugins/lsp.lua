@@ -184,7 +184,7 @@ return {
 					buf_nnoremap("<localleader>r", vim.lsp.buf.rename)
 					buf_nnoremap("<localleader>a", vim.lsp.buf.code_action)
 					buf_nnoremap("<localleader>f", vim.lsp.buf.format)
-					buf_nnoremap("<localleader>cp", '<cmd>let @+ = expand("%:p")<cr>') -- copy path to current buffer
+					buf_nnoremap("<localleader>cp", '<cmd>let @+ = expand("%:~")<cr>') -- copy path to current buffer (:~ replaces home dir with ~)
 					local buf_vnoremap = require("yvhn.keymap").buf_vnoremap
 					buf_vnoremap("<localleader>cp", function()
 						-- "v" marks the selection anchor, "." is the cursor —
@@ -197,7 +197,7 @@ return {
 							s_line, e_line = e_line, s_line
 							s_col, e_col = e_col, s_col
 						end
-						local path = vim.fn.expand("%:p")
+						local path = vim.fn.expand("%:~") -- :~ replaces home dir with ~
 						local range
 						if vim.fn.mode() == "V" then
 							-- linewise (V): cols are always 1/EOL, omit them
