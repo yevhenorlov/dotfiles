@@ -130,7 +130,7 @@ return {
 			local ensure_installed = {
 				"eslint_d",
 				"lua_ls",
-				"prettierd",
+				-- "prettierd",
 				"shfmt",
 				"stylua",
 				-- "delve",
@@ -185,6 +185,31 @@ return {
 					buf_nnoremap("<localleader>a", vim.lsp.buf.code_action)
 					buf_nnoremap("<localleader>f", vim.lsp.buf.format)
 					buf_nnoremap("<localleader>cp", '<cmd>let @+ = expand("%:p")<cr>') -- copy path to current buffer
+					local buf_vnoremap = require("yvhn.keymap").buf_vnoremap
+					buf_vnoremap("<localleader>cp", function()
+						-- "v" marks the selection anchor, "." is the cursor —
+						-- swap if selection was made bottom-to-top
+						local s_line = vim.fn.line("v")
+						local e_line = vim.fn.line(".")
+						local s_col = vim.fn.col("v")
+						local e_col = vim.fn.col(".")
+						if s_line > e_line or (s_line == e_line and s_col > e_col) then
+							s_line, e_line = e_line, s_line
+							s_col, e_col = e_col, s_col
+						end
+						local path = vim.fn.expand("%:p")
+						local range
+						if vim.fn.mode() == "V" then
+							-- linewise (V): cols are always 1/EOL, omit them
+							-- → /path/to/file.lua:10-20
+							range = s_line .. "-" .. e_line
+						else
+							-- charwise (v): include col positions
+							-- → /path/to/file.lua:10:5-20:15
+							range = s_line .. ":" .. s_col .. "-" .. e_line .. ":" .. e_col
+						end
+						vim.fn.setreg("+", path .. ":" .. range)
+					end) -- copy path with line or char range
 
 					local filetype = vim.bo[bufnr].filetype
 					if disable_semantic_tokens[filetype] then
