@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="45 30 240 150" width="240" height="150">
+
+  <!-- pixel_w=15, pixel_h=30, padding=30 -->
+  <!-- x = col*15 + 30,  y = row*30 + 30 -->
+
+  <!-- Row 0 (y=30): cols 3–14 -->
+  <rect x="75"  y="30"  width="180" height="30" fill="#CC7A55"/>
+
+  <!-- Row 1 (y=60): cols 3–4, eye@5, cols 6–11, eye@12, cols 13–14 -->
+  <rect x="75"  y="60"  width="30"  height="30" fill="#CC7A55"/>
+  <rect x="105" y="60"  width="15"  height="30" fill="black"/>
+  <rect x="120" y="60"  width="90"  height="30" fill="#CC7A55"/>
+  <rect x="210" y="60"  width="15"  height="30" fill="black"/>
+  <rect x="225" y="60"  width="30"  height="30" fill="#CC7A55"/>
+
+  <!-- Row 2 (y=90): cols 1–16 -->
+  <rect x="45"  y="90"  width="240" height="30" fill="#CC7A55"/>
+
+  <!-- Row 3 (y=120): cols 3–14 -->
+  <rect x="75"  y="120" width="180" height="30" fill="#CC7A55"/>
+
+  <!-- Row 4 (y=150): feet at cols 4, 6, 11, 13 -->
+  <rect x="90"  y="150" width="15"  height="30" fill="#CC7A55"/>
+  <rect x="120" y="150" width="15"  height="30" fill="#CC7A55"/>
+  <rect x="195" y="150" width="15"  height="30" fill="#CC7A55"/>
+  <rect x="225" y="150" width="15"  height="30" fill="#CC7A55"/>
+</svg>
