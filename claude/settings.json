@@ -1,0 +1,28 @@
+{
+  "alwaysThinkingEnabled": true,
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); TMUX_WIN=$(tmux display-message -p '#S:#I' 2>/dev/null || echo 'no-tmux'); echo \"[$(date)] [tmux:$TMUX_WIN] Notification hook — matcher: permission_prompt|idle_prompt|elicitation_dialog — type: $(echo \"$INPUT\" | jq -r '.notification_type // \"unknown\"')\" >> ~/.claude/hook-log.txt; afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); TMUX_WIN=$(tmux display-message -p '#S:#I' 2>/dev/null || echo 'no-tmux'); echo \"[$(date)] [tmux:$TMUX_WIN] Stop hook — data: $(echo \"$INPUT\" | jq -c '.')\" >> ~/.claude/hook-log.txt; afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}
+
