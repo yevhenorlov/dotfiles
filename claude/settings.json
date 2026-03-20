@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; osascript -e \"display notification \\\"Needs your attention\\\" with title \\\"$TITLE\\\"\"; afplay /System/Library/Sounds/Glass.aiff"
+            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; alerter --title \"$TITLE\" --message \"Needs your attention\" --app-icon ~/.claude/claude-logo.png; afplay /System/Library/Sounds/Glass.aiff"
           }
         ]
       }
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; osascript -e \"display notification \\\"Done\\\" with title \\\"$TITLE\\\"\"; afplay /System/Library/Sounds/Funk.aiff"
+            "command": "SESSION=$(tmux display-message -p '#{session_name}' 2>/dev/null || echo ''); TITLE=\"Claude Code${SESSION:+ [$SESSION]}\"; alerter --title \"$TITLE\" --message \"Done\" --app-icon ~/.claude/claude-logo.png; afplay /System/Library/Sounds/Funk.aiff"
           }
         ]
       }
