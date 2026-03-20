@@ -27,6 +27,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 loadenv() {
   set -o allexport
@@ -40,16 +41,7 @@ export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 
 # syntax-highlighting (must be at the end of the file)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
-# END opam configuration
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
