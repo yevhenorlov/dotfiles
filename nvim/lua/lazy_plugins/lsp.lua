@@ -30,8 +30,6 @@ return {
 					vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			end
 
-			local lspconfig = require("lspconfig")
-
 			local emmet_capabilities = vim.lsp.protocol.make_client_capabilities()
 			emmet_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -56,7 +54,7 @@ return {
 				tailwindcss = true,
 				-- vue_ls = true, -- runs in tandem with ts_ls (formerly tsserver) (https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L33)
 
-				tsserver = {
+				ts_ls = {
 					init_options = {
 						plugins = {
 							{
@@ -140,29 +138,18 @@ return {
 			vim.list_extend(ensure_installed, servers_to_install)
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			-- automatically install ensure_installed servers
-			require("mason-lspconfig").setup_handlers({
-				-- Will be called for each installed server that doesn't have
-				-- a dedicated handler.
-				--
-				function(server_name) -- default handler (optional)
-					-- https://github.com/neovim/nvim-lspconfig/pull/3232
-					if server_name == "tsserver" then
-						server_name = "ts_ls"
-					end
-				end,
-			})
+			require("mason-lspconfig").setup()
 
 			for name, config in pairs(servers) do
 				if config == true then
 					config = {}
 				end
-				config = vim.tbl_deep_extend("force", {}, {
-					capabilities = capabilities,
-				}, config)
+				config = vim.tbl_deep_extend("force", {}, { capabilities = capabilities }, config)
 
-				lspconfig[name].setup(config)
+				vim.lsp.config(name, config)
 			end
+			-- automatically install ensure_installed servers
+			vim.lsp.enable(vim.tbl_keys(servers))
 
 			local disable_semantic_tokens = {
 				lua = true,
