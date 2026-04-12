@@ -47,7 +47,7 @@ return {
 				prismals = true,
 				rust_analyzer = true,
 				tailwindcss = true,
-				-- vue_ls = true, -- runs in tandem with ts_ls (formerly tsserver) (https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L33)
+				vue_ls = true, -- runs in tandem with ts_ls (formerly tsserver) (https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L33)
 
 				ts_ls = {
 					init_options = {
