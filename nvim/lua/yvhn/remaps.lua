@@ -10,8 +10,8 @@ end)
 nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- navigate diagnostics
-nnoremap("]d", vim.diagnostic.goto_next)
-nnoremap("[d", vim.diagnostic.goto_prev)
+nnoremap("]d", function() vim.diagnostic.jump({ count = 1, float = true }) end)
+nnoremap("[d", function() vim.diagnostic.jump({ count = -1, float = true }) end)
 
 -- toggle zoom (tmux-like)
 nnoremap("<Leader>zi", "<cmd>:tab split<CR>")
