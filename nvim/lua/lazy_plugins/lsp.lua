@@ -33,16 +33,11 @@ return {
 			local emmet_capabilities = vim.lsp.protocol.make_client_capabilities()
 			emmet_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-			-- FIXME ideally this path should be fetched dynamically like so:
-			-- ```
-			-- local vue_language_server_path = require("mason-registry").get_package('vue-language-server'):get_install_path()
-			-- ```
-			-- but it currently cannot find the package by that name due to async shenanigans with initializing the registry.
-			-- (source: https://github.com/vuejs/language-tools/blob/0e52a2d21fdd7c68447b7cd3d5c06876762cdc8b/README.md?plain=1#L40)
-			--
-			-- a "good enough" workaround is to run the expression above via :lua=... and copy the output path here
-			local vue_language_server_path = os.getenv("HOME")
-				.. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
+			-- mason-registry.get_package("vue-language-server"):get_install_path() would be cleaner
+			-- but fails at config time due to async registry initialization. Mason always installs
+			-- to stdpath("data")/mason/packages/, so this is equivalent without the async issue.
+			local vue_language_server_path = vim.fn.stdpath("data")
+				.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 
 			local servers = {
 				bashls = true,
