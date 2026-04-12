@@ -33,20 +33,3 @@ nnoremap("<Leader>tz", vim.cmd.ToggleZenMode, {
 	desc = "Remove distractions and focus on the code",
 	silent = true,
 })
-
--- toggle copilot
-local is_copilot_enabled = true
-vim.api.nvim_create_user_command("ToggleCopilot", function()
-	if is_copilot_enabled then
-		vim.cmd(":Copilot disable")
-		print("Copilot disabled")
-	else
-		vim.cmd(":Copilot enable")
-		print("Copilot enabled")
-	end
-	is_copilot_enabled = not is_copilot_enabled
-end, {})
-nnoremap("<Leader>tc", vim.cmd.ToggleCopilot, {
-	desc = "Toggle Copilot",
-})
-nnoremap("<Leader>cs", "<cmd>:Copilot status<CR>")

@@ -25,6 +25,3 @@ require("lazy").setup("lazy_plugins", {
 	},
 })
 require("yvhn")
-
--- disable Copilot by default
-vim.cmd(":Copilot disable")
