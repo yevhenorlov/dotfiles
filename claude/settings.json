@@ -1,5 +1,4 @@
 {
-  "alwaysThinkingEnabled": true,
   "hooks": {
     "Notification": [
       {
@@ -25,5 +24,9 @@
         ]
       }
     ]
+  },
+  "alwaysThinkingEnabled": true,
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
   }
 }
