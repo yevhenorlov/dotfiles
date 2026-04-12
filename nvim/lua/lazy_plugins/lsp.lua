@@ -128,7 +128,7 @@ return {
 			local ensure_installed = {
 				"eslint_d",
 				"lua_ls",
-				-- "prettierd",
+				"prettierd",
 				"shfmt",
 				"stylua",
 				-- "delve",
