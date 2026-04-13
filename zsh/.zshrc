@@ -29,6 +29,9 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export GOROOT=$(brew --prefix go)/libexec
+export PATH=$PATH:$GOROOT/bin
+
 loadenv() {
   set -o allexport
   source .dev
