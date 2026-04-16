@@ -18,16 +18,6 @@ Plugins currently loading at startup that could be deferred:
 
 **Skip:** `theme` (must load first, `priority=1000`), `mini` (statusline/pairs need to be immediate).
 
-## Migrate nvim-treesitter to `main` branch (nvim 0.12+ compatibility)
-
-The `master` branch was archived April 2026. The `main` branch is a full rewrite for nvim 0.12+.
-Currently causing: `Decoration provider "conceal_line"` errors on markdown files.
-
-**Steps:**
-1. Install `tree-sitter` CLI: `brew install tree-sitter`
-2. In `lazy_plugins/treesitter.lua`: change `-- no branch` → `branch = "main"`
-3. Replace `require("nvim-treesitter.configs").setup({...})` with the new `require("nvim-treesitter")` API
-4. Highlighting/indentation wired via `FileType` autocmds instead of config table
-5. Run `:TSUninstall all` then `:TSUpdate` to recompile parsers
+## ~~Migrate nvim-treesitter to `main` branch (nvim 0.12+ compatibility)~~ ✓ Done
 
 **Reference:** https://www.qu8n.com/posts/treesitter-migration-guide-for-nvim-0-12
