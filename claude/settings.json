@@ -1,4 +1,9 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "model": "sonnet",
   "hooks": {
     "Notification": [
       {
@@ -30,9 +35,6 @@
     "lua-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "model": "sonnet"
+  "effortLevel": "medium",
+  "editorMode": "vim"
 }
