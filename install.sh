@@ -58,3 +58,6 @@ npm install -g prettier tldr typescript @vue/language-server
 
 # for faster search from Telescope.nvim
 brew install ripgrep
+
+# node version manager
+brew install fnm
