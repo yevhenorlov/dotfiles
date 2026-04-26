@@ -45,8 +45,8 @@ ln -sfn "$DotfilesPath/nvim/init.lua" "$ConfigPath/nvim/init.lua"
 
 # tmux
 ln -sfn "$DotfilesPath/.tmux.conf" "$HOME/.tmux.conf"
-ln -sfn "$DotfilesPath/tmux-sessionizer" "/usr/local/bin/tmux-sessionizer"
-ln -sfn "$DotfilesPath/tmux-cht.sh" "/usr/local/bin/tmux-cht.sh"
+ln -sfn "$DotfilesPath/tmux-sessionizer" "/opt/homebrew/bin/tmux-sessionizer"
+ln -sfn "$DotfilesPath/tmux-cht.sh" "/opt/homebrew/bin/tmux-cht.sh"
 
 # karabiner
 ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabiner.json"
