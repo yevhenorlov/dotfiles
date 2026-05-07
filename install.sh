@@ -51,6 +51,13 @@ ln -sfn "$DotfilesPath/tmux-cht.sh" "/opt/homebrew/bin/tmux-cht.sh"
 # karabiner
 ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabiner.json"
 
+# claude
+if command -v claude &>/dev/null; then
+  ln -sfn "$DotfilesPath/claude/skills" "$HOME/.claude/skills"
+else
+  echo "Claude not installed. Skipping \`skills\` symlink..."
+fi
+
 # npm dependencies that were not handled by mason.nvim etc.
 # to update the list, check
 # npm list -g --depth 0
