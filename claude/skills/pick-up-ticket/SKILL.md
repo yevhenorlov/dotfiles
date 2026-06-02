@@ -1,7 +1,7 @@
 ---
 name: pick-up-ticket
 description: "Pick up a Linear ticket to work on — fetches ticket details, creates a git branch, updates status to In Progress, then grills the developer on requirements and produces a task plan. Usage: /pick-up-ticket [TICKET-ID]. If no ID given, lists tickets assigned to you."
-tools: mcp__linear-server__get_issue, mcp__linear-server__list_issues, mcp__linear-server__list_users, mcp__linear-server__list_issue_statuses, mcp__linear-server__list_teams, mcp__linear-server__save_issue
+tools: mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_users, mcp__claude_ai_Linear__list_issue_statuses, mcp__claude_ai_Linear__list_teams, mcp__claude_ai_Linear__save_issue
 ---
 
 # Pick Up Ticket
