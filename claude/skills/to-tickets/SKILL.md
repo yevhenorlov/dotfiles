@@ -1,7 +1,7 @@
 ---
 name: to-tickets
 description: Quiz the user to fill in a ticket template field-by-field, then publish it to Linear. Use when the user wants to create a Linear issue, ticket, or task.
-tools: mcp__claude_ai_Linear__list_teams, mcp__claude_ai_Linear__list_users, mcp__claude_ai_Linear__list_issue_labels, mcp__claude_ai_Linear__save_issue
+allowed-tools: mcp__claude_ai_Linear__list_teams, mcp__claude_ai_Linear__list_users, mcp__claude_ai_Linear__list_issue_labels, mcp__claude_ai_Linear__save_issue
 ---
 
 # To-Tickets

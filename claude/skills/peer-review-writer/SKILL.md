@@ -1,7 +1,7 @@
 ---
 name: peer-review-writer
 description: Write a structured peer performance review for a colleague by asking the user targeted questions and filling out the review template. Use when the user wants to write a peer review, performance feedback, or 360 review for someone on their team.
-tools: AskUserQuestion, Bash
+allowed-tools: AskUserQuestion, Bash
 ---
 
 # Peer Review Writer
