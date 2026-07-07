@@ -1,5 +1,7 @@
-# local config
-.claude
+# local config — keep shareable .claude/ (skills, agents, settings.json) trackable,
+# ignore only machine-local files
+.claude/settings.local.json
+.claude/worktrees/
 # secrets
 .env
 
