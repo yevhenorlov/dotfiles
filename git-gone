@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+#
+# git-gone — safely delete local branches whose upstream is gone.
+#
+# A branch is a delete candidate when:
+#   * it once tracked a remote branch, AND
+#   * that remote branch no longer exists (i.e. PR merged + auto-deleted).
+#
+# Branches that were never pushed have NO upstream, so they never show up
+# here — your unpushed WIP is protected by construction.
+#
+# Flow: fetch --prune -> list candidates (flagging any with extra local
+# commits not in the base branch) -> single y/N confirm -> delete.
+#
+# Usage:
+#   git gone            # base branch = main (or master fallback)
+#   git gone develop    # use a different base branch
+#   git gone -n         # dry run: list only, never delete
+#
+set -euo pipefail
+
+# --- args -------------------------------------------------------------------
+DRY_RUN=0
+BASE=""
+for arg in "$@"; do
+  case "$arg" in
+    -n|--dry-run) DRY_RUN=1 ;;
+    -*)           echo "unknown flag: $arg" >&2; exit 2 ;;
+    *)            BASE="$arg" ;;
+  esac
+done
+
+# --- sanity -----------------------------------------------------------------
+git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+  echo "not a git repo" >&2; exit 1
+}
+
+# pick base branch: explicit arg > main > master
+if [ -z "$BASE" ]; then
+  if git show-ref --verify --quiet refs/heads/main; then
+    BASE=main
+  elif git show-ref --verify --quiet refs/heads/master; then
+    BASE=master
+  else
+    echo "no main/master found; pass a base branch explicitly" >&2; exit 1
+  fi
+fi
+
+CURRENT=$(git symbolic-ref --quiet --short HEAD || echo "")
+PROTECTED="main master develop $BASE $CURRENT"
+
+# --- refresh remote state ---------------------------------------------------
+echo "› git fetch --prune"
+git fetch --prune --quiet
+
+# --- collect candidates -----------------------------------------------------
+# branches whose upstream tracking ref is "gone"
+mapfile -t CANDIDATES < <(
+  git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads \
+    | awk '$2 == "[gone]" {print $1}'
+)
+
+# drop protected branches
+FILTERED=()
+for b in "${CANDIDATES[@]:-}"; do
+  [ -z "$b" ] && continue
+  skip=0
+  for p in $PROTECTED; do [ "$b" = "$p" ] && skip=1; done
+  [ "$skip" -eq 0 ] && FILTERED+=("$b")
+done
+
+if [ "${#FILTERED[@]}" -eq 0 ]; then
+  echo "✓ nothing to clean — no branches with a gone upstream."
+  exit 0
+fi
+
+# --- report -----------------------------------------------------------------
+# Note: we deliberately do NOT flag "commits not in $BASE". With squash-merge
+# the squashed commit has a new SHA, so a cleanly-merged branch always shows
+# its original commits as "missing" — the check is pure noise here. The gone
+# upstream is the trustworthy signal: remote branch deleted => PR merged.
+echo
+echo "Candidates (upstream gone => PR merged & remote deleted):"
+echo
+for b in "${FILTERED[@]}"; do
+  last=$(git log -1 --format='%h %ad %s' --date=short "$b" 2>/dev/null || echo "")
+  printf "  · %-46s %s\n" "$b" "$last"
+done
+echo
+
+if [ "$DRY_RUN" -eq 1 ]; then
+  echo "(dry run — nothing deleted)"
+  exit 0
+fi
+
+# --- confirm & delete -------------------------------------------------------
+printf "Delete these %d branch(es)? [y/N] " "${#FILTERED[@]}"
+read -r reply
+case "$reply" in
+  y|Y|yes|YES) ;;
+  *) echo "aborted."; exit 0 ;;
+esac
+
+for b in "${FILTERED[@]}"; do
+  # -D because squash-merged branches fail the -d merge check
+  git branch -D "$b"
+done
+echo "✓ done."

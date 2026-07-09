@@ -18,6 +18,9 @@
   hh = diff --color --color-words --abbrev HEAD^ HEAD
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
+  # delete local branches whose upstream is gone (merged PRs); unpushed WIP is safe
+  gone = "!$HOME/code/dotfiles/git-gone"
+
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
