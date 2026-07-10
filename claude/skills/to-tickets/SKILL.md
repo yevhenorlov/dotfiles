@@ -10,10 +10,11 @@ Create a Linear ticket by quizzing the user field-by-field, then publishing.
 
 ## Phase 0: Fetch Linear data upfront
 
-Before asking anything, fetch all three in parallel:
+Before asking anything, fetch both in parallel:
 - `list_teams` — to offer team options and resolve team ID
 - `list_users` — to offer assignee options and resolve user ID
-- `list_issue_labels` — to offer label options and resolve label IDs
+
+Do NOT fetch labels yet — labels are fetched after the team is chosen (see step 9).
 
 ## Phase 1: Read template
 
@@ -41,7 +42,7 @@ Field order (maps to TEMPLATE.md placeholders):
 
 8. **Team** — present a numbered list of teams fetched from Linear. Ask the user to pick one. *(not in template; metadata)*
 
-9. **Labels** *(optional)* — present available labels for the chosen team. Pick any or skip. *(metadata)*
+9. **Labels** *(optional)* — after the team is chosen, fetch labels filtered by that team. Paginate (`cursor`) until `hasNextPage` is false to get the full list. Present all labels and let the user pick any or skip. *(metadata)*
 
 10. **Assignee** *(optional)* — present a numbered list of users. Pick one or skip. *(metadata)*
 
@@ -62,6 +63,6 @@ Ask: "Publish this to Linear?" — wait for explicit confirmation before proceed
 
 ## Phase 4: Publish
 
-1. Resolve all names to IDs (team, labels, assignee) using the data fetched in Phase 0.
+1. Resolve all names to IDs (team, labels, assignee) using the data fetched in Phase 0 and step 9.
 2. Call `save_issue` with: title and body from the rendered template, plus type/team/labels/assignee.
 3. Output the resulting ticket URL to the user.

@@ -3,7 +3,39 @@
     "commit": "",
     "pr": ""
   },
-  "model": "sonnet",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(echo *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(type *)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git stash list *)",
+      "Bash(git ls-files *)",
+      "Bash(git blame *)",
+      "Bash(npm list *)",
+      "Bash(npm run *)",
+      "Bash(node *)",
+      "Bash(jq *)",
+      "Bash(rg *)",
+      "WebSearch"
+    ]
+  },
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -30,11 +62,16 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/y.orlov/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "medium",
+  "effortLevel": "high",
+  "tui": "fullscreen",
   "editorMode": "vim"
 }
