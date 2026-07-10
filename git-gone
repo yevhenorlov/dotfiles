@@ -9,8 +9,9 @@
 # Branches that were never pushed have NO upstream, so they never show up
 # here — your unpushed WIP is protected by construction.
 #
-# Flow: fetch --prune -> list candidates (flagging any with extra local
-# commits not in the base branch) -> single y/N confirm -> delete.
+# Flow: fetch --prune -> list candidates oldest-first (branch, date, author)
+# -> walk them one-by-one with a per-branch y/n/a/q prompt -> delete on the
+# spot. No all-or-nothing batch step.
 #
 # Usage:
 #   git gone            # base branch = main (or master fallback)
@@ -54,19 +55,25 @@ echo "› git fetch --prune"
 git fetch --prune --quiet
 
 # --- collect candidates -----------------------------------------------------
-# branches whose upstream tracking ref is "gone"
-mapfile -t CANDIDATES < <(
-  git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads \
-    | awk '$2 == "[gone]" {print $1}'
+# One for-each-ref pass, sorted oldest tip first, carrying everything we need:
+# track state, branch, committer date, author, short hash, subject. Fields are
+# tab-separated (git subjects/authors don't contain tabs).
+TAB=$'\t'
+mapfile -t RECORDS < <(
+  git for-each-ref --sort=committerdate \
+    --format="%(upstream:track)${TAB}%(refname:short)${TAB}%(committerdate:short)${TAB}%(authorname)${TAB}%(objectname:short)${TAB}%(contents:subject)" \
+    refs/heads
 )
 
-# drop protected branches
+# keep only [gone] upstreams, minus protected branches
 FILTERED=()
-for b in "${CANDIDATES[@]:-}"; do
-  [ -z "$b" ] && continue
+for rec in "${RECORDS[@]:-}"; do
+  [ -z "$rec" ] && continue
+  IFS="$TAB" read -r track branch _cdate _author _hash _subject <<<"$rec"
+  [ "$track" = "[gone]" ] || continue
   skip=0
-  for p in $PROTECTED; do [ "$b" = "$p" ] && skip=1; done
-  [ "$skip" -eq 0 ] && FILTERED+=("$b")
+  for p in $PROTECTED; do [ "$branch" = "$p" ] && skip=1; done
+  [ "$skip" -eq 0 ] && FILTERED+=("$rec")
 done
 
 if [ "${#FILTERED[@]}" -eq 0 ]; then
@@ -80,11 +87,11 @@ fi
 # its original commits as "missing" — the check is pure noise here. The gone
 # upstream is the trustworthy signal: remote branch deleted => PR merged.
 echo
-echo "Candidates (upstream gone => PR merged & remote deleted):"
+echo "Candidates (oldest first; upstream gone => PR merged & remote deleted):"
 echo
-for b in "${FILTERED[@]}"; do
-  last=$(git log -1 --format='%h %ad %s' --date=short "$b" 2>/dev/null || echo "")
-  printf "  · %-46s %s\n" "$b" "$last"
+for rec in "${FILTERED[@]}"; do
+  IFS="$TAB" read -r _track branch cdate author hash subject <<<"$rec"
+  printf "  · %-34s %s  %-16s %s  %s\n" "$branch" "$cdate" "$author" "$hash" "$subject"
 done
 echo
 
@@ -93,16 +100,46 @@ if [ "$DRY_RUN" -eq 1 ]; then
   exit 0
 fi
 
-# --- confirm & delete -------------------------------------------------------
-printf "Delete these %d branch(es)? [y/N] " "${#FILTERED[@]}"
-read -r reply
-case "$reply" in
-  y|Y|yes|YES) ;;
-  *) echo "aborted."; exit 0 ;;
-esac
+# --- walk & delete ----------------------------------------------------------
+# Per-branch prompt, oldest first, immediate delete. Vocabulary mirrors
+# `git add -p`: y/n/a/q, with ? for help. Empty or unrecognized input keeps
+# the branch (safe default). EOF on stdin is treated as quit.
+assume_yes=0
+quit=0
+deleted=0
+total=${#FILTERED[@]}
 
-for b in "${FILTERED[@]}"; do
-  # -D because squash-merged branches fail the -d merge check
-  git branch -D "$b"
+for rec in "${FILTERED[@]}"; do
+  IFS="$TAB" read -r _track branch _cdate _author _hash _subject <<<"$rec"
+
+  if [ "$assume_yes" -eq 1 ]; then
+    git branch -D "$branch" >/dev/null && echo "  deleted $branch"
+    deleted=$((deleted + 1))
+    continue
+  fi
+
+  while true; do
+    printf "Delete branch '%s'? [y,n,a,q,?] " "$branch"
+    if ! IFS= read -r reply; then reply=q; fi
+    case "$reply" in
+      y|Y)
+        git branch -D "$branch" >/dev/null && echo "  deleted $branch"
+        deleted=$((deleted + 1)); break ;;
+      a|A)
+        git branch -D "$branch" >/dev/null && echo "  deleted $branch"
+        deleted=$((deleted + 1)); assume_yes=1; break ;;
+      q|Q)
+        quit=1; break ;;
+      n|N|"")
+        break ;;
+      \?)
+        printf '  y - delete this branch\n  n - keep it, next\n  a - delete this and all remaining\n  q - quit, keep the rest\n' ;;
+      *)
+        : ;;  # unrecognized -> re-ask
+    esac
+  done
+
+  [ "$quit" -eq 1 ] && break
 done
-echo "✓ done."
+
+echo "✓ deleted $deleted, kept $((total - deleted))"
