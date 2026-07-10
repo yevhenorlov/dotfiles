@@ -12,10 +12,11 @@ This file records their provenance and preserves the required license notices.
 
 Skills in this directory that originate from that repo:
 
-| Skill      | Relation        | Upstream path                        |
-| ---------- | --------------- | ------------------------------------ |
-| `teach`    | verbatim copy   | `skills/productivity/teach`          |
-| `grill-me` | adapted         | `skills/productivity/grill-me`       |
+| Skill       | Relation        | Upstream path                        |
+| ----------- | --------------- | ------------------------------------ |
+| `teach`     | verbatim copy   | `skills/productivity/teach`          |
+| `wayfinder` | verbatim copy   | `skills/engineering/wayfinder`       |
+| `grill-me`  | adapted         | `skills/productivity/grill-me`       |
 
 > `to-tickets` shares a name with an upstream skill but is an independent,
 > original skill — not derived from that repo.
