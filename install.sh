@@ -53,7 +53,14 @@ ln -sfn "$DotfilesPath/karabiner/karabiner.json" "$ConfigPath/karabiner/karabine
 
 # claude
 if command -v claude &>/dev/null; then
-  ln -sfn "$DotfilesPath/claude/skills" "$HOME/.claude/skills"
+  SkillsPath="$HOME/.claude/skills"
+  # Bail if something real (not our symlink) is already there — otherwise
+  # `ln -sfn` would nest the link inside it (~/.claude/skills/skills).
+  if [[ -e "$SkillsPath" && ! -L "$SkillsPath" ]]; then
+    echo "ERROR: $SkillsPath already exists and is not a symlink. Back it up or remove it, then re-run."
+    exit 1
+  fi
+  ln -sfn "$DotfilesPath/claude/skills" "$SkillsPath"
 else
   echo "Claude not installed. Skipping \`skills\` symlink..."
 fi
