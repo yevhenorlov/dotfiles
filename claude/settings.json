@@ -74,5 +74,6 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "tui": "fullscreen",
+  "theme": "light-daltonized",
   "editorMode": "vim"
 }
