@@ -1,7 +1,7 @@
 # fork of ohmyzsh theme called "minimal": https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/minimal.zsh-theme
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[white]%}["
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[cyan]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}●%{$fg[white]%}]%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}●%{$fg[cyan]%}]%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN="]%{$reset_color%} "
 
 ZSH_THEME_SVN_PROMPT_PREFIX="$ZSH_THEME_GIT_PROMPT_PREFIX"
