@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "tool": "tts_open_toolkit",
+  "installedAt": "2026-07-20T14:37:21.498Z",
+  "installedHash": "eaffb91666590474e80add513a1b4622553beda3cea964cf90ead4b7bd5f29c7",
+  "name": "tts-openapi-guide",
+  "source": {
+    "type": "bundled",
+    "name": "tts-openapi-guide"
+  },
+  "target": {
+    "agent": "cc"
+  }
+}

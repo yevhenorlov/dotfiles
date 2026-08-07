@@ -1,0 +1,483 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "tiktok shop openapi",
+    "description": "sdk for apis",
+    "version": "1.0.0"
+  },
+  "split_by": "first_level_path",
+  "total_paths": 405,
+  "module_count": 25,
+  "modules": [
+    {
+      "first_level_path": "affiliate",
+      "file": "paths/affiliate.json",
+      "path_count": 11,
+      "versions": [
+        "202309",
+        "202402",
+        "202403"
+      ],
+      "sample_paths": [
+        "/affiliate/202309/live_rooms",
+        "/affiliate/202309/live_rooms/products",
+        "/affiliate/202309/live_rooms/products/top",
+        "/affiliate/202309/live_rooms/products/{product_id}/pin",
+        "/affiliate/202309/live_rooms/products/{product_id}/unpin"
+      ]
+    },
+    {
+      "first_level_path": "affiliate_creator",
+      "file": "paths/affiliate_creator.json",
+      "path_count": 29,
+      "versions": [
+        "202405",
+        "202407",
+        "202409",
+        "202410",
+        "202412",
+        "202501",
+        "202504",
+        "202505",
+        "202508",
+        "202509",
+        "202511",
+        "202512",
+        "202601"
+      ],
+      "sample_paths": [
+        "/affiliate_creator/202405/open_collaborations/products/search",
+        "/affiliate_creator/202405/orders/search",
+        "/affiliate_creator/202405/profiles",
+        "/affiliate_creator/202405/showcases/products",
+        "/affiliate_creator/202405/showcases/products/add"
+      ]
+    },
+    {
+      "first_level_path": "affiliate_partner",
+      "file": "paths/affiliate_partner.json",
+      "path_count": 16,
+      "versions": [
+        "202405",
+        "202411",
+        "202501",
+        "202504",
+        "202505",
+        "202508"
+      ],
+      "sample_paths": [
+        "/affiliate_partner/202405/campaigns",
+        "/affiliate_partner/202405/campaigns/{campaign_id}",
+        "/affiliate_partner/202405/campaigns/{campaign_id}/partial_edit",
+        "/affiliate_partner/202405/campaigns/{campaign_id}/products",
+        "/affiliate_partner/202405/campaigns/{campaign_id}/products/{product_id}/promotion_link/generate"
+      ]
+    },
+    {
+      "first_level_path": "affiliate_seller",
+      "file": "paths/affiliate_seller.json",
+      "path_count": 46,
+      "versions": [
+        "202405",
+        "202406",
+        "202409",
+        "202410",
+        "202412",
+        "202505",
+        "202507",
+        "202508",
+        "202509",
+        "202511",
+        "202512",
+        "202601"
+      ],
+      "sample_paths": [
+        "/affiliate_seller/202405/open_collaboration_settings",
+        "/affiliate_seller/202405/open_collaborations",
+        "/affiliate_seller/202405/open_collaborations/products/search",
+        "/affiliate_seller/202405/open_collaborations/{open_collaboration_id}/remove_creator",
+        "/affiliate_seller/202405/orders/search"
+      ]
+    },
+    {
+      "first_level_path": "analytics",
+      "file": "paths/analytics.json",
+      "path_count": 35,
+      "versions": [
+        "202309",
+        "202403",
+        "202405",
+        "202406",
+        "202409",
+        "202503",
+        "202505",
+        "202508",
+        "202509",
+        "202510",
+        "202512"
+      ],
+      "sample_paths": [
+        "/analytics/202309/live_rooms/{live_room_id}/core_stats",
+        "/analytics/202309/live_rooms/{live_room_id}/gmv_trend_performances",
+        "/analytics/202309/live_rooms/{live_room_id}/interactive_trend_performances",
+        "/analytics/202309/live_rooms/{live_room_id}/product_stats",
+        "/analytics/202309/live_rooms/{live_room_id}/traffic_performances"
+      ]
+    },
+    {
+      "first_level_path": "authorization",
+      "file": "paths/authorization.json",
+      "path_count": 5,
+      "versions": [
+        "202309",
+        "202312",
+        "202401",
+        "202403",
+        "202405"
+      ],
+      "sample_paths": [
+        "/authorization/202309/shops",
+        "/authorization/202312/widget_token",
+        "/authorization/202401/widget_token",
+        "/authorization/202403/shops",
+        "/authorization/202405/category_assets"
+      ]
+    },
+    {
+      "first_level_path": "customer_engagement",
+      "file": "paths/customer_engagement.json",
+      "path_count": 7,
+      "versions": [
+        "202412",
+        "202501",
+        "202502"
+      ],
+      "sample_paths": [
+        "/customer_engagement/202412/engagement_tasks",
+        "/customer_engagement/202412/message_templates",
+        "/customer_engagement/202412/messages",
+        "/customer_engagement/202412/performances",
+        "/customer_engagement/202501/customer_tab/visibility"
+      ]
+    },
+    {
+      "first_level_path": "customer_service",
+      "file": "paths/customer_service.json",
+      "path_count": 7,
+      "versions": [
+        "202309",
+        "202407",
+        "202601"
+      ],
+      "sample_paths": [
+        "/customer_service/202309/agents/settings",
+        "/customer_service/202309/conversations",
+        "/customer_service/202309/conversations/{conversation_id}/messages",
+        "/customer_service/202309/conversations/{conversation_id}/messages/read",
+        "/customer_service/202309/images/upload"
+      ]
+    },
+    {
+      "first_level_path": "data_reconciliation",
+      "file": "paths/data_reconciliation.json",
+      "path_count": 3,
+      "versions": [
+        "202309",
+        "202310",
+        "202401"
+      ],
+      "sample_paths": [
+        "/data_reconciliation/202309/orders/sync",
+        "/data_reconciliation/202310/orders/import",
+        "/data_reconciliation/202401/orders/import"
+      ]
+    },
+    {
+      "first_level_path": "epharmacy",
+      "file": "paths/epharmacy.json",
+      "path_count": 5,
+      "versions": [
+        "202504",
+        "202507"
+      ],
+      "sample_paths": [
+        "/epharmacy/202504/orders/{order_id}/update_prescription_status",
+        "/epharmacy/202504/pharmacies",
+        "/epharmacy/202504/pharmacies/update",
+        "/epharmacy/202504/products/{product_id}/prescription_requirements/update",
+        "/epharmacy/202507/consultations/{consultation_id}/providers"
+      ]
+    },
+    {
+      "first_level_path": "event",
+      "file": "paths/event.json",
+      "path_count": 1,
+      "versions": [
+        "202309"
+      ],
+      "sample_paths": [
+        "/event/202309/webhooks"
+      ]
+    },
+    {
+      "first_level_path": "fbt",
+      "file": "paths/fbt.json",
+      "path_count": 10,
+      "versions": [
+        "202408",
+        "202409",
+        "202410",
+        "202601"
+      ],
+      "sample_paths": [
+        "/fbt/202408/inventory/search",
+        "/fbt/202408/warehouses",
+        "/fbt/202409/goods/search",
+        "/fbt/202409/inbound_orders",
+        "/fbt/202409/merchants/onboarded_regions"
+      ]
+    },
+    {
+      "first_level_path": "finance",
+      "file": "paths/finance.json",
+      "path_count": 9,
+      "versions": [
+        "202309",
+        "202501",
+        "202504",
+        "202507"
+      ],
+      "sample_paths": [
+        "/finance/202309/orders/{order_id}/statement_transactions",
+        "/finance/202309/payments",
+        "/finance/202309/statements",
+        "/finance/202309/statements/{statement_id}/statement_transactions",
+        "/finance/202309/withdrawals"
+      ]
+    },
+    {
+      "first_level_path": "fulfillment",
+      "file": "paths/fulfillment.json",
+      "path_count": 29,
+      "versions": [
+        "202309",
+        "202407",
+        "202408",
+        "202502",
+        "202508",
+        "202510",
+        "202512",
+        "202601"
+      ],
+      "sample_paths": [
+        "/fulfillment/202309/combinable_packages/search",
+        "/fulfillment/202309/files/upload",
+        "/fulfillment/202309/images/upload",
+        "/fulfillment/202309/orders/split_attributes",
+        "/fulfillment/202309/orders/{order_id}/handover_time_slots"
+      ]
+    },
+    {
+      "first_level_path": "gs_full_service_commodity",
+      "file": "paths/gs_full_service_commodity.json",
+      "path_count": 36,
+      "versions": [
+        "202404",
+        "202405",
+        "202406",
+        "202407",
+        "202408",
+        "202410",
+        "202503",
+        "202504",
+        "202507",
+        "202508",
+        "202509"
+      ],
+      "sample_paths": [
+        "/gs_full_service_commodity/202404/preview/brands",
+        "/gs_full_service_commodity/202404/preview/categories/search",
+        "/gs_full_service_commodity/202404/preview/categories/{category_id}",
+        "/gs_full_service_commodity/202404/preview/categories/{category_id}/attributes",
+        "/gs_full_service_commodity/202405/beta/brands"
+      ]
+    },
+    {
+      "first_level_path": "gs_full_service_inventory",
+      "file": "paths/gs_full_service_inventory.json",
+      "path_count": 4,
+      "versions": [
+        "202404",
+        "202405"
+      ],
+      "sample_paths": [
+        "/gs_full_service_inventory/202404/preview/virtual_inventory/query",
+        "/gs_full_service_inventory/202404/preview/virtual_inventory/update",
+        "/gs_full_service_inventory/202405/beta/virtual_inventory/query",
+        "/gs_full_service_inventory/202405/beta/virtual_inventory/update"
+      ]
+    },
+    {
+      "first_level_path": "gs_full_service_shipment",
+      "file": "paths/gs_full_service_shipment.json",
+      "path_count": 33,
+      "versions": [
+        "202405",
+        "202407",
+        "202409",
+        "202410",
+        "202503"
+      ],
+      "sample_paths": [
+        "/gs_full_service_shipment/202405/beta/delivery_orders",
+        "/gs_full_service_shipment/202405/beta/delivery_orders/confirm",
+        "/gs_full_service_shipment/202405/beta/delivery_orders/delivery_batchs",
+        "/gs_full_service_shipment/202405/beta/delivery_orders/documents",
+        "/gs_full_service_shipment/202405/beta/delivery_orders/reserve_ship"
+      ]
+    },
+    {
+      "first_level_path": "logistics",
+      "file": "paths/logistics.json",
+      "path_count": 8,
+      "versions": [
+        "202309",
+        "202412",
+        "202502",
+        "202510"
+      ],
+      "sample_paths": [
+        "/logistics/202309/delivery_options/{delivery_option_id}/shipping_providers",
+        "/logistics/202309/global_warehouses",
+        "/logistics/202309/warehouses",
+        "/logistics/202309/warehouses/{warehouse_id}/delivery_options",
+        "/logistics/202412/addresses/standardize"
+      ]
+    },
+    {
+      "first_level_path": "order",
+      "file": "paths/order.json",
+      "path_count": 9,
+      "versions": [
+        "202309",
+        "202406",
+        "202407",
+        "202507",
+        "202511"
+      ],
+      "sample_paths": [
+        "/order/202309/orders",
+        "/order/202309/orders/search",
+        "/order/202309/privileged_orders",
+        "/order/202406/orders/external_order_search",
+        "/order/202406/orders/external_orders"
+      ]
+    },
+    {
+      "first_level_path": "product",
+      "file": "paths/product.json",
+      "path_count": 72,
+      "versions": [
+        "202309",
+        "202312",
+        "202401",
+        "202404",
+        "202405",
+        "202407",
+        "202409",
+        "202411",
+        "202501",
+        "202502",
+        "202503",
+        "202505",
+        "202506",
+        "202507",
+        "202508",
+        "202509",
+        "202601"
+      ],
+      "sample_paths": [
+        "/product/202309/brands",
+        "/product/202309/brands/recommend",
+        "/product/202309/categories",
+        "/product/202309/categories/recommend",
+        "/product/202309/categories/{category_id}/attributes"
+      ]
+    },
+    {
+      "first_level_path": "promotion",
+      "file": "paths/promotion.json",
+      "path_count": 7,
+      "versions": [
+        "202309",
+        "202406"
+      ],
+      "sample_paths": [
+        "/promotion/202309/activities",
+        "/promotion/202309/activities/search",
+        "/promotion/202309/activities/{activity_id}",
+        "/promotion/202309/activities/{activity_id}/deactivate",
+        "/promotion/202309/activities/{activity_id}/products"
+      ]
+    },
+    {
+      "first_level_path": "return_refund",
+      "file": "paths/return_refund.json",
+      "path_count": 14,
+      "versions": [
+        "202309",
+        "202405",
+        "202512"
+      ],
+      "sample_paths": [
+        "/return_refund/202309/cancellations",
+        "/return_refund/202309/cancellations/search",
+        "/return_refund/202309/cancellations/{cancel_id}/approve",
+        "/return_refund/202309/cancellations/{cancel_id}/reject",
+        "/return_refund/202309/orders/{order_id}/aftersale_eligibility"
+      ]
+    },
+    {
+      "first_level_path": "review_rating",
+      "file": "paths/review_rating.json",
+      "path_count": 3,
+      "versions": [
+        "202410",
+        "202508"
+      ],
+      "sample_paths": [
+        "/review_rating/202410/media/upload",
+        "/review_rating/202410/product_reviews",
+        "/review_rating/202508/product_reviews"
+      ]
+    },
+    {
+      "first_level_path": "seller",
+      "file": "paths/seller.json",
+      "path_count": 5,
+      "versions": [
+        "202309",
+        "202407",
+        "202508"
+      ],
+      "sample_paths": [
+        "/seller/202309/permissions",
+        "/seller/202309/shops",
+        "/seller/202407/shop_creators",
+        "/seller/202508/collections/sync",
+        "/seller/202508/status"
+      ]
+    },
+    {
+      "first_level_path": "supply_chain",
+      "file": "paths/supply_chain.json",
+      "path_count": 1,
+      "versions": [
+        "202309"
+      ],
+      "sample_paths": [
+        "/supply_chain/202309/packages/sync"
+      ]
+    }
+  ]
+}

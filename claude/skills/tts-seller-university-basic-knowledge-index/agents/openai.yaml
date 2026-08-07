@@ -1,0 +1,4 @@
+interface:
+  display_name: "商家基础知识索引"
+  short_description: "按分类查找商家大学文档 URL，适合外部开发者支持。"
+  default_prompt: "Use $tts-seller-university-basic-knowledge-index to find the Seller University category and URL for a merchant topic."

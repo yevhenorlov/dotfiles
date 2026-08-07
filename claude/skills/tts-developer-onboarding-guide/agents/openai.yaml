@@ -1,0 +1,4 @@
+interface:
+  display_name: "TTS Developer Onboarding"
+  short_description: "Compare ISV and seller custom-app onboarding paths."
+  default_prompt: "Use $tts-developer-onboarding-guide to choose the right TikTok Shop developer onboarding path."

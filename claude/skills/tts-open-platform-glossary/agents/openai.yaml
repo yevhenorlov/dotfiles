@@ -1,0 +1,5 @@
+interface:
+  display_name: "TTS Open Platform Glossary"
+  short_description: "Explain Open Platform and TTSPC terms for external users."
+  default_prompt: "Use $tts-open-platform-glossary to explain a TikTok Shop Open Platform term."
+

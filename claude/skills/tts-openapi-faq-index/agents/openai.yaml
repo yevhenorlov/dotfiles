@@ -1,0 +1,4 @@
+interface:
+  display_name: "TTS OpenAPI FAQ Index"
+  short_description: "Route common OpenAPI questions by topic category."
+  default_prompt: "Use $tts-openapi-faq-index to route this TikTok Shop OpenAPI question."

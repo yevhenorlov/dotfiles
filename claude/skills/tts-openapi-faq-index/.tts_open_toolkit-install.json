@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "tool": "tts_open_toolkit",
+  "installedAt": "2026-07-20T14:37:21.480Z",
+  "installedHash": "cd500acd9d8ebecabb342a06644cb0cd01cc5f9de72c6c18059ed620e894cd36",
+  "name": "tts-openapi-faq-index",
+  "source": {
+    "type": "bundled",
+    "name": "tts-openapi-faq-index"
+  },
+  "target": {
+    "agent": "cc"
+  }
+}

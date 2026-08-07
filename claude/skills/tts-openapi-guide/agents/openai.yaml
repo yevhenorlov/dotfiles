@@ -1,0 +1,4 @@
+interface:
+  display_name: "TTS OpenAPI Guide"
+  short_description: "Answer endpoint structure questions from bundled OAS first."
+  default_prompt: "Use $tts-openapi-guide to confirm this TikTok Shop OpenAPI structure from OAS first."
