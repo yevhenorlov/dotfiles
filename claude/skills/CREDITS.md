@@ -16,9 +16,32 @@ Skills in this directory that originate from that repo:
 | ---------- | --------------- | ------------------------------------ |
 | `teach`    | verbatim copy   | `skills/productivity/teach`          |
 | `grill-me` | adapted         | `skills/productivity/grill-me`       |
+| `improve-codebase-architecture` | adapted | `skills/engineering/improve-codebase-architecture` + `skills/engineering/codebase-design` |
+
+Adaptations to `improve-codebase-architecture` (upstream at
+`d80fa0f4ebe0c5714af0adf8670336065233ecc6`): the `codebase-design` vocabulary, principles and
+dependency categories are inlined, so it depends on no other skill; the CDN-based HTML report
+is replaced by a terminal report with ASCII sketches, with `show-me` or a self-contained local
+HTML file as the fallback; `GLOSSARY.md`/`docs/adr/` are replaced by discovering the project's
+own decision records, plans and rules at runtime; `grilling` is replaced by `grill-me` with an
+inline fallback; framework-collision, read-only, local-only and structure-not-data rules added.
 
 > `to-tickets` shares a name with an upstream skill but is an independent,
 > original skill — not derived from that repo.
+
+### humanlayer/skills
+
+- Repository: https://github.com/humanlayer/skills
+- License: MIT © 2026 HumanLayer (same MIT text as below, with this copyright line)
+- Pinned at: `ca7c8088db69e315a8b2deea43820270457f8f3c`
+
+| Skill     | Relation | Upstream path                                        |
+| --------- | -------- | ---------------------------------------------------- |
+| `show-me` | adapted  | `plugins/visual-pr/skills/visual-pr/references/show-me.md` |
+
+Adaptations: promoted from a `visual-pr` reference file to a standalone skill; `task-artifact`
+output replaced with one self-contained local HTML file (no CDN/remote assets) opened with
+`open`; local-only, ground-in-real-code and placeholder-data rules added.
 
 ---
 
