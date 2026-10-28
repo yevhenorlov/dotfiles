@@ -1,1 +1,9 @@
 .env
+
+# managed by tools, not authored here
+/plannotator*
+/find-skills
+/synced/
+/.trash/
+/*.local.md
+/*/*.local.md
