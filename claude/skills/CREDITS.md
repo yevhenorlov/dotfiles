@@ -27,6 +27,10 @@ HTML file as the fallback; `GLOSSARY.md`/`docs/adr/` are replaced by discovering
 own decision records, plans and rules at runtime; `grilling` is replaced by `grill-me` with an
 inline fallback; framework-collision, read-only, local-only and structure-not-data rules added.
 
+Adaptations to `grill-me`: upstream's one-line delegation to `grilling` is replaced by inlining
+its rounds/frontier interview (at `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d`), so it depends on
+no other skill; model invocation stays enabled; a closing summary step is added.
+
 Adaptations to `grill-with-docs` (upstream `skills/engineering/grill-with-docs` +
 `skills/productivity/grilling` + `skills/engineering/domain-modeling`, at
 `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d`): upstream's one-line delegation to `grilling` and
