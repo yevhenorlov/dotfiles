@@ -16,6 +16,7 @@ Skills in this directory that originate from that repo:
 | ---------- | --------------- | ------------------------------------ |
 | `teach`    | verbatim copy   | `skills/productivity/teach`          |
 | `grill-me` | adapted         | `skills/productivity/grill-me`       |
+| `grill-with-docs` | adapted  | `skills/engineering/grill-with-docs` (+ `grilling`, `domain-modeling`) |
 | `improve-codebase-architecture` | adapted | `skills/engineering/improve-codebase-architecture` + `skills/engineering/codebase-design` |
 
 Adaptations to `improve-codebase-architecture` (upstream at
@@ -25,6 +26,15 @@ is replaced by a terminal report with ASCII sketches, with `show-me` or a self-c
 HTML file as the fallback; `GLOSSARY.md`/`docs/adr/` are replaced by discovering the project's
 own decision records, plans and rules at runtime; `grilling` is replaced by `grill-me` with an
 inline fallback; framework-collision, read-only, local-only and structure-not-data rules added.
+
+Adaptations to `grill-with-docs` (upstream `skills/engineering/grill-with-docs` +
+`skills/productivity/grilling` + `skills/engineering/domain-modeling`, at
+`4ae2317ddb22b046e26455e4f9c9b3aaaf62212d`): upstream's one-line delegation to `grilling` and
+`domain-modeling` is replaced by inlining both into one file, so it depends on no other skill;
+hardcoded `GLOSSARY.md`/`docs/adr/` are replaced by discovering the project's existing glossary
+and decision-record homes, with upstream layout as a fallback that asks before creating files;
+decision records are drafted and written only on a yes; a closing summary of decided-but-unwritten
+answers is added; no-personal-data, no-commit and untrusted-input rules added.
 
 > `to-tickets` shares a name with an upstream skill but is an independent,
 > original skill — not derived from that repo.
