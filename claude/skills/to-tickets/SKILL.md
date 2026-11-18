@@ -8,7 +8,12 @@ allowed-tools: mcp__claude_ai_Linear__list_teams, mcp__claude_ai_Linear__list_us
 
 Create a Linear ticket by quizzing the user field-by-field, then publishing.
 
-## Phase 0: Fetch Linear data upfront
+## Phase 0: Find the Linear tools and fetch data upfront
+
+Linear's tool names depend on the user's connector, so resolve them at runtime. Call `ToolSearch`
+with `select:` for the names you need, or with keywords such as `linear save_issue`, and use the
+Linear server it returns. Do not hardcode a connector ID. If no Linear tools are found, stop and
+say the Linear connector is not connected.
 
 Before asking anything, fetch both in parallel:
 - `list_teams` — to offer team options and resolve team ID
