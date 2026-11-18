@@ -6,7 +6,7 @@ description: >
   one page of ranked items with a suggested action each. Triggers on "coffee", "morning brief",
   "what needs me", "what did I miss", or /coffee. Read-only: it never replies, never marks read,
   never writes.
-allowed-tools: mcp__claude_ai_Slack__slack_search_public_and_private, mcp__claude_ai_Slack__slack_read_thread, mcp__claude_ai_Slack__slack_read_channel, mcp__claude_ai_Linear__get_notifications, mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_comments, mcp__claude_ai_Linear__get_project, mcp__claude_ai_Google_Calendar__list_events, Bash(gh pr list:*), Bash(gh pr view:*), Bash(git for-each-ref:*), Bash(git log:*), Bash(date:*)
+allowed-tools: mcp__claude_ai_Slack__slack_search_public_and_private, mcp__claude_ai_Slack__slack_read_thread, mcp__claude_ai_Slack__slack_read_channel, mcp__claude_ai_Linear__get_notifications, mcp__claude_ai_Linear__get_issue, mcp__claude_ai_Linear__list_issues, mcp__claude_ai_Linear__list_comments, mcp__claude_ai_Linear__get_project, mcp__linear-server__get_notifications, mcp__linear-server__get_issue, mcp__linear-server__list_issues, mcp__linear-server__list_comments, mcp__linear-server__get_project, mcp__claude_ai_Google_Calendar__list_events, Bash(gh pr list:*), Bash(gh pr view:*), Bash(git for-each-ref:*), Bash(git log:*), Bash(date:*)
 ---
 
 One page, over one coffee. Ranked by who is waiting on you.
@@ -212,6 +212,11 @@ check that found nothing.
 
 **Keep the coverage line when it applies.** A skipped calendar or a DM search that stopped at
 Tuesday changes what "0 promises open" means. Say which source and how far back it reached.
+
+**Every issue ID is a link**, so it can be clicked in the terminal: write `LEN-270` as
+`[LEN-270](https://linear.app/trengo/issue/LEN-270)` every time it appears, never inside a code
+block, where links don't render. Linear opens the issue from that URL without the title part. The
+template above shows plain IDs only to stay readable.
 
 **One action per item, concrete.** "→ merge #123 first" is an action. "Follow up with the team"
 is not. If there is no action, it belongs in Around you or the overflow.
